@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "46f5697cc0f55679",
+        "id": "48d6a7cc041e3f11",
         "type": "tabs",
         "children": [
           {
-            "id": "575fc545abf8f8bf",
+            "id": "fedb20eb9813eed1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Python_Basic/00_00_Outline.md",
+                "file": "10_Python_Basic/demodemo.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,16 +28,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "00_00_Outline"
+              "title": "demodemo"
             }
           },
           {
-            "id": "83143d6ec099754d",
+            "id": "63a4cc1b111a067b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Python_Basic/10_数据类型/10_01_字符串.md",
+                "file": "new.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,16 +52,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "10_01_字符串"
+              "title": "new"
             }
           },
           {
-            "id": "e422ae11438d1731",
+            "id": "342f92334ea3a641",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Python_Basic/10_数据类型/10_02_数.md",
+                "file": "欢迎.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,7 +76,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "10_02_数"
+              "title": "欢迎"
             }
           }
         ],
@@ -112,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"入库时间\"]",
+                "query": "[\"modify date\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -225,11 +225,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,20 +241,47 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
-      "zk-prefixer:创建时间戳笔记": false
+      "zk-prefixer:创建时间戳笔记": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "e422ae11438d1731",
+  "active": "410d44cfe5f776ca",
   "lastOpenFiles": [
-    "10_Python_Basic/10_数据类型/10_01_字符串.md",
-    "10_Python_Basic/10_数据类型/10_02_数.md",
-    "10_Python_Basic/10_数据类型",
-    "10_Python_Basic/00_01_符号集合.md",
-    "10_Python_Basic/00_00_Outline.md",
-    "2025-08-11.md",
-    "创建链接.md",
+    "demo_linter.md",
     "欢迎.md",
-    "10_Python_Basic",
+    "创建链接.md",
+    "2025-08-11.md",
+    "10_Python_Basic/00_00_Outline.md",
+    "10_Python_Basic/00_01_符号集合.md",
+    "10_Python_Basic/demodemo.md",
+    "new.md",
+    "Templates/Programming Notes Template.md",
+    "abc.md",
+    "00.md",
+    "00_linter.md",
+    "10_Python_Basic/00_03_Temp.md",
+    "00_demo.md",
+    "00_00_demo.md",
+    "10_Python_Basic/00_03_Temp.md.md",
+    "10_Python_Basic/10_数据类型/10_01_字符串.md",
+    "10_Python_Basic/00_02_Temp.md.md",
+    "10_Python_Basic/10_数据类型/10_02_数.md",
+    "10_Python_Basic/10_数据类型/30_30/30_30_demo.md.md",
+    "10_Python_Basic/10_数据类型/30_30",
+    "10_Python_Basic/10_数据类型/10_03/10_03_demo.md",
+    "10_Python_Basic/10_数据类型/10_03",
+    "10_Python_Basic/10_0000/10_0000_demo.md.md",
+    "10_Python_Basic/10_0000",
+    "10_Python_Basic/10_00/10_00_demo.md.md",
+    "10_Python_Basic/10_00",
+    "10_Python_Basic/20_00/20_00_demo.md.md",
+    "11_C_Basic/00_00/00_00_new.md.md",
+    "10_Python_Basic/20_00",
+    "11_C_Basic/00_00",
+    "10_Python_Basic/10_数据类型/00_04",
+    "10_Python_Basic/00_02",
+    "10_Python_Basic/10_数据类型/20_00",
+    "11_C_Basic",
     "未命名.canvas"
   ]
 }

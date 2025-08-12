@@ -90,5 +90,21 @@
       ],
       "key": "O"
     }
+  ],
+  "code-block-from-selection:e3dea0f5-37f2-4d79-ae58-490af3228069": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "P"
+    }
+  ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "C"
+    }
   ]
 }

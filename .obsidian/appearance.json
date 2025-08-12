@@ -1,4 +1,10 @@
 {
   "nativeMenus": false,
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "monospaceFontFamily": "JetBrains Mono",
+  "cssTheme": "Things",
+  "accentColor": "#24c6ab",
+  "theme": "obsidian",
+  "interfaceFontFamily": "",
+  "textFontFamily": "Fira Code"
 }
