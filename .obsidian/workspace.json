@@ -11,48 +11,10 @@
             "id": "fedb20eb9813eed1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10_Python_Basic/demodemo.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "demodemo"
-            }
-          },
-          {
-            "id": "63a4cc1b111a067b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "new.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "new"
+              "title": "新标签页"
             }
           },
           {
@@ -61,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "欢迎.md",
+                "file": "10_Python_Basic/00_01_符号集合.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,11 +38,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "欢迎"
+              "title": "00_01_符号集合"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -245,17 +207,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "410d44cfe5f776ca",
+  "active": "342f92334ea3a641",
   "lastOpenFiles": [
-    "demo_linter.md",
-    "欢迎.md",
-    "创建链接.md",
-    "2025-08-11.md",
+    "10_Python_Basic/10_数据类型/10_01_字符串.md",
+    "10_Python_Basic/10_数据类型/10_02_数.md",
+    "Templates/Programming Notes Template.md",
     "10_Python_Basic/00_00_Outline.md",
     "10_Python_Basic/00_01_符号集合.md",
+    "欢迎.md",
+    "创建链接.md",
+    "demo_linter.md",
+    "2025-08-11.md",
     "10_Python_Basic/demodemo.md",
     "new.md",
-    "Templates/Programming Notes Template.md",
     "abc.md",
     "00.md",
     "00_linter.md",
@@ -263,9 +227,7 @@
     "00_demo.md",
     "00_00_demo.md",
     "10_Python_Basic/00_03_Temp.md.md",
-    "10_Python_Basic/10_数据类型/10_01_字符串.md",
     "10_Python_Basic/00_02_Temp.md.md",
-    "10_Python_Basic/10_数据类型/10_02_数.md",
     "10_Python_Basic/10_数据类型/30_30/30_30_demo.md.md",
     "10_Python_Basic/10_数据类型/30_30",
     "10_Python_Basic/10_数据类型/10_03/10_03_demo.md",
