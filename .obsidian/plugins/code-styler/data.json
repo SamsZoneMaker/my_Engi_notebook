@@ -302,7 +302,7 @@
         "lineNumbers": true,
         "unwrapLines": true,
         "wrapLinesActive": false,
-        "curvature": 8
+        "curvature": 4
       },
       "gutter": {
         "highlight": true,

@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "Templates",
+  "templates_folder": "90_obsystem/Templates",
   "templates_pairs": [
     [
       "",

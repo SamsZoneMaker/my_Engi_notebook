@@ -2,7 +2,6 @@
   "code-styler",
   "code-block-from-selection",
   "templater-obsidian",
-  "quickadd",
   "dataview",
-  "obsidian-linter"
+  "update-time-on-edit"
 ]

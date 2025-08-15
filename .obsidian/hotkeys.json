@@ -91,6 +91,14 @@
       "key": "O"
     }
   ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "C"
+    }
+  ],
   "code-block-from-selection:e3dea0f5-37f2-4d79-ae58-490af3228069": [
     {
       "modifiers": [
@@ -99,12 +107,12 @@
       "key": "P"
     }
   ],
-  "editor:toggle-source": [
+  "code-block-from-selection:1220b7b0-fbc5-4465-a61f-64b6e5f7f16b": [
     {
       "modifiers": [
         "Alt"
       ],
-      "key": "C"
+      "key": "G"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "dateFormat": "yyyy-MM-dd  HH:mm:ss",
+  "enableCreateTime": false,
+  "headerUpdated": "modify date",
+  "headerCreated": "created",
+  "minMinutesBetweenSaves": 1,
+  "ignoreGlobalFolder": [
+    "90_obsystem/Templates"
+  ],
+  "ignoreCreatedFolder": [],
+  "enableExperimentalHash": false,
+  "fileHashMap": {
+    "90_obsystem/Templates/template for quick notes.md": "6ebb3b7743f071fc762a36aec604fbbf1db21807604afc95ef93f7934d9b5ac3",
+    "10_Areas/02_Programming/Python/数据类型.md": "faf395f0433e71641c9b34c6e8640a522f4912e44d76818a3f6a1141bfa94d67"
+  }
+}
