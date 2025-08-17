@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Areas/02_Programming/Python/数据类型.md",
+                "file": "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "数据类型"
+              "title": "00_Computer_Science_MOC"
             }
           }
         ]
@@ -189,7 +189,6 @@
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
       "zk-prefixer:创建时间戳笔记": false,
@@ -198,14 +197,13 @@
   },
   "active": "0237bca7c3fe47d2",
   "lastOpenFiles": [
-    "90_obsystem/Templates/template for programming notes.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "90_obsystem/Templates/template for quick notes.md",
-    "00_Inbox/202508151635.md",
     "00_Inbox/202508141800.md",
-    "00_Inbox/202508151633.md",
+    "90_obsystem/Templates/template for quick notes.md",
+    "90_obsystem/Templates/template for programming notes.md",
     "2025-08-11.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "00_Inbox/202508151635.md",
+    "00_Inbox/202508151633.md",
     "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/Tools & Environments",
     "10_Areas/01_Computer_Science/Networks",
