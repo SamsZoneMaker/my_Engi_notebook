@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
+                "file": "10_Areas/02_Programming/C-language/C Programme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "00_Computer_Science_MOC"
+              "title": "C Programme"
             }
           }
         ]
@@ -197,14 +197,17 @@
   },
   "active": "0237bca7c3fe47d2",
   "lastOpenFiles": [
+    "链接脚本文件（.ld).md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
+    "10_Areas/02_Programming/C-language/C Programme.md",
+    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
     "00_Inbox/202508141800.md",
     "90_obsystem/Templates/template for quick notes.md",
     "90_obsystem/Templates/template for programming notes.md",
     "2025-08-11.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
     "00_Inbox/202508151635.md",
     "00_Inbox/202508151633.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/Tools & Environments",
     "10_Areas/01_Computer_Science/Networks",
     "10_Areas/01_Computer_Science/Architecture",
@@ -214,7 +217,6 @@
     "10_Areas/02_Programming/C-Language",
     "10_Areas/02_Programming/00_Programming_MOC.md",
     "10_Areas/02_Programming/Python",
-    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
     "10_Areas/03_Operating_Systems",
     "10_Areas/02_Programming",
     "创建链接.md",
@@ -231,7 +233,6 @@
     "10_Python_Basic/demodemo.md",
     "new.md",
     "abc.md",
-    "00.md",
     "未命名.canvas"
   ]
 }
