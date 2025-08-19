@@ -1,5 +1,5 @@
 ---
-modify date: 2025-08-18  10:17:08
+modify date: 2025-08-19  18:03:19
 ---
 # C Programme
 
@@ -66,7 +66,11 @@ modify date: 2025-08-18  10:17:08
    for( ; ; ){}
    ```
 
-   
+```c
+printf("why no header?");
+
+```
+
 
 
 

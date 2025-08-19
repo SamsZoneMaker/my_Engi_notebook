@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Areas/02_Programming/C-language/C Programme.md",
+                "file": "10_Areas/02_Programming/Python/数据类型.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "C Programme"
+              "title": "数据类型"
             }
           }
         ]
@@ -197,11 +197,16 @@
   },
   "active": "0237bca7c3fe47d2",
   "lastOpenFiles": [
-    "链接脚本文件（.ld).md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/C-language/C Programme.md",
+    "10_Areas/01_Computer_Science/Architecture/00_Architecture_MOC.md",
     "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
+    "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
+    "10_Areas/02_Programming/00_Programming_MOC.md",
+    "10_Areas/01_Computer_Science/Architecture",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "10_Areas/01_Computer_Science/Algorithm",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
+    "链接脚本文件（.ld).md",
     "00_Inbox/202508141800.md",
     "90_obsystem/Templates/template for quick notes.md",
     "90_obsystem/Templates/template for programming notes.md",
@@ -215,10 +220,7 @@
     "10_Areas/01_Computer_Science/Data Strutures",
     "10_Areas/03_Operating_Systems/Shell",
     "10_Areas/02_Programming/C-Language",
-    "10_Areas/02_Programming/00_Programming_MOC.md",
     "10_Areas/02_Programming/Python",
-    "10_Areas/03_Operating_Systems",
-    "10_Areas/02_Programming",
     "创建链接.md",
     "欢迎.md",
     "demo2.md",
@@ -231,8 +233,6 @@
     "10_Python_Basic/10_数据类型/10_02_数.md",
     "demo_linter.md",
     "10_Python_Basic/demodemo.md",
-    "new.md",
-    "abc.md",
     "未命名.canvas"
   ]
 }

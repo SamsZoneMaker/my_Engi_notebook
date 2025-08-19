@@ -32,7 +32,7 @@
     ""
   ],
   "startup_templates": [
-    "Template.md",
+    "90_obsystem/Templates/template for programming notes.md",
     ""
   ],
   "intellisense_render": 1

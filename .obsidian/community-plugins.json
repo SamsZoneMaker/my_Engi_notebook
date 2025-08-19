@@ -1,7 +1,7 @@
 [
-  "code-styler",
   "code-block-from-selection",
   "templater-obsidian",
   "dataview",
-  "update-time-on-edit"
+  "update-time-on-edit",
+  "codeblock-customizer"
 ]
