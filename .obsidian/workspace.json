@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/202508211039.md",
-                "mode": "preview",
+                "file": "20_Project/01_Dragon/build文件的使用.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "202508211039"
+              "title": "build文件的使用"
             }
           }
         ]
@@ -199,7 +199,28 @@
   },
   "active": "d1aba5df46a9494a",
   "lastOpenFiles": [
+    "10_Areas/01_Computer_Science/Networks/00_Networks_MOC.md",
+    "10_Areas/01_Computer_Science/Data Structures/00_Data_Structures_MOC.md",
+    "10_Areas/01_Computer_Science/Networks",
+    "10_Areas/02_Programming/Tools & Environments/00_Tools_Environments_MOC.md",
+    "10_Areas/01_Computer_Science/Data Structures",
+    "20_Project/01_Dragon/build文件的使用.md",
+    "10_Areas/02_Programming/Tools & Environments",
+    "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
+    "10_Areas/03_Operation_system/Embede_system/00_Embedded_system_MOC.md",
+    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
+    "10_Areas/02_Programming/C-language/C Programme.md",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
+    "10_Areas/02_Programming/Shell",
+    "10_Areas/03_Operation_system/Embede_system",
+    "10_Areas/03_Operation_system/Linux",
+    "未命名",
+    "10_Areas/03_Operation_system",
+    "Untitled.md",
+    "未命名.md",
     "00_Inbox/202508211039.md",
+    "20_Project/01_Dragon",
+    "20_Project",
     "90_obsystem/Templates/template for quick notes.md",
     "00_Inbox/202508211037.md",
     "00_Inbox/202508141800.md",
@@ -207,34 +228,13 @@
     "90_obsystem/Templates/template for programming notes.md",
     "10_Areas/01_Computer_Science/Architecture/00_Architecture_MOC.md",
     "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/02_Programming/C-language/C Programme.md",
     "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
     "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
     "10_Areas/02_Programming/00_Programming_MOC.md",
-    "10_Areas/01_Computer_Science/Architecture",
-    "10_Areas/01_Computer_Science/Algorithm",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "链接脚本文件（.ld).md",
     "2025-08-11.md",
     "00_Inbox/202508151635.md",
     "00_Inbox/202508151633.md",
-    "10_Areas/02_Programming/Tools & Environments",
-    "10_Areas/01_Computer_Science/Networks",
-    "10_Areas/01_Computer_Science/Architecture",
-    "10_Areas/01_Computer_Science/Algorithm",
-    "10_Areas/01_Computer_Science/Data Strutures",
-    "10_Areas/03_Operating_Systems/Shell",
-    "10_Areas/02_Programming/C-Language",
-    "10_Areas/02_Programming/Python",
-    "创建链接.md",
-    "欢迎.md",
-    "demo2.md",
-    "demo.md",
-    "title.md",
-    "11_C_Basic/c语言.md",
-    "demo.md.md",
-    "10_Python_Basic/10_数据类型/10_01_字符串.md",
-    "10_Python_Basic/00_00_Outline.md",
     "未命名.canvas"
   ]
 }
