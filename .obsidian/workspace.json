@@ -11,10 +11,24 @@
             "id": "6e51bce6871d2c74",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "20_Project/01_Dragon/build文件的使用.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "build文件的使用"
             }
           }
         ]
@@ -138,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pasted image 20250825175547.png",
+                "file": "20_Project/01_Dragon/build文件的使用.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Pasted image 20250825175547 的大纲"
+              "title": "build文件的使用 的大纲"
             }
           },
           {
@@ -166,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 371.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,7 +196,7 @@
       "templates:插入模板": false
     }
   },
-  "active": "410d44cfe5f776ca",
+  "active": "6e51bce6871d2c74",
   "lastOpenFiles": [
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
