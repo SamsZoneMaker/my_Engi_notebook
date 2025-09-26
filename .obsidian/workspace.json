@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "202508271023"
             }
+          },
+          {
+            "id": "6e6ca4198d6d7b30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Inbox/202509261030.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "202509261030"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -152,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/202508271023.md",
+                "file": "00_Inbox/202509261030.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "202508271023 的大纲"
+              "title": "202509261030 的大纲"
             }
           },
           {
@@ -196,8 +221,9 @@
       "templates:插入模板": false
     }
   },
-  "active": "7cc1b624dd9ff209",
+  "active": "6e6ca4198d6d7b30",
   "lastOpenFiles": [
+    "00_Inbox/202509261030.md",
     "().md",
     "00_Inbox/202508271023.md",
     "20_Project/01_Dragon/build文件的使用.md",
@@ -235,7 +261,6 @@
     "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
     "10_Areas/02_Programming/00_Programming_MOC.md",
     "链接脚本文件（.ld).md",
-    "2025-08-11.md",
     "未命名.canvas"
   ]
 }
