@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/202509261030.md",
+                "file": "00_Inbox/202508211039.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "202509261030"
+              "title": "202508211039"
             }
           }
         ],
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/202509261030.md",
+                "file": "00_Inbox/202508211039.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "202509261030 的大纲"
+              "title": "202508211039 的大纲"
             }
           },
           {
@@ -209,7 +209,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -223,8 +222,16 @@
   },
   "active": "6e6ca4198d6d7b30",
   "lastOpenFiles": [
-    "00_Inbox/202509261030.md",
+    "10_Areas/02_Programming/Python/python的符号.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
+    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
+    "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
+    "00_Inbox/202508141800.md",
+    "2025-08-11.md",
+    "链接脚本文件（.ld).md",
     "().md",
+    "00_Inbox/202509261030.md",
     "00_Inbox/202508271023.md",
     "20_Project/01_Dragon/build文件的使用.md",
     "Pasted image 20250825175548.png",
@@ -239,9 +246,7 @@
     "10_Areas/02_Programming/Tools & Environments",
     "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
     "10_Areas/03_Operation_system/Embede_system/00_Embedded_system_MOC.md",
-    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
     "10_Areas/02_Programming/C-language/C Programme.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/Shell",
     "10_Areas/03_Operation_system/Embede_system",
     "10_Areas/03_Operation_system/Linux",
@@ -253,14 +258,8 @@
     "20_Project",
     "90_obsystem/Templates/template for quick notes.md",
     "00_Inbox/202508211037.md",
-    "00_Inbox/202508141800.md",
     "00_Inbox/flow chart rules.md",
     "10_Areas/01_Computer_Science/Architecture/00_Architecture_MOC.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
-    "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
-    "10_Areas/02_Programming/00_Programming_MOC.md",
-    "链接脚本文件（.ld).md",
     "未命名.canvas"
   ]
 }
