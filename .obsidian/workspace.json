@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7cc1b624dd9ff209",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_Inbox/202508271023.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "202508271023"
-            }
-          },
-          {
             "id": "6e6ca4198d6d7b30",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/202508211039.md",
+                "file": "20_Project/01_Dragon/build文件的使用.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,11 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "202508211039"
+              "title": "build文件的使用"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:python的数据类型",
+                "query": "tag:projDragon",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -113,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 304.5
   },
   "right": {
     "id": "c52a3eced2de6214",
@@ -163,7 +138,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
+                "useHierarchy": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -177,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/202508211039.md",
+                "file": "20_Project/01_Dragon/build文件的使用.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "202508211039 的大纲"
+              "title": "build文件的使用 的大纲"
             }
           },
           {
@@ -199,9 +174,19 @@
               "icon": "lucide-archive",
               "title": "添加笔记属性"
             }
+          },
+          {
+            "id": "44980b7230d8cab0",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -209,6 +194,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -222,18 +208,13 @@
   },
   "active": "6e6ca4198d6d7b30",
   "lastOpenFiles": [
-    "10_Areas/02_Programming/Python/python的符号.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
-    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
-    "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
-    "00_Inbox/202508141800.md",
-    "2025-08-11.md",
-    "链接脚本文件（.ld).md",
-    "().md",
-    "00_Inbox/202509261030.md",
-    "00_Inbox/202508271023.md",
+    "00_Inbox/bflash_test代码学习随记.md",
     "20_Project/01_Dragon/build文件的使用.md",
+    "00_Inbox/202508211039.md",
+    "00_Inbox/202508141800.md",
+    "00_Inbox/202509261030.md",
+    "10_Areas/02_Programming/Python/python的符号.md",
+    "().md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "未命名.md",
@@ -246,20 +227,25 @@
     "10_Areas/02_Programming/Tools & Environments",
     "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
     "10_Areas/03_Operation_system/Embede_system/00_Embedded_system_MOC.md",
+    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
     "10_Areas/02_Programming/C-language/C Programme.md",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/Shell",
     "10_Areas/03_Operation_system/Embede_system",
     "10_Areas/03_Operation_system/Linux",
     "未命名",
     "10_Areas/03_Operation_system",
     "Untitled.md",
-    "00_Inbox/202508211039.md",
     "20_Project/01_Dragon",
     "20_Project",
     "90_obsystem/Templates/template for quick notes.md",
     "00_Inbox/202508211037.md",
     "00_Inbox/flow chart rules.md",
     "10_Areas/01_Computer_Science/Architecture/00_Architecture_MOC.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
+    "10_Areas/01_Computer_Science/Algorithm/00_Algorithm_MOC.md",
+    "10_Areas/02_Programming/00_Programming_MOC.md",
     "未命名.canvas"
   ]
 }

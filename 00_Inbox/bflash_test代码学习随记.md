@@ -1,6 +1,6 @@
 ---
 create date: 2025-08-27  10:23
-modify date: 2025-08-27  14:57:00
+modify date: 2025-09-29  15:15:14
 ---
 
 **Relative to:** #bflash_test #projDragon #c语言
@@ -28,8 +28,8 @@ typedef struct
 } BFT_CASE_T;
 
 static BFT_CASE_T s_bftCase[] = { 
-    [0]={.systemBinName="bft_system.bin", .modifyFun=NULL, .checkFun=bft_case_check_sub_1}, 
-    [1]={"bft_system.bin", bft_case_wrong_bi0_binfo_magic, bft_case_check_binfo_0_err}，
+    {.systemBinName="bft_system.bin", .modifyFun=NULL, .checkFun=bft_case_check_sub_1}, 
+    {"bft_system.bin", bft_case_wrong_bi0_binfo_magic, bft_case_check_binfo_0_err}，
     ......
 };
 ```
@@ -168,7 +168,7 @@ ww_memset(buf: (void *)s_pBfTestBootStus, c: 0xff, n: sizeof(BFLASH_STUS_T));
 
 ## bft_shm_load_file
 
-这个函数里面游泳回到 `FILE`，这是一个典型的**“不透明类型”（Opaque Type）**
+这个函数里面游泳回到 `FILE`，这是一个典型的**不透明类型（Opaque Type**
 
 `FILE` 类型本质上是一个**结构体（`struct`）**。
 
