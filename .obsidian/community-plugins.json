@@ -3,7 +3,8 @@
   "templater-obsidian",
   "dataview",
   "update-time-on-edit",
-  "codeblock-customizer",
   "calendar",
-  "obsidian-tasks-plugin"
+  "obsidian-tasks-plugin",
+  "obsidian-git",
+  "obsidian-admonition"
 ]
