@@ -122,5 +122,17 @@
       ],
       "key": "S"
     }
+  ],
+  "templater-obsidian:create-new-note-from-template": [],
+  "templater-obsidian:jump-to-next-cursor-location": [],
+  "templater-obsidian:insert-templater": [],
+  "templater-obsidian:replace-in-file-templater": [],
+  "quickadd:choice:e05ea832-a657-4199-85e1-abb04a2fb48a": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "N"
+    }
   ]
 }

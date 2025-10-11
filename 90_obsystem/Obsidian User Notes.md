@@ -4,7 +4,7 @@ tags:
   - "#ob的基本使用"
 aliases:
 create date: 2025-10-10 10:45:08
-modify date: 2025-10-10  18:29:18
+modify date: 2025-10-11  09:28:41
 ---
 # 📝 笔记内容
 
@@ -50,7 +50,7 @@ callout的用法
 ```
 > [!seealso] 
 ```
-
+> [!seealso] 
 
 ## 注释语法
 注释可以是单行的，也可以是多行的

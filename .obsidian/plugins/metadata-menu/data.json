@@ -1,0 +1,61 @@
+{
+  "presetFields": [
+    {
+      "type": "Select",
+      "tagName": "select",
+      "icon": "right-triangle",
+      "tooltip": "Accepts a single value from a list",
+      "colorClass": "select",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "📥 收集 (Inbox)",
+          "2": "🌱 孵化中 (Seedling)",
+          "3": "🌿 成长中 (Growing)",
+          "4": "🌳 已完成 (Evergreen)",
+          "5": "🔗 归档 (Archived)"
+        }
+      },
+      "name": "status",
+      "id": "5MdPfA",
+      "path": "",
+      "style": {
+        "italic": false,
+        "code": false,
+        "strikethrough": false,
+        "bold": false
+      }
+    }
+  ],
+  "fileClassQueries": [],
+  "displayFieldsInContextMenu": true,
+  "globallyIgnoredFields": [],
+  "classFilesPath": null,
+  "isAutosuggestEnabled": true,
+  "fileClassAlias": "fileClass",
+  "settingsVersion": "5.3",
+  "firstDayOfWeek": 1,
+  "enableLinks": true,
+  "enableTabHeader": true,
+  "enableEditor": true,
+  "enableBacklinks": true,
+  "enableStarred": true,
+  "enableFileExplorer": true,
+  "enableSearch": true,
+  "enableProperties": true,
+  "tableViewMaxRecords": 20,
+  "frontmatterListDisplay": "asArray",
+  "fileClassExcludedFolders": [],
+  "showIndexingStatusInStatusBar": true,
+  "fileIndexingExcludedFolders": [],
+  "fileIndexingExcludedExtensions": [
+    ".excalidraw.md"
+  ],
+  "fileIndexingExcludedRegex": [],
+  "frontmatterOnly": false,
+  "showFileClassSelectInModal": true,
+  "chooseFileClassAtFileCreation": false,
+  "autoInsertFieldsAtFileClassInsertion": false,
+  "fileClassIcon": "package",
+  "isAutoCalculationEnabled": true
+}

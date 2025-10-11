@@ -4,7 +4,12 @@
   "monospaceFontFamily": "Cascadia Code",
   "cssTheme": "Obsidian Nord",
   "accentColor": "#24c6ab",
-  "theme": "obsidian",
+  "theme": "system",
   "interfaceFontFamily": "",
-  "textFontFamily": "Fira Code Retina"
+  "textFontFamily": "Fira Code Retina",
+  "enabledCssSnippets": [
+    "codelinenum",
+    "cunstom_style_v2",
+    "vscode_search"
+  ]
 }

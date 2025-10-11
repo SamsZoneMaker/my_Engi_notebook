@@ -1,0 +1,487 @@
+/* ========================================
+   Obsidian 增强样式集合
+   包含：彩虹文件夹、标题样式、标签美化、链接高亮、
+        表格斑马纹、缩进参考线、Dataview美化、日历热力图
+   ======================================== */
+
+/* ==================== 1. 彩虹文件夹 ==================== */
+
+/* 
+   使用方法：将下面的文件夹名称替换成你自己的文件夹名称
+   例如：如果你有一个叫 "Assignments" 的文件夹，可以添加：
+   .nav-folder-title[data-path*="Assignments"] .nav-folder-title-content::before {
+       color: #ff6b6b;
+   }
+*/
+
+/* 文件夹图标颜色 - 根据文件夹名称自动着色 */
+/* 请根据你的文件夹名称修改下面的路径 */
+
+/* 示例：红色系文件夹 */
+.nav-folder-title[data-path*="项目"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Project"] .nav-folder-title-content::before {
+    color: #ff6b6b;
+}
+
+/* 示例：青色系文件夹 */
+.nav-folder-title[data-path*="笔记"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Notes"] .nav-folder-title-content::before {
+    color: #4ecdc4;
+}
+
+/* 示例：绿色系文件夹 */
+.nav-folder-title[data-path*="资源"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Resource"] .nav-folder-title-content::before {
+    color: #95e1d3;
+}
+
+/* 示例：黄色系文件夹 */
+.nav-folder-title[data-path*="日记"] .nav-folder-title-content::before,
+.nav-folder-title[data-path*="Daily"] .nav-folder-title-content::before {
+    color: #ffd93d;
+}
+
+/* 你可以继续添加更多文件夹的颜色配置 */
+
+/* ==================== 2. 自定义标题样式 ==================== */
+
+/* H1 标题 - 3px 下划线，使用 Nord 亮青色 */
+.markdown-preview-view h1,
+.markdown-reading-view h1 {
+    font-weight: 700;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid #bf626a; /* Nord11 亮红色 */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+/* H2 标题 - 2px 下划线，使用 Nord 极地蓝 */
+.markdown-preview-view h2,
+.markdown-reading-view h2 {
+    font-weight: 600;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid #ebcb8b;
+    margin-top: 1.3em;
+    margin-bottom: 0.6em;
+}
+
+/* H3 标题 - 简洁风格，无装饰 */
+.markdown-preview-view h3,
+.markdown-reading-view h3 {
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: None;
+}
+
+/* 确保移除 H3 的任何前缀 */
+.markdown-preview-view h3::before,
+.markdown-reading-view h3::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* H4 标题 - 带左侧小装饰线 */
+.markdown-preview-view h4,
+.markdown-reading-view h4 {
+    color: #5E81AC; /* Nord10 深青色 */
+    font-weight: 600;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    padding-left: 0.8em;
+}
+
+/* H5 标题 - 小号粗体，带 # 符号前缀 */
+.markdown-preview-view h5,
+.markdown-reading-view h5 {
+    color: #88C0D0; /* 使用亮青色保持可读性 */
+    font-weight: 600;
+    margin-top: 0.6em;
+    margin-bottom: 0.3em;
+    font-size: 1.1em;
+}
+
+.markdown-preview-view h5::before,
+.markdown-reading-view h5::before {
+    content: "# ";
+    color: #8FBCBB;
+    opacity: 0.7;
+    margin-right: 0.3em;
+}
+
+/* H6 标题 - 最小标题，斜体 */
+.markdown-preview-view h6,
+.markdown-reading-view h6 {
+    color: #81A1C1; /* Nord9 */
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    opacity: 0.85;
+}
+
+/* ==================== 3. 标签美化 ==================== */
+
+/* 
+   标签使用方法：在笔记正文中输入 #标签名 即可
+   例如：#重要 #完成 #进行中
+   注意：这是正文中的标签，不是 frontmatter 属性中的 tags
+*/
+
+/* 标签基础样式 */
+.cm-hashtag,
+a.tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 0.2em 0.8em;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.cm-hashtag:hover,
+a.tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* 不同标签的颜色方案 - 根据标签内容 */
+/* 重要标签 - 红色渐变 */
+.cm-hashtag:is([data-tag*="重要"], [data-tag*="important"]),
+a.tag[href*="重要"],
+a.tag[href*="important"] {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* 完成标签 - 蓝色渐变 */
+.cm-hashtag:is([data-tag*="完成"], [data-tag*="done"]),
+a.tag[href*="完成"],
+a.tag[href*="done"] {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* 进行中标签 - 绿色渐变 */
+.cm-hashtag:is([data-tag*="进行中"], [data-tag*="doing"]),
+a.tag[href*="进行中"],
+a.tag[href*="doing"] {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* 待办标签 - 橙色渐变 */
+.cm-hashtag:is([data-tag*="待办"], [data-tag*="todo"]),
+a.tag[href*="待办"],
+a.tag[href*="todo"] {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* 想法标签 - 粉紫渐变 */
+.cm-hashtag:is([data-tag*="想法"], [data-tag*="idea"]),
+a.tag[href*="想法"],
+a.tag[href*="idea"] {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+/* ==================== 4. 高亮不同类型的链接 ==================== */
+
+/* 内部链接（已存在的笔记） */
+.markdown-preview-view .internal-link,
+.markdown-reading-view .internal-link {
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.markdown-preview-view .internal-link:hover,
+.markdown-reading-view .internal-link:hover {
+    border-bottom-color: #4ecdc4;
+}
+
+/* 未创建的链接 */
+.markdown-preview-view .internal-link.is-unresolved,
+.markdown-reading-view .internal-link.is-unresolved {
+    color: #ff6b6b;
+    opacity: 0.7;
+}
+
+/* 外部链接 */
+.markdown-preview-view .external-link,
+.markdown-reading-view .external-link {
+    color: #a29bfe;
+    text-decoration: none;
+}
+
+.markdown-preview-view .external-link::after,
+.markdown-reading-view .external-link::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+.markdown-preview-view .external-link:hover,
+.markdown-reading-view .external-link:hover {
+    text-decoration: underline;
+}
+
+/* ==================== 5. 表格斑马纹 ==================== */
+
+/* 表格基础样式 */
+.markdown-preview-view table,
+.markdown-reading-view table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+/* 表头样式 */
+.markdown-preview-view table thead tr,
+.markdown-reading-view table thead tr {
+    background: var(--background-secondary);
+    font-weight: 600;
+}
+
+/* 斑马纹 - 偶数行 */
+.markdown-preview-view table tbody tr:nth-child(even),
+.markdown-reading-view table tbody tr:nth-child(even) {
+    background: var(--background-primary-alt);
+}
+
+/* 斑马纹 - 奇数行 */
+.markdown-preview-view table tbody tr:nth-child(odd),
+.markdown-reading-view table tbody tr:nth-child(odd) {
+    background: var(--background-primary);
+}
+
+/* 悬停效果 */
+.markdown-preview-view table tbody tr:hover,
+.markdown-reading-view table tbody tr:hover {
+    background: var(--background-secondary-alt);
+    transition: background 0.2s ease;
+}
+
+/* 单元格样式 */
+.markdown-preview-view table td,
+.markdown-preview-view table th,
+.markdown-reading-view table td,
+.markdown-reading-view table th {
+    padding: 0.6em 1em;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* ==================== 6. 缩进参考线 ==================== */
+
+/* 最简单直接的方案 - 给所有嵌套列表添加左边框 */
+
+/* 第一层嵌套（无论是 ul 还是 ol） */
+.markdown-preview-view li > ul,
+.markdown-preview-view li > ol,
+.markdown-reading-view li > ul,
+.markdown-reading-view li > ol,
+.markdown-rendered li > ul,
+.markdown-rendered li > ol {
+    border-left: 2px solid var(--background-modifier-border);
+    margin-left: 1em;
+    padding-left: 1em;
+}
+
+/* 第二层嵌套 */
+.markdown-preview-view li > ul li > ul,
+.markdown-preview-view li > ul li > ol,
+.markdown-preview-view li > ol li > ul,
+.markdown-preview-view li > ol li > ol,
+.markdown-reading-view li > ul li > ul,
+.markdown-reading-view li > ul li > ol,
+.markdown-reading-view li > ol li > ul,
+.markdown-reading-view li > ol li > ol {
+    border-left: 2px solid var(--background-modifier-border);
+    opacity: 0.7;
+}
+
+/* 第三层嵌套 */
+.markdown-preview-view li > ul li > ul li > ul,
+.markdown-preview-view li > ul li > ul li > ol,
+.markdown-preview-view li > ol li > ol li > ul,
+.markdown-preview-view li > ol li > ol li > ol,
+.markdown-reading-view li > ul li > ul li > ul,
+.markdown-reading-view li > ul li > ul li > ol,
+.markdown-reading-view li > ol li > ol li > ul,
+.markdown-reading-view li > ol li > ol li > ol {
+    border-left: 2px solid var(--background-modifier-border);
+    opacity: 0.5;
+}
+
+/* ==================== 7. Dataview 表格美化 ==================== */
+
+/* Dataview 表格容器 */
+.dataview.table-view-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Dataview 表头 */
+.dataview.table-view-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.dataview.table-view-table thead th {
+    padding: 0.8em 1em;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+/* Dataview 表格行 */
+.dataview.table-view-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.dataview.table-view-table tbody tr:nth-child(even) {
+    background: var(--background-primary-alt);
+}
+
+.dataview.table-view-table tbody tr:nth-child(odd) {
+    background: var(--background-primary);
+}
+
+.dataview.table-view-table tbody tr:hover {
+    background: var(--background-secondary-alt);
+    transform: scale(1.01);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dataview 单元格 */
+.dataview.table-view-table tbody td {
+    padding: 0.7em 1em;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* Dataview 链接美化 */
+.dataview.table-view-table a {
+    color: #4ecdc4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.dataview.table-view-table a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== 8. 日历热力图 ==================== */
+
+/* 日历热力图容器 */
+.block-language-calendar {
+    margin: 2em 0;
+}
+
+/* 日历单元格基础样式 */
+.day-cell {
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+/* 热力图颜色梯度 - 根据活跃度 */
+.day-cell[data-count="0"] {
+    background-color: var(--background-secondary);
+    opacity: 0.3;
+}
+
+.day-cell[data-count="1"] {
+    background-color: #c6e48b;
+}
+
+.day-cell[data-count="2"] {
+    background-color: #7bc96f;
+}
+
+.day-cell[data-count="3"] {
+    background-color: #239a3b;
+}
+
+.day-cell[data-count="4"] {
+    background-color: #196127;
+}
+
+/* 更高活跃度 */
+.day-cell[data-count="5"],
+.day-cell[data-count="6"],
+.day-cell[data-count="7"],
+.day-cell[data-count="8"],
+.day-cell[data-count="9"],
+.day-cell[data-count="10"] {
+    background-color: #0d3f1f;
+}
+
+/* 日历单元格悬停效果 */
+.day-cell:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* 今天的标记 */
+.day-cell.today {
+    border: 2px solid #ffd93d;
+    box-shadow: 0 0 8px rgba(255, 217, 61, 0.5);
+}
+
+/* 日历月份标签 */
+.calendar-month {
+    font-weight: 600;
+    color: var(--text-normal);
+    margin-bottom: 0.5em;
+}
+
+/* 日历图例 */
+.calendar-legend {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 1em;
+    font-size: 0.85em;
+    color: var(--text-muted);
+}
+
+.calendar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+/* ==================== 额外优化 ==================== */
+
+/* 平滑滚动 */
+* {
+    scroll-behavior: smooth;
+}
+
+/* 选中文本的颜色 */
+::selection {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+/* 引用块美化（额外赠送） */
+.markdown-preview-view blockquote,
+.markdown-reading-view blockquote {
+    border-left: 4px solid #4ecdc4;
+    background: var(--background-primary-alt);
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/* 分隔线美化 */
+.markdown-preview-view hr,
+.markdown-reading-view hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #667eea, transparent);
+    margin: 2em 0;
+}

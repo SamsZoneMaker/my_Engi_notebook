@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4259a595dc099d19",
+        "id": "c927baec329caaae",
         "type": "tabs",
         "children": [
           {
-            "id": "b7f58118105f0de9",
+            "id": "84a17508fd94f0b0",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "未命名.md",
-                "bFile": "未命名.md",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: 未命名"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -53,13 +49,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.md",
+                "file": "00_Inbox/202508141800.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "202508141800 的大纲"
             }
           },
           {
@@ -68,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"TQ_show_start_date\"]",
+                "query": "tag:#python符号",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +85,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -110,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "10_Python_Basic/10_01_字符串.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +116,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "10_01_字符串 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -129,12 +125,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "10_Python_Basic/10_01_字符串.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "10_01_字符串 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -144,7 +139,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false,
+                "useHierarchy": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -189,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "dca79d4e366eddf1",
@@ -218,55 +213,54 @@
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
       "zk-prefixer:创建时间戳笔记": false,
       "templater-obsidian:Templater": false,
-      "templates:插入模板": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "homepage:Open homepage": false
     }
   },
-  "active": "410d44cfe5f776ca",
+  "active": "84a17508fd94f0b0",
   "lastOpenFiles": [
-    "未命名.md",
-    "90_obsystem/Obsidian User Notes.md",
+    "未命名.base",
+    "90_obsystem/Templates/Template for notes.md",
+    "10_Areas/02_Programming/Python/python的符号.md",
+    "10_Areas/02_Programming/Python/python符号2.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "90_obsystem/Templates/template for quick notes.md",
+    "10_Areas/02_Programming/Python/string.md",
+    "10_Areas/02_Programming/Python/string1.md",
+    "90_obsystem/Templates/template for programming notes.md",
+    "Home Page.md",
+    "2025-08-11.md",
+    "00_Inbox/202508141800.md",
     "20_Project/01_Dragon/build文件的使用.md",
+    "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
+    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
+    "链接脚本文件（.ld).md",
+    "10_Areas/02_Programming/C-language/C Programme.md",
+    "90_obsystem/Obsidian User Notes.md",
+    "10_Areas/02_Programming/00_Programming_MOC.md",
+    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
+    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "00_Inbox/bflash_test代码学习随记.md",
     "笔记文件名.md",
-    "2025-08-11.md",
-    "链接脚本文件（.ld).md",
     "00_Inbox/202509261030.md",
-    "未命名.base",
-    "90_obsystem/Templates/template for programming notes.md",
-    "90_obsystem/Templates/template for quick notes.md",
     "20_Project/01_Dragon/build.sh 记录.md",
     "未命名 1.md",
-    "90_obsystem/未命名.md",
-    "00_Inbox/202508211039.md",
-    "00_Inbox/202508141800.md",
-    "10_Areas/02_Programming/Python/python的符号.md",
-    "().md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
-    "10_Areas/01_Computer_Science/Networks/00_Networks_MOC.md",
-    "10_Areas/01_Computer_Science/Data Structures/00_Data_Structures_MOC.md",
     "10_Areas/01_Computer_Science/Networks",
-    "10_Areas/02_Programming/Tools & Environments/00_Tools_Environments_MOC.md",
     "10_Areas/01_Computer_Science/Data Structures",
     "10_Areas/02_Programming/Tools & Environments",
-    "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
-    "10_Areas/03_Operation_system/Embede_system/00_Embedded_system_MOC.md",
-    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
-    "10_Areas/02_Programming/C-language/C Programme.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
     "10_Areas/02_Programming/Shell",
     "10_Areas/03_Operation_system/Embede_system",
     "10_Areas/03_Operation_system/Linux",
     "未命名",
     "10_Areas/03_Operation_system",
     "20_Project/01_Dragon",
-    "00_Inbox/202508211037.md",
     "未命名.canvas"
   ]
 }
