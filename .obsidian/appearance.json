@@ -10,6 +10,7 @@
   "enabledCssSnippets": [
     "codelinenum",
     "cunstom_style_v2",
-    "vscode_search"
+    "vscode_search",
+    "cunstom_style"
   ]
 }

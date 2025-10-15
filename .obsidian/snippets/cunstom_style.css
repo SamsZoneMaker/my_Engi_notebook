@@ -50,7 +50,7 @@
 .markdown-reading-view h1 {
     font-weight: 700;
     padding-bottom: 0.5em;
-    border-bottom: 3px solid #bf626a; /* Nord11 亮红色 */
+    border-bottom: 3px solid #bf626a;
     margin-top: 1.5em;
     margin-bottom: 0.8em;
 }
@@ -74,45 +74,26 @@
     border-bottom: None;
 }
 
-/* 确保移除 H3 的任何前缀 */
-.markdown-preview-view h3::before,
-.markdown-reading-view h3::before {
-    content: none !important;
-    display: none !important;
-}
-
 /* H4 标题 - 带左侧小装饰线 */
 .markdown-preview-view h4,
 .markdown-reading-view h4 {
-    color: #5E81AC; /* Nord10 深青色 */
     font-weight: 600;
     margin-top: 0.8em;
     margin-bottom: 0.4em;
-    padding-left: 0.8em;
 }
 
 /* H5 标题 - 小号粗体，带 # 符号前缀 */
 .markdown-preview-view h5,
 .markdown-reading-view h5 {
-    color: #88C0D0; /* 使用亮青色保持可读性 */
     font-weight: 600;
     margin-top: 0.6em;
     margin-bottom: 0.3em;
     font-size: 1.1em;
 }
 
-.markdown-preview-view h5::before,
-.markdown-reading-view h5::before {
-    content: "# ";
-    color: #8FBCBB;
-    opacity: 0.7;
-    margin-right: 0.3em;
-}
-
 /* H6 标题 - 最小标题，斜体 */
 .markdown-preview-view h6,
 .markdown-reading-view h6 {
-    color: #81A1C1; /* Nord9 */
     font-weight: 600;
     font-style: italic;
     font-size: 1em;
@@ -121,71 +102,7 @@
     opacity: 0.85;
 }
 
-/* ==================== 3. 标签美化 ==================== */
-
-/* 
-   标签使用方法：在笔记正文中输入 #标签名 即可
-   例如：#重要 #完成 #进行中
-   注意：这是正文中的标签，不是 frontmatter 属性中的 tags
-*/
-
-/* 标签基础样式 */
-.cm-hashtag,
-a.tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white !important;
-    padding: 0.2em 0.8em;
-    border-radius: 12px;
-    font-size: 0.85em;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border: none;
-    text-decoration: none;
-}
-
-.cm-hashtag:hover,
-a.tag:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
-}
-
-/* 不同标签的颜色方案 - 根据标签内容 */
-/* 重要标签 - 红色渐变 */
-.cm-hashtag:is([data-tag*="重要"], [data-tag*="important"]),
-a.tag[href*="重要"],
-a.tag[href*="important"] {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-/* 完成标签 - 蓝色渐变 */
-.cm-hashtag:is([data-tag*="完成"], [data-tag*="done"]),
-a.tag[href*="完成"],
-a.tag[href*="done"] {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-/* 进行中标签 - 绿色渐变 */
-.cm-hashtag:is([data-tag*="进行中"], [data-tag*="doing"]),
-a.tag[href*="进行中"],
-a.tag[href*="doing"] {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-/* 待办标签 - 橙色渐变 */
-.cm-hashtag:is([data-tag*="待办"], [data-tag*="todo"]),
-a.tag[href*="待办"],
-a.tag[href*="todo"] {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-/* 想法标签 - 粉紫渐变 */
-.cm-hashtag:is([data-tag*="想法"], [data-tag*="idea"]),
-a.tag[href*="想法"],
-a.tag[href*="idea"] {
-    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-}
-
-/* ==================== 4. 高亮不同类型的链接 ==================== */
+/* ==================== 3. 高亮不同类型的链接 ==================== */
 
 /* 内部链接（已存在的笔记） */
 .markdown-preview-view .internal-link,
@@ -227,7 +144,7 @@ a.tag[href*="idea"] {
     text-decoration: underline;
 }
 
-/* ==================== 5. 表格斑马纹 ==================== */
+/* ==================== 4. 表格斑马纹 ==================== */
 
 /* 表格基础样式 */
 .markdown-preview-view table,
@@ -274,45 +191,6 @@ a.tag[href*="idea"] {
 
 /* ==================== 6. 缩进参考线 ==================== */
 
-/* 最简单直接的方案 - 给所有嵌套列表添加左边框 */
-
-/* 第一层嵌套（无论是 ul 还是 ol） */
-.markdown-preview-view li > ul,
-.markdown-preview-view li > ol,
-.markdown-reading-view li > ul,
-.markdown-reading-view li > ol,
-.markdown-rendered li > ul,
-.markdown-rendered li > ol {
-    border-left: 2px solid var(--background-modifier-border);
-    margin-left: 1em;
-    padding-left: 1em;
-}
-
-/* 第二层嵌套 */
-.markdown-preview-view li > ul li > ul,
-.markdown-preview-view li > ul li > ol,
-.markdown-preview-view li > ol li > ul,
-.markdown-preview-view li > ol li > ol,
-.markdown-reading-view li > ul li > ul,
-.markdown-reading-view li > ul li > ol,
-.markdown-reading-view li > ol li > ul,
-.markdown-reading-view li > ol li > ol {
-    border-left: 2px solid var(--background-modifier-border);
-    opacity: 0.7;
-}
-
-/* 第三层嵌套 */
-.markdown-preview-view li > ul li > ul li > ul,
-.markdown-preview-view li > ul li > ul li > ol,
-.markdown-preview-view li > ol li > ol li > ul,
-.markdown-preview-view li > ol li > ol li > ol,
-.markdown-reading-view li > ul li > ul li > ul,
-.markdown-reading-view li > ul li > ul li > ol,
-.markdown-reading-view li > ol li > ol li > ul,
-.markdown-reading-view li > ol li > ol li > ol {
-    border-left: 2px solid var(--background-modifier-border);
-    opacity: 0.5;
-}
 
 /* ==================== 7. Dataview 表格美化 ==================== */
 
@@ -375,86 +253,6 @@ a.tag[href*="idea"] {
     text-decoration: underline;
 }
 
-/* ==================== 8. 日历热力图 ==================== */
-
-/* 日历热力图容器 */
-.block-language-calendar {
-    margin: 2em 0;
-}
-
-/* 日历单元格基础样式 */
-.day-cell {
-    border-radius: 3px;
-    transition: all 0.2s ease;
-}
-
-/* 热力图颜色梯度 - 根据活跃度 */
-.day-cell[data-count="0"] {
-    background-color: var(--background-secondary);
-    opacity: 0.3;
-}
-
-.day-cell[data-count="1"] {
-    background-color: #c6e48b;
-}
-
-.day-cell[data-count="2"] {
-    background-color: #7bc96f;
-}
-
-.day-cell[data-count="3"] {
-    background-color: #239a3b;
-}
-
-.day-cell[data-count="4"] {
-    background-color: #196127;
-}
-
-/* 更高活跃度 */
-.day-cell[data-count="5"],
-.day-cell[data-count="6"],
-.day-cell[data-count="7"],
-.day-cell[data-count="8"],
-.day-cell[data-count="9"],
-.day-cell[data-count="10"] {
-    background-color: #0d3f1f;
-}
-
-/* 日历单元格悬停效果 */
-.day-cell:hover {
-    transform: scale(1.2);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-/* 今天的标记 */
-.day-cell.today {
-    border: 2px solid #ffd93d;
-    box-shadow: 0 0 8px rgba(255, 217, 61, 0.5);
-}
-
-/* 日历月份标签 */
-.calendar-month {
-    font-weight: 600;
-    color: var(--text-normal);
-    margin-bottom: 0.5em;
-}
-
-/* 日历图例 */
-.calendar-legend {
-    display: flex;
-    gap: 0.5em;
-    margin-top: 1em;
-    font-size: 0.85em;
-    color: var(--text-muted);
-}
-
-.calendar-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.3em;
-}
-
 /* ==================== 额外优化 ==================== */
 
 /* 平滑滚动 */
@@ -464,10 +262,10 @@ a.tag[href*="idea"] {
 
 /* 选中文本的颜色 */
 ::selection {
-    background: rgba(102, 126, 234, 0.3);
+    background: rgba(104, 102, 234, 0.836);
 }
 
-/* 引用块美化（额外赠送） */
+/* 引用块美化 */
 .markdown-preview-view blockquote,
 .markdown-reading-view blockquote {
     border-left: 4px solid #4ecdc4;
@@ -477,11 +275,19 @@ a.tag[href*="idea"] {
     border-radius: 0 8px 8px 0;
 }
 
-/* 分隔线美化 */
-.markdown-preview-view hr,
-.markdown-reading-view hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #667eea, transparent);
-    margin: 2em 0;
+/* 图片居中显示 */
+.markdown-rendered img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%; /* 图片最大宽度不超过容器的80% */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/******************************** == 自定义 [!idea] Callout == *********************************/
+.callout[data-callout="idea"] {
+  --callout-color: 255, 215, 0; /* 主色调 (RGB): 金色 */
+  --callout-icon: lucide-lightbulb; /* 使用 Lucide 图标库的灯泡图标 */
 }

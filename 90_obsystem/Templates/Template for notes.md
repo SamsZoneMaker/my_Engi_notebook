@@ -2,27 +2,36 @@
 tags:
 aliases:
 status:
-related:
-create date: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
-modify date:
+related: []
+source:
+created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
+modified:
 ---
-# 📝 <% tp.file.title %>
+# <% tp.file.title %>
 
-> [!TIP] 目标与摘要 
+> [!abstract] 摘要 
 > 在这里用一两句话总结这篇笔记的核心目的或关键结论。
 
+## 🎯 Target
+- [ ] Target 1
+- [ ] Target 2
 
-## 
 
 
+# 📝 Core
 
 
 
 ---
-## 🚀 行动项 (Tasks)
+# 🤔 Q&A
+
+### Q1: 
+**A**:
+
+# 🚀 Tasks
 
 
-## 📚 [参考文献]
+# 📚 Reference
 
 
-## 🕸️ 相关笔记
+# 🕸️ Relation

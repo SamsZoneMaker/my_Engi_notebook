@@ -1,20 +1,34 @@
 {
   "main": {
-    "id": "081c6dcb9a2c9d91",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "c927baec329caaae",
+        "id": "9162c6fb5667a51a",
         "type": "tabs",
         "children": [
           {
-            "id": "84a17508fd94f0b0",
+            "id": "8196768d2ef16529",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "90_obsystem/Templates/Template for notes.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Template for notes"
             }
           }
         ]
@@ -49,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/202508141800.md",
+                "file": "90_obsystem/Templates/Template for notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "202508141800 的大纲"
+              "title": "Template for notes 的大纲"
             }
           },
           {
@@ -64,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#python符号",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,8 +99,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -222,30 +235,32 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "84a17508fd94f0b0",
+  "active": "8196768d2ef16529",
   "lastOpenFiles": [
+    "10_Areas/00_Goals.md",
     "未命名.base",
+    "未命名 1.base",
+    "新建文本文档.txt",
+    "00_Inbox/bflash_test代码学习随记.md",
+    "20_Project/01_Dragon/build文件的使用.md",
+    "90_obsystem/Obsidian User Notes.md",
+    "Home Page.md",
     "90_obsystem/Templates/Template for notes.md",
+    "10_Areas/02_Programming/C/C Programme.md",
+    "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
+    "90_obsystem/Templates/template for programming notes.md",
     "10_Areas/02_Programming/Python/python的符号.md",
     "10_Areas/02_Programming/Python/python符号2.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
     "90_obsystem/Templates/template for quick notes.md",
     "10_Areas/02_Programming/Python/string.md",
     "10_Areas/02_Programming/Python/string1.md",
-    "90_obsystem/Templates/template for programming notes.md",
-    "Home Page.md",
-    "2025-08-11.md",
     "00_Inbox/202508141800.md",
-    "20_Project/01_Dragon/build文件的使用.md",
     "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
-    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
     "链接脚本文件（.ld).md",
-    "10_Areas/02_Programming/C-language/C Programme.md",
-    "90_obsystem/Obsidian User Notes.md",
     "10_Areas/02_Programming/00_Programming_MOC.md",
     "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
-    "10_Areas/02_Programming/Python/00_Python_MOC.md",
-    "00_Inbox/bflash_test代码学习随记.md",
     "笔记文件名.md",
     "00_Inbox/202509261030.md",
     "20_Project/01_Dragon/build.sh 记录.md",
@@ -259,8 +274,6 @@
     "10_Areas/03_Operation_system/Embede_system",
     "10_Areas/03_Operation_system/Linux",
     "未命名",
-    "10_Areas/03_Operation_system",
-    "20_Project/01_Dragon",
     "未命名.canvas"
   ]
 }

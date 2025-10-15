@@ -1,0 +1,23 @@
+# Obsidian工作区文件（每台电脑不同）
+.obsidian/workspace-mobile.json
+
+# 缓存文件
+.obsidian/cache
+
+# 插件临时文件
+.obsidian/plugins/*/data.json.bak
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# 回收站
+.trash/
+
+# 私密文件（如果有的话）
+Private/

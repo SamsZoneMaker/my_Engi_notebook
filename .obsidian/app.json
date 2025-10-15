@@ -2,5 +2,7 @@
   "showLineNumber": true,
   "readableLineLength": false,
   "promptDelete": false,
-  "foldHeading": true
+  "foldHeading": true,
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": true
 }
