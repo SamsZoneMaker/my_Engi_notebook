@@ -1,8 +1,10 @@
 ---
 create date: 2025-08-27  10:23
-modify date: 2025-10-15  17:33:33
+modify date: 2025-10-17  18:13:29
+tags:
+  - project/🤗Dragon
 ---
-**Relative to:** #bflash_test #projDragon #c语言
+**Relative to:** #bflash_test #c语言 #project/Dragon 
 
 # title: bflash_test代码学习随记
 ## typedef unsigned int U32;

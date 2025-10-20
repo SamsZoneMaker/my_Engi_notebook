@@ -12,28 +12,100 @@
           "1": "📥 收集 (Inbox)",
           "2": "🌱 孵化中 (Seedling)",
           "3": "🌿 成长中 (Growing)",
-          "4": "🌳 已完成 (Evergreen)",
-          "5": "🔗 归档 (Archived)"
+          "4": "🌲 已完成 (Evergreen)",
+          "5": "📦 归档 (Archived)"
         }
       },
       "name": "status",
-      "id": "5MdPfA",
-      "path": "",
-      "style": {
-        "italic": false,
-        "code": false,
-        "strikethrough": false,
-        "bold": false
-      }
+      "id": "TctETK",
+      "path": ""
+    },
+    {
+      "type": "Multi",
+      "tagName": "multi",
+      "icon": "bullet-list",
+      "tooltip": "Accepts multiple values from a list",
+      "colorClass": "multi",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "domain/🔧 Chip-arch",
+          "2": "domain/🖥️ RISC-V",
+          "3": "domain/🚀 Boot",
+          "4": "domain/🎛️ fpga",
+          "5": "domain/💻 C",
+          "6": "domain/🐍 Python",
+          "7": "domain/🐚 Shell",
+          "8": "domain/🐧 Linux",
+          "9": "domain/🔌 PCIe",
+          "10": "domain/📡 SerDes",
+          "11": "domain/💾 DDR",
+          "12": "domain/🔨 Toolchain",
+          "13": "domain/🐛 debug",
+          "14": "level/📚 Basics ",
+          "15": "level/📖 Intermediate ",
+          "16": "level/📕 Advanced",
+          "17": "level/📋 Reference",
+          "18": "proj/🎯 Retimer",
+          "19": "grain/⚛️ atomic",
+          "20": "grain/🏗️ structure ",
+          "21": "grain/🗺️ MOC"
+        }
+      },
+      "name": "tags",
+      "id": "tx0JUH",
+      "path": ""
+    },
+    {
+      "type": "Select",
+      "tagName": "select",
+      "icon": "right-triangle",
+      "tooltip": "Accepts a single value from a list",
+      "colorClass": "select",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "⭐⭐⭐⭐⭐",
+          "2": "⭐⭐⭐⭐",
+          "3": "⭐⭐⭐",
+          "4": "⭐⭐",
+          "5": "⭐"
+        }
+      },
+      "name": "rating",
+      "id": "vympW5",
+      "path": ""
+    },
+    {
+      "type": "Multi",
+      "tagName": "multi",
+      "icon": "bullet-list",
+      "tooltip": "Accepts multiple values from a list",
+      "colorClass": "multi",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "doc",
+          "2": "code",
+          "3": "paper",
+          "4": "course",
+          "5": "article",
+          "6": "video"
+        }
+      },
+      "name": "resource",
+      "id": "7jnzgZ",
+      "path": ""
     }
   ],
   "fileClassQueries": [],
   "displayFieldsInContextMenu": true,
   "globallyIgnoredFields": [],
-  "classFilesPath": null,
+  "classFilesPath": "90_obsystem/FileClasses/",
   "isAutosuggestEnabled": true,
   "fileClassAlias": "fileClass",
-  "settingsVersion": "5.3",
+  "settingsVersion": "5.9",
+  "globalFileClass": "",
   "firstDayOfWeek": 1,
   "enableLinks": true,
   "enableTabHeader": true,
@@ -55,7 +127,7 @@
   "frontmatterOnly": false,
   "showFileClassSelectInModal": true,
   "chooseFileClassAtFileCreation": false,
-  "autoInsertFieldsAtFileClassInsertion": false,
+  "autoInsertFieldsAtFileClassInsertion": true,
   "fileClassIcon": "package",
   "isAutoCalculationEnabled": true
 }

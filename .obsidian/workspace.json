@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "9162c6fb5667a51a",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "8196768d2ef16529",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90_obsystem/Templates/Template for notes.md",
+                "file": "00_Inbox/bflash_test代码学习随记.md",
                 "mode": "source",
-                "source": true,
+                "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Template for notes"
+              "title": "bflash_test代码学习随记"
             }
           }
         ]
@@ -63,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "90_obsystem/Templates/Template for notes.md",
+                "file": "00_Inbox/202509261030.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Template for notes 的大纲"
+              "title": "202509261030 的大纲"
             }
           },
           {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#project",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -197,7 +197,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "dca79d4e366eddf1",
@@ -235,45 +235,46 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "8196768d2ef16529",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "00_Inbox/202509261030.md",
+    "00_Inbox/202508141800.md",
+    "00_Inbox/202508211039.md",
+    "90_obsystem/Obsidian User Notes.md",
+    "90_obsystem/Templates/Template for resource notes.md",
+    "90_obsystem/Templates/template for quick notes.md",
+    "90_obsystem/Templates/Template for project notes.md",
+    "90_obsystem/Templates/Template for main notes.md",
+    "90_obsystem/Templates/Template for MOC.md",
+    "90_obsystem/Templates/Template for daily notes.md",
+    "Untitled.md",
+    "另一篇笔记.md",
+    "10_Areas/02_Programming/C/pointer.md",
+    "00_Inbox/bflash_test代码学习随记.md",
+    "待办.md",
+    "链接脚本文件（.ld).md",
+    "20_Project/01_Dragon/build文件的使用.md",
+    "tags.md",
+    "未命名.md",
+    "demoTags.md",
+    "Home Page.md",
+    "90_obsystem/FileClasses/Note.md",
+    "10_Areas/02_Programming/Python/数据类型.md",
+    "90_obsystem/FileClasses",
+    "90_obsystem/fileClass.json",
+    "40_Archives",
+    "30_Resources",
+    "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md",
     "10_Areas/00_Goals.md",
     "未命名.base",
     "未命名 1.base",
     "新建文本文档.txt",
-    "00_Inbox/bflash_test代码学习随记.md",
-    "20_Project/01_Dragon/build文件的使用.md",
-    "90_obsystem/Obsidian User Notes.md",
-    "Home Page.md",
-    "90_obsystem/Templates/Template for notes.md",
     "10_Areas/02_Programming/C/C Programme.md",
-    "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/01_Computer_Science/00_Computer_Science_MOC.md",
-    "90_obsystem/Templates/template for programming notes.md",
-    "10_Areas/02_Programming/Python/python的符号.md",
-    "10_Areas/02_Programming/Python/python符号2.md",
-    "90_obsystem/Templates/template for quick notes.md",
-    "10_Areas/02_Programming/Python/string.md",
-    "10_Areas/02_Programming/Python/string1.md",
-    "00_Inbox/202508141800.md",
-    "10_Areas/03_Operation_system/Linux/00_Linux_MOC.md",
-    "链接脚本文件（.ld).md",
-    "10_Areas/02_Programming/00_Programming_MOC.md",
-    "10_Areas/02_Programming/Shell/00_Shell_MOC.md",
-    "笔记文件名.md",
-    "00_Inbox/202509261030.md",
-    "20_Project/01_Dragon/build.sh 记录.md",
-    "未命名 1.md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "10_Areas/01_Computer_Science/Networks",
     "10_Areas/01_Computer_Science/Data Structures",
     "10_Areas/02_Programming/Tools & Environments",
-    "10_Areas/02_Programming/Shell",
-    "10_Areas/03_Operation_system/Embede_system",
-    "10_Areas/03_Operation_system/Linux",
-    "未命名",
     "未命名.canvas"
   ]
 }

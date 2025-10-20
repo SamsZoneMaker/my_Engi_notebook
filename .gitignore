@@ -1,7 +1,8 @@
-# Obsidian工作区文件（每台电脑不同）
+# Obsidian工作区文件（每台电脑布局可能不同）
+.obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
-# 缓存文件
+# 缓存文件（会自动重建）
 .obsidian/cache
 
 # 插件临时文件

@@ -1,29 +1,31 @@
 {
   "dateFormat": "yyyy-MM-dd  HH:mm:ss",
   "enableCreateTime": false,
-  "headerUpdated": "modify date",
+  "headerUpdated": "modified",
   "headerCreated": "created",
   "minMinutesBetweenSaves": 1,
   "ignoreGlobalFolder": [
-    "90_obsystem/Templates"
+    "90_obsystem/Templates",
+    "90_obsystem/FileClasses"
   ],
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
     "90_obsystem/Templates/template for quick notes.md": "6ebb3b7743f071fc762a36aec604fbbf1db21807604afc95ef93f7934d9b5ac3",
-    "10_Areas/02_Programming/Python/数据类型.md": "9b2e8edb2ca6d3752dbfdc3b0b6a2e29da4f46c7c3c4a8f2ea182991253c52b7",
+    "10_Areas/02_Programming/Python/数据类型.md": "25112948691f7b69fdd5972e4eb3776f48d6927c43c565a122bf66f431c02679",
     "00_Inbox/202508141800.md": "99dbd105b534c4c7797730b8e5d0f0a9bf4e1412a43b553017cb778365373380",
     "10_Areas/01_Computer_Science/Architecture/00_Architecture_MOC.md": "450ed94ffcde444dca5d38daeb929abcc55af0f443ce7b9548c3fd53908683a9",
     "00_Inbox/202508211039.md": "47d996e8c5717d34af7746641c12f0d5ebc8d2e725ab2245c21fad4c870f751b",
     "10_Areas/02_Programming/Shell/00_Shell_MOC.md": "ada0b47fa31680805df953edc9675b2476b25987232d312099452524be46008f",
     "00_Inbox/202509261030.md": "42bb6e6052e0295fd074bebb133d6b6031659def6426e11ad9da1bbabef154b2",
     "链接脚本文件（.ld).md": "b2218c6dfbd790e2eb4aeac13dae258f9669a7e85eb355f88f853e60d316ffa3",
-    "00_Inbox/bflash_test代码学习随记.md": "0808c247e9a4334cd8f91b6fee3d734638a54b7eedccf81f819e1da3ef700b0a",
-    "90_obsystem/Obsidian User Notes.md": "2bd406789a6d9ea1c60d787f57ea0ef9ababc63ce8dcceb38e88ede814c4c670",
+    "00_Inbox/bflash_test代码学习随记.md": "ad57bd094e5edd993644cd8e3ceaeef765c1154b91f7d19cbeddf949c19caafd",
+    "90_obsystem/Obsidian User Notes.md": "b355abbae48cd7261abe8fd7f6015fe56beedfb2a14d8eb89aea75cef058502e",
     "20_Project/01_Dragon/build文件的使用.md": "9a021b932ec428d7794de507824d2fc6e828c94f73b8cb163073c3c20fd3dd48",
-    "Home Page.md": "8605e6ddd6c8d46b004a3179436e5c7627aca556a06c6ba5df5c8f78dd5067eb",
     "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md": "da184d70ab79b8a053a62a573f7d7dd493bf29185472ed9579f4875280bf660c",
     "10_Areas/02_Programming/C/C Programme.md": "f065848d43d34531d987c7f090e58d1735502f8dc51a516dcc8d1db67967e254",
-    "10_Areas/00_Goals.md": "ecffd143241c3a39672006d995a9fe10ecd1f42684639364f7a486b14626e7e7"
+    "10_Areas/00_Goals.md": "ecffd143241c3a39672006d995a9fe10ecd1f42684639364f7a486b14626e7e7",
+    "待办.md": "0f54c28faf2d0bf58d31f11aa8a14e0ae1041ef55f5b99ce9a28b11ae804f41a",
+    "10_Areas/02_Programming/C/pointer.md": "001ac75e1312c4cc7a3cb3e3e87144a8ad5891812ed85c95ff3b63b51cedb921"
   }
 }
