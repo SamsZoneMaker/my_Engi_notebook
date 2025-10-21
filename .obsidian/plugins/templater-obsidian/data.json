@@ -29,10 +29,11 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
+    "90_obsystem/Templates/Template for notes.md",
     ""
   ],
   "startup_templates": [
-    "90_obsystem/Templates/template for programming notes.md",
+    "90_obsystem/Templates/Template for notes.md",
     ""
   ],
   "intellisense_render": 1

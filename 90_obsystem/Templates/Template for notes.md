@@ -1,9 +1,10 @@
 ---
 tags:
-aliases:
 status:
 related: []
 resource:
+rating:
+aliases:
 created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
 modified:
 ---
