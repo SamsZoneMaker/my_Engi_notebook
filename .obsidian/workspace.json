@@ -11,10 +11,24 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "链接脚本文件（.ld).md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "链接脚本文件（.ld)"
             }
           }
         ]
@@ -161,16 +175,6 @@
             }
           },
           {
-            "id": "99856cff697e3876",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          },
-          {
             "id": "915e48a63af1ee31",
             "type": "leaf",
             "state": {
@@ -181,9 +185,21 @@
               "icon": "lucide-info",
               "title": "未命名的笔记属性"
             }
+          },
+          {
+            "id": "6a10e6c725bacdd1",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "50_Periodic_notes/Daily/2025-10-22.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "脚注"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "dca79d4e366eddf1",
@@ -204,7 +220,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 371.5
+    "width": 347.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -216,51 +232,51 @@
       "workspaces:管理工作区布局": false,
       "zk-prefixer:创建时间戳笔记": false,
       "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "homepage:Open homepage": false
+      "homepage:Open homepage": false,
+      "periodic-notes:Open today": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "待办.md",
+    "链接脚本文件（.ld).md",
+    "50_Periodic_notes/Weekly/2025-W43.md",
+    "90_obsystem/Obsidian User Notes.md",
+    "50_Periodic_notes/Daily/2025-10-22.md",
+    "90_obsystem/Templates/Template for project notes.md",
+    "50_Periodic_notes/Monthly",
+    "50_Periodic_notes/Weekly",
+    "50_Periodic_notes/Daily",
+    "50_Periodic_notes",
+    "90_obsystem/Templates/Template for notes.md",
+    "90_obsystem/Templates/Template for MOC.md",
+    "30_Resources/@pci-sig2010.md",
+    "30_Resources/reading notes.md",
+    "@pci-sig2010.md",
+    "20_Project/01_Dragon/build文件的使用.md",
+    "30_Resources/zotero/MyLibrary.bib",
+    "30_Resources/zotero",
+    "30_Resources/新建文件夹",
     "90_obsystem/Templates/Template for resource notes.md",
     "90_obsystem/Templates/template for quick notes.md",
-    "90_obsystem/Obsidian User Notes.md",
     "90_obsystem/Templates/Template for daily notes.md",
-    "90_obsystem/Templates/Template for project notes.md",
-    "90_obsystem/Templates/Template for MOC.md",
-    "90_obsystem/Templates/Template for notes.md",
     "00_Inbox/bflash_test代码学习随记.md",
-    "待办.md",
     "00_Inbox/202509261030.md",
     "00_Inbox/202508141800.md",
     "00_Inbox/202508211039.md",
     "Untitled.md",
     "另一篇笔记.md",
     "10_Areas/02_Programming/C/pointer.md",
-    "链接脚本文件（.ld).md",
-    "20_Project/01_Dragon/build文件的使用.md",
     "tags.md",
     "未命名.md",
     "demoTags.md",
     "Home Page.md",
-    "90_obsystem/FileClasses/Note.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
     "90_obsystem/FileClasses",
     "90_obsystem/fileClass.json",
     "40_Archives",
-    "30_Resources",
-    "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md",
-    "10_Areas/00_Goals.md",
-    "未命名.base",
-    "未命名 1.base",
-    "新建文本文档.txt",
-    "10_Areas/02_Programming/C/C Programme.md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
-    "10_Areas/01_Computer_Science/Networks",
-    "10_Areas/01_Computer_Science/Data Structures",
-    "10_Areas/02_Programming/Tools & Environments",
     "未命名.canvas"
   ]
 }

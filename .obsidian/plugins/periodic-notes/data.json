@@ -1,0 +1,33 @@
+{
+  "showGettingStartedBanner": false,
+  "hasMigratedDailyNoteSettings": false,
+  "hasMigratedWeeklyNoteSettings": false,
+  "daily": {
+    "format": "",
+    "template": "90_obsystem/Templates/Template for daily notes.md",
+    "folder": "50_Periodic_notes/Daily",
+    "enabled": true
+  },
+  "weekly": {
+    "format": "",
+    "template": "90_obsystem/Templates/Template for daily notes.md",
+    "folder": "50_Periodic_notes/Weekly",
+    "enabled": true
+  },
+  "monthly": {
+    "format": "",
+    "template": "90_obsystem/Templates/Template for daily notes.md",
+    "folder": "50_Periodic_notes/Monthly",
+    "enabled": true
+  },
+  "quarterly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  },
+  "yearly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  }
+}

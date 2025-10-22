@@ -5,7 +5,6 @@
   "update-time-on-edit",
   "calendar",
   "obsidian-tasks-plugin",
-  "obsidian-git",
   "tag-wrangler",
   "table-editor-obsidian",
   "obsidian-hover-editor",
@@ -14,5 +13,6 @@
   "homepage",
   "quickadd",
   "metadata-menu",
-  "periodic-notes"
+  "periodic-notes",
+  "obsidian-citation-plugin"
 ]

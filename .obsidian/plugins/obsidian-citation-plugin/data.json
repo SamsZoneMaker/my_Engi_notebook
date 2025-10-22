@@ -1,0 +1,9 @@
+{
+  "citationExportFormat": "biblatex",
+  "literatureNoteTitleTemplate": "@{{citekey}}",
+  "literatureNoteFolder": "/30_Resources/",
+  "literatureNoteContentTemplate": "---\ntitle: \"{{title}}\"\nauthors: \"{{authorString}}\"\nyear: {{year}}\ncitekey: \"@{{citekey}}\"\ntags: literature-note\n---\n\n# {{title}}\n\n- **✍️ 作者**: {{authorString}}\n- **🗓️ 年份**: {{year}}\n- **📖 期刊/出版社**: {{publicationTitle}}\n- **🔗 Zotero 链接**: {{zoteroSelectURI}}\n\n---\n\n## 📝 摘要 (Abstract)\n> {{abstract}}\n\n## 💡 我的笔记与思考 (My Notes & Thoughts)\n\n\n",
+  "markdownCitationTemplate": "[[@{{citekey}}]]",
+  "alternativeMarkdownCitationTemplate": "@{{citekey}}",
+  "citationExportPath": "D:\\WorkSpace\\Personal\\my_notebook\\30_Resources\\zotero\\MyLibrary.bib"
+}
