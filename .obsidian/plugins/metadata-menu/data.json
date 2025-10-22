@@ -1,6 +1,27 @@
 {
   "presetFields": [
     {
+      "type": "Multi",
+      "tagName": "multi",
+      "icon": "bullet-list",
+      "tooltip": "Accepts multiple values from a list",
+      "colorClass": "multi",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "doc",
+          "2": "code",
+          "3": "paper",
+          "4": "course",
+          "5": "article",
+          "6": "video"
+        }
+      },
+      "name": "resource",
+      "id": "7jnzgZ",
+      "path": ""
+    },
+    {
       "type": "Select",
       "tagName": "select",
       "icon": "right-triangle",
@@ -21,6 +42,24 @@
       "path": ""
     },
     {
+      "type": "Select",
+      "tagName": "select",
+      "icon": "right-triangle",
+      "tooltip": "Accepts a single value from a list",
+      "colorClass": "select",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "⚛️ Atomic",
+          "2": "🏗️ Structure",
+          "3": "🗺️ MOC "
+        }
+      },
+      "name": "notetype",
+      "id": "iOvmR4",
+      "path": ""
+    },
+    {
       "type": "Multi",
       "tagName": "multi",
       "icon": "bullet-list",
@@ -29,32 +68,28 @@
       "options": {
         "sourceType": "ValuesList",
         "valuesList": {
-          "1": "domain/🔧 Chip-arch",
-          "2": "domain/🖥️ RISC-V",
-          "3": "domain/🚀 Boot",
-          "4": "domain/🎛️ fpga",
-          "5": "domain/💻 C",
-          "6": "domain/🐍 Python",
-          "7": "domain/🐚 Shell",
-          "8": "domain/🐧 Linux",
-          "9": "domain/🔌 PCIe",
-          "10": "domain/📡 SerDes",
-          "11": "domain/💾 DDR",
-          "12": "domain/🔨 Toolchain",
-          "13": "domain/🐛 debug",
-          "14": "level/📚 Basics ",
-          "15": "level/📖 Intermediate ",
-          "16": "level/📕 Advanced",
-          "17": "level/📋 Reference",
-          "18": "proj/🎯 Retimer",
-          "19": "grain/⚛️ atomic",
-          "20": "grain/🏗️ structure ",
-          "21": "grain/🗺️ MOC"
+          "1": "domain/Chip-arch",
+          "2": "domain/RISC-V",
+          "3": "domain/Boot",
+          "4": "domain/fpga",
+          "5": "domain/C",
+          "6": "domain/Python",
+          "7": "domain/Shell",
+          "8": "domain/Linux",
+          "9": "domain/PCIe",
+          "10": "domain/SerDes",
+          "11": "domain/DDR",
+          "12": "domain/Toolchain",
+          "13": "domain/debug",
+          "18": "proj/Retimer"
         }
       },
       "name": "tags",
       "id": "tx0JUH",
-      "path": ""
+      "path": "",
+      "style": {
+        "bold": true
+      }
     },
     {
       "type": "Select",
@@ -77,24 +112,21 @@
       "path": ""
     },
     {
-      "type": "Multi",
-      "tagName": "multi",
-      "icon": "bullet-list",
-      "tooltip": "Accepts multiple values from a list",
-      "colorClass": "multi",
+      "type": "Select",
+      "tagName": "select",
+      "icon": "right-triangle",
+      "tooltip": "Accepts a single value from a list",
+      "colorClass": "select",
       "options": {
         "sourceType": "ValuesList",
         "valuesList": {
-          "1": "doc",
-          "2": "code",
-          "3": "paper",
-          "4": "course",
-          "5": "article",
-          "6": "video"
+          "1": "⭐️Foundational ",
+          "2": "⭐️⭐️Intermediate",
+          "3": "⭐️⭐️⭐️Advanced "
         }
       },
-      "name": "resource",
-      "id": "7jnzgZ",
+      "name": "complexity",
+      "id": "aXcU8e",
       "path": ""
     }
   ],
@@ -104,7 +136,7 @@
   "classFilesPath": "90_obsystem/FileClasses/",
   "isAutosuggestEnabled": true,
   "fileClassAlias": "fileClass",
-  "settingsVersion": "5.9",
+  "settingsVersion": "5.25",
   "globalFileClass": "",
   "firstDayOfWeek": 1,
   "enableLinks": true,

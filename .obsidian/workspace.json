@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "链接脚本文件（.ld).md",
+                "file": "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "链接脚本文件（.ld)"
+              "title": "链接脚本"
             }
           }
         ]
@@ -63,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/202509261030.md",
+                "file": "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "202509261030 的大纲"
+              "title": "链接脚本 的大纲"
             }
           },
           {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#type/project",
+                "query": "[\"type\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -239,19 +239,27 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "待办.md",
-    "链接脚本文件（.ld).md",
-    "50_Periodic_notes/Weekly/2025-W43.md",
+    "90_obsystem/Templates/template for quick notes.md",
     "90_obsystem/Obsidian User Notes.md",
-    "50_Periodic_notes/Daily/2025-10-22.md",
+    "00_Inbox/202508141800.md",
     "90_obsystem/Templates/Template for project notes.md",
+    "90_obsystem/Templates/Template for daily notes.md",
+    "90_obsystem/Templates/Template for MOC.md",
+    "90_obsystem/Templates/Template for notes.md",
+    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
+    "grain atomic.md",
+    "链接脚本文件（.ld).md",
+    "10_Areas/03_Embeded_System/Toolchain",
+    "10_Areas/03_Embeded_System",
+    "Homepage.md",
+    "30_Resources/@pci-sig2010.md",
+    "待办.md",
+    "50_Periodic_notes/Weekly/2025-W43.md",
+    "50_Periodic_notes/Daily/2025-10-22.md",
     "50_Periodic_notes/Monthly",
     "50_Periodic_notes/Weekly",
     "50_Periodic_notes/Daily",
     "50_Periodic_notes",
-    "90_obsystem/Templates/Template for notes.md",
-    "90_obsystem/Templates/Template for MOC.md",
-    "30_Resources/@pci-sig2010.md",
     "30_Resources/reading notes.md",
     "@pci-sig2010.md",
     "20_Project/01_Dragon/build文件的使用.md",
@@ -259,22 +267,14 @@
     "30_Resources/zotero",
     "30_Resources/新建文件夹",
     "90_obsystem/Templates/Template for resource notes.md",
-    "90_obsystem/Templates/template for quick notes.md",
-    "90_obsystem/Templates/Template for daily notes.md",
     "00_Inbox/bflash_test代码学习随记.md",
     "00_Inbox/202509261030.md",
-    "00_Inbox/202508141800.md",
     "00_Inbox/202508211039.md",
     "Untitled.md",
     "另一篇笔记.md",
     "10_Areas/02_Programming/C/pointer.md",
     "tags.md",
-    "未命名.md",
-    "demoTags.md",
-    "Home Page.md",
     "90_obsystem/FileClasses",
-    "90_obsystem/fileClass.json",
-    "40_Archives",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "未命名.canvas"

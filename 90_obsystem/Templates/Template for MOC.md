@@ -1,9 +1,8 @@
 ---
 tags:
-  - grain/MOC
-  - domain/[topic-tag]
-type: moc
+status:
 topic: "[TOPIC_NAME]"
+notetype: MOC
 created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
 modified:
 ---

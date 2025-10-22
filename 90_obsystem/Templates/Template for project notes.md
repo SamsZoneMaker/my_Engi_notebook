@@ -1,10 +1,11 @@
 ---
 tags:
 status:
+notetype: Structure
 created: ${tp.date.now("YYYY-MM-DD HH:mm")}
 modified:
 ---
-# 🎯 projName
+# 🎯 Project Name
 
 > [!abstract] 项目概述
 > 

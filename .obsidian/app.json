@@ -4,5 +4,7 @@
   "promptDelete": false,
   "foldHeading": true,
   "alwaysUpdateLinks": true,
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "showUnsupportedFiles": false,
+  "focusNewTab": true
 }
