@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="编译链接流程">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 预处理阶段 -->
+        <mxCell id="2" value="预处理阶段" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E1F5FF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="main.c" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;" vertex="1" parent="2">
+          <mxGeometry x="40" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Preprocessor" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BBDEFB;" vertex="1" parent="2">
+          <mxGeometry x="60" y="90" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="main.i" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;" vertex="1" parent="2">
+          <mxGeometry x="40" y="130" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 编译阶段 -->
+        <mxCell id="6" value="编译阶段" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFF4E1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Compiler" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BBDEFB;" vertex="1" parent="6">
+          <mxGeometry x="60" y="50" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="main.s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;" vertex="1" parent="6">
+          <mxGeometry x="40" y="130" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 汇编阶段 -->
+        <mxCell id="9" value="汇编阶段" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFE1F5;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Assembler" style="rhombus;whiteSpace=wrap;html=1;fillColor=#BBDEFB;" vertex="1" parent="9">
+          <mxGeometry x="60" y="50" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="main.o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;" vertex="1" parent="9">
+          <mxGeometry x="40" y="130" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 链接阶段 -->
+        <mxCell id="12" value="链接阶段 - 链接脚本的舞台" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E1FFE1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="360" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Linker (ld)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#90EE90;strokeWidth=2;" vertex="1" parent="12">
+          <mxGeometry x="140" y="50" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="linker.ld&#xa;链接脚本" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#FF6B6B;strokeWidth=3;" vertex="1" parent="12">
+          <mxGeometry x="20" y="40" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="符号解析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;" vertex="1" parent="12">
+          <mxGeometry x="60" y="150" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="重定位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;" vertex="1" parent="12">
+          <mxGeometry x="200" y="150" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="program.elf" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeWidth=2;" vertex="1" parent="12">
+          <mxGeometry x="110" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭头连接 -->
+        <mxCell id="18" edge="1" parent="1" source="5" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" source="8" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="11" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="14" target="13" style="dashed=1;strokeColor=#FF6B6B;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -5,8 +5,7 @@
   "headerCreated": "created",
   "minMinutesBetweenSaves": 1,
   "ignoreGlobalFolder": [
-    "90_obsystem/Templates",
-    "90_obsystem/FileClasses"
+    "90_obsystem/Templates"
   ],
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
@@ -21,13 +20,14 @@
     "链接脚本文件（.ld).md": "984dab2c74e90610fd631abfb6205fabaa41e67fe6303aa33d30b23317937d1a",
     "00_Inbox/bflash_test代码学习随记.md": "ad57bd094e5edd993644cd8e3ceaeef765c1154b91f7d19cbeddf949c19caafd",
     "90_obsystem/Obsidian User Notes.md": "6bb673129df4db1a3ca9b653de1bc35fe9beee860585d3e066814df0efc5b3e4",
-    "20_Project/01_Dragon/build文件的使用.md": "9a021b932ec428d7794de507824d2fc6e828c94f73b8cb163073c3c20fd3dd48",
+    "20_Project/01_Dragon/build文件的使用.md": "7dbaed30f81f4afce35f10a2aa6e05b023dbc9fd8cb2f157c7bb8b6543a5a3d7",
     "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md": "da184d70ab79b8a053a62a573f7d7dd493bf29185472ed9579f4875280bf660c",
     "10_Areas/02_Programming/C/C Programme.md": "f065848d43d34531d987c7f090e58d1735502f8dc51a516dcc8d1db67967e254",
     "10_Areas/00_Goals.md": "ecffd143241c3a39672006d995a9fe10ecd1f42684639364f7a486b14626e7e7",
     "待办.md": "29c4914c510f272f5ab798d33a1d0b41de4b59aace837caa409df3f6396768e7",
     "10_Areas/02_Programming/C/pointer.md": "001ac75e1312c4cc7a3cb3e3e87144a8ad5891812ed85c95ff3b63b51cedb921",
     "Homepage.md": "494ef84749039d3a576cf5ccf608f64a8b49a11e7195c9b5416d30a058cf1002",
-    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md": "efde48e57f9ee90a8e51ee877c3389956bde7e95c1aa0dfd49fb0814e20e0f9f"
+    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md": "dcc3709b3578816e361f6e45d930f31b7ba9117f1963cf63a136ba8bf46c51fd",
+    "99_Archives/ddemo.md": "1fdfb2db7447c9ce51907b2ead9f7d17a0996437385cd212f61807e803df1339"
   }
 }

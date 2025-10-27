@@ -6,6 +6,7 @@ tags:
 aliases:
 create date: 2025-08-22 16:20:48
 modify date: 2025-10-15  16:56:37
+modified: 2025-10-27  16:25:59
 ---
 # 📝 笔记内容
 
@@ -114,7 +115,7 @@ f_alert()
   
 - 输出到标准错误（>&2）
 
-#### f_exit: 
+#### f_exit
 红色背景输出，用于错误信息并退出程序
 ```Shell
 f_exit()
@@ -125,7 +126,7 @@ f_exit()
 ```
 
 **说明**
-- 设置红色背景白色前景 `\033[41;37m`
+- 设置红色背景白色字体 `\033[41;37m`
   
 - 输出前缀、`[error]`标识和错误信息
   
@@ -237,7 +238,7 @@ f_wait_process_stop()
     while true; do                                          # step4：进入无限循环
         result=`pgrep -x "$1" || true`                      # step5：查找指定进程
         if [ "${result}" == "" ]; then                      # step6：检查进程是否存在
-            break                                           # step7a：进程不存在，退出循环
+            break                                           # step7：进程不存在，退出循环
         fi
 
         time2=`date +%s`                                    # step8：获取当前时间
@@ -318,8 +319,8 @@ f_choice_list_add_item()
     local new_item=$1                                       # step1：保存新项目到局部变量
     local c                                                 # step2：声明循环变量
 
-    for c in ${L_CHOICE_MENU_ITEMS[@]}; do                 # step3：遍历现有菜单项
-        if [ "$new_item" = "$c" ]; then                    # step4：检查是否重复
+    for c in ${L_CHOICE_MENU_ITEMS[@]}; do                  # step3：遍历现有菜单项
+        if [ "$new_item" = "$c" ]; then                     # step4：检查是否重复
             return                                          # step5a：重复则直接返回
         fi
     done
@@ -339,7 +340,7 @@ f_choice_list_add_item()
 ```Shell
 f_choice_build_list()
 {
-    local file                                              # step1：声明循环变量
+    local file                                             # step1：声明循环变量
     
     for file in `eval "$1"`                                # step2：执行命令获取文件列表
     do
@@ -362,11 +363,11 @@ f_choice_print_menu()
     local i=1                                              # step1：初始化计数器
     local choice                                           # step2：声明循环变量
 
-    for choice in ${L_CHOICE_MENU_ITEMS[@]}               # step3：遍历菜单项
+    for choice in ${L_CHOICE_MENU_ITEMS[@]}                # step3：遍历菜单项
     do
-        echo "    $i. $choice"                            # step4：输出编号和选项
+        echo "    $i. $choice"                             # step4：输出编号和选项
     done
-    echo                                                  # step5：输出空行
+    echo                                                   # step5：输出空行
 }
 ```
 
@@ -1098,12 +1099,12 @@ f_clean()
 ```Shell
 L_out_dir=${L_DIR_OUT}/${L_PARA_CLASS}                   # step1：设置输出目录路径  
 if [ "${L_PARA_CLASS}" == "boot" ]; then                 # step2：检查是否为boot构建  
- if [ "${L_PARA_TARGET}" != "" ]; then                # step3：检查是否指定了目标  
-	 L_target_name='basename ${L_PARA_TARGET}'         # step4：获取目标基础名（语法错误）  
-	 L_out_dir=${L_out_dir}/${L_target_name}           # step5：更新输出目录路径  
+ if [ "${L_PARA_TARGET}" != "" ]; then                   # step3：检查是否指定了目标  
+	 L_target_name='basename ${L_PARA_TARGET}'           # step4：获取目标基础名（语法错误）  
+	 L_out_dir=${L_out_dir}/${L_target_name}             # step5：更新输出目录路径  
  fi  
- f_clean_sub ${L_out_dir}                              # step6：清理输出目录  
- return                                                 # step7：返回  
+ f_clean_sub ${L_out_dir}                                # step6：清理输出目录  
+ return                                                  # step7：返回  
 fi  
 ```
 
@@ -1111,13 +1112,13 @@ fi
 ### 主程序初始化部分
 
 ```Shell
-set -e                                                 # step0：启用错误时退出模式
+set -e                                                   # step0：启用错误时退出模式
 # ---------- main process ----------  
-L_PREFIX=build                                            # step1：设置输出前缀  
+L_PREFIX=build                                           # step1：设置输出前缀  
 if [ "${L_PREFIX}" != "" ]; then                         # step2：检查前缀是否非空  
- L_PREFIX="[${L_PREFIX}]"                             # step3：格式化前缀  
+ L_PREFIX="[${L_PREFIX}]"                                # step3：格式化前缀  
 fi  
-f_determin_dir $0                                         # step4：确定脚本目录  
+f_determin_dir $0                                        # step4：确定脚本目录  
 # ---------- to define the already existed path  
 L_DIR_ROOT=${L_SCRIPT_LOCATED_DIR}                       # step5：设置根目录  
 L_DIR_SW=${L_DIR_ROOT}/sw                                # step6：设置软件目录  
@@ -1197,13 +1198,13 @@ L_LAST_BUILD_CMD_FILE=${L_DIR_ROOT}/last_build.cmd       # step15：上次构
 ```Shell
 # ---------- to use last build cmd if no para provided  
 if [[ $# == 0 ]]; then                                   # step1：检查是否没有提供参数  
- if [ -f ${L_LAST_BUILD_CMD_FILE} ]; then            # step2：检查上次构建命令文件是否存在  
-	 L_last_build_cmd='cat ${L_LAST_BUILD_CMD_FILE}'  # step3：读取上次构建命令（语法错误）  
+ if [ -f ${L_LAST_BUILD_CMD_FILE} ]; then                # step2：检查上次构建命令文件是否存在  
+	 L_last_build_cmd='cat ${L_LAST_BUILD_CMD_FILE}'     # step3：读取上次构建命令（语法错误）  
  fi  
- if [ "${L_last_build_cmd}" == "" ]; then            # step4：检查命令是否为空  
-	 f_exit "no parameter provided"                   # step5：报错退出  
+ if [ "${L_last_build_cmd}" == "" ]; then                # step4：检查命令是否为空  
+	 f_exit "no parameter provided"                      # step5：报错退出  
  fi  
- eval set -- ${L_last_build_cmd}                     # step6：设置命令行参数  
+ eval set -- ${L_last_build_cmd}                         # step6：设置命令行参数  
 fi
 ```
 
@@ -1217,7 +1218,7 @@ fi
 - `eval set --`: 重新设置位置参数
   
 - 第3步有语法错误，应该使用$(cat ...)
-- 
+- 该函数设定了，如果没有填写参数，并不是build全局，而是build上一次的
 ### 选项解析和清理处理
 
 ```Shell
