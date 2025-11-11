@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/2025-10-28-1902.md",
+                "file": "00_Inbox/2025-11-11-1726.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2025-10-28-1902"
+              "title": "2025-11-11-1726"
             }
           }
         ]
@@ -239,16 +239,17 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "00_Inbox/2025-10-28-1902.md",
+    "00_Inbox/2025-11-11-1726.md",
+    "00_Inbox/bflash_test代码学习随记.md",
+    "Homepage.md",
+    "链接脚本文件（.ld).md",
+    "待办.md",
+    "99_Archives/ddemo.md",
     "90_obsystem/Templates/template for quick notes.md",
     "00_Inbox/202509261030.md",
     "90_obsystem/Templates/Template for notes.md",
-    "00_Inbox/2025-10-28-1902.md",
     "20_Project/01_Dragon/build文件的使用.md",
-    "99_Archives/ddemo.md",
-    "待办.md",
-    "链接脚本文件（.ld).md",
-    "Homepage.md",
-    "00_Inbox/bflash_test代码学习随记.md",
     "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
     "10_Areas/03_Embeded_System/Toolchain/figures/image-20251024182455155.png",
     "10_Areas/03_Embeded_System/Toolchain/figures/ld_1.svg",
@@ -278,7 +279,6 @@
     "30_Resources/reading notes.md",
     "@pci-sig2010.md",
     "90_obsystem/Templates/Template for resource notes.md",
-    "00_Inbox/202508211039.md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "未命名.canvas"
