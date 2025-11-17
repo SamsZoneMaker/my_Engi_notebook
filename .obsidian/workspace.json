@@ -11,24 +11,10 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_Inbox/2025-11-11-1726.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-11-11-1726"
+              "title": "新标签页"
             }
           }
         ]
@@ -239,8 +225,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "00_Inbox/2025-10-28-1902.md",
+    "20_Project/01_Dragon/claude初稿.md",
+    "20_Project/01_Dragon/日志模块重构设计方案.md",
     "00_Inbox/2025-11-11-1726.md",
+    "00_Inbox/2025-10-28-1902.md",
     "00_Inbox/bflash_test代码学习随记.md",
     "Homepage.md",
     "链接脚本文件（.ld).md",
@@ -277,8 +265,6 @@
     "50_Periodic_notes/Weekly/2025-W43.md",
     "50_Periodic_notes/Daily/2025-10-22.md",
     "30_Resources/reading notes.md",
-    "@pci-sig2010.md",
-    "90_obsystem/Templates/Template for resource notes.md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "未命名.canvas"
