@@ -5,7 +5,7 @@ status:
 related: []
 resource:
 created: 2025-10-20 17:43:19
-modified: 2025-10-20  17:43:19
+modified: 2025-11-18  21:48:31
 ---
 # pointer
 
