@@ -11,10 +11,24 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00_Inbox/2025-10-28-1902.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-10-28-1902"
             }
           }
         ]
@@ -49,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
+                "file": "00_Inbox/2025-11-11-1726.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "链接脚本 的大纲"
+              "title": "2025-11-11-1726 的大纲"
             }
           },
           {
@@ -225,10 +239,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "20_Project/01_Dragon/claude初稿.md",
-    "20_Project/01_Dragon/日志模块重构设计方案.md",
     "00_Inbox/2025-11-11-1726.md",
     "00_Inbox/2025-10-28-1902.md",
+    "20_Project/01_Dragon/日志模块重构方案.md",
+    "20_Project/01_Dragon/日志模块重构设计方案.md",
+    "20_Project/01_Dragon/本地ai生成内容.md",
+    "20_Project/01_Dragon/claude初稿.md",
     "00_Inbox/bflash_test代码学习随记.md",
     "Homepage.md",
     "链接脚本文件（.ld).md",
@@ -263,8 +279,6 @@
     "grain atomic.md",
     "30_Resources/@pci-sig2010.md",
     "50_Periodic_notes/Weekly/2025-W43.md",
-    "50_Periodic_notes/Daily/2025-10-22.md",
-    "30_Resources/reading notes.md",
     "Pasted image 20250825175548.png",
     "Pasted image 20250825175547.png",
     "未命名.canvas"
