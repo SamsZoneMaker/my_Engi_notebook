@@ -632,9 +632,11 @@ echo "脚本结束"
 
 ## 相关资源
 
-- [[Makefile完全指南]]：构建脚本最佳实践
-- [[Linux系统编程 - 进程管理]]：进程和Shell交互
-- [[VSCode完全指南]]：Shell脚本调试配置
+- [[00_Shell_MOC]] - Shell编程知识体系
+- [[Shell脚本编程基础]] - Shell基础语法和结构
+- [[Makefile完全指南]] - 构建脚本最佳实践
+- [[Linux系统编程 - 进程管理]] - 进程和Shell交互、fork/exec
+- [[VSCode完全指南]] - Shell脚本调试配置
 
 ## 参考链接
 
