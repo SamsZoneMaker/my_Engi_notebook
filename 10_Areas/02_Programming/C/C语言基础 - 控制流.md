@@ -816,6 +816,568 @@ while (1) {
 }
 ```
 
+### 常见陷阱和错误
+
+#### 陷阱1: if语句后的分号
+```c
+int x = 10;
+
+if (x > 5);  // 错误!空语句
+{
+    printf("x大于5\n");  // 总是执行!
+}
+
+// 正确写法
+if (x > 5) {
+    printf("x大于5\n");
+}
+```
+
+#### 陷阱2: 赋值与比较混淆
+```c
+int x = 10;
+
+if (x = 5) {  // 错误!这是赋值,不是比较
+    printf("这总是执行\n");
+}
+
+// 正确写法
+if (x == 5) {
+    printf("x等于5\n");
+}
+
+// 防御性编程(Yoda条件)
+if (5 == x) {  // 如果误写成5=x,编译器会报错
+    printf("x等于5\n");
+}
+```
+
+#### 陷阱3: 浮点数在循环条件中
+```c
+// 危险!可能无限循环
+for (float f = 0.0f; f != 1.0f; f += 0.1f) {
+    printf("%.10f\n", f);
+}
+
+// 正确做法:使用整数或<比较
+for (float f = 0.0f; f < 1.0f; f += 0.1f) {
+    printf("%.2f\n", f);
+}
+```
+
+#### 陷阱4: switch缺少break
+```c
+int day = 2;
+
+switch (day) {
+    case 1:
+        printf("Monday\n");
+        // 缺少break,会继续执行
+    case 2:
+        printf("Tuesday\n");
+        // 缺少break
+    case 3:
+        printf("Wednesday\n");
+        break;
+}
+// 输出: Tuesday  Wednesday (两个都输出!)
+```
+
+#### 陷阱5: 逻辑运算符优先级
+```c
+int a = 5, b = 10, c = 15;
+
+// 错误!优先级问题
+if (a < b && b < c && c < 20)  // OK
+if (a < b < c)  // 错误!(a < b)结果是0或1,然后与c比较
+
+// 位运算与逻辑运算混淆
+int x = 1, y = 2;
+if (x & y) {  // 位AND
+    printf("都是奇数\n");
+}
+if (x && y) {  // 逻辑AND
+    printf("都非零\n");
+}
+```
+
+#### 陷阱6: 循环变量的类型
+```c
+// 使用unsigned时要小心
+for (unsigned int i = 10; i >= 0; i--) {  // 无限循环!
+    printf("%u\n", i);
+}
+// 当i为0时,i--变成UINT_MAX
+
+// 正确做法
+for (int i = 10; i >= 0; i--) {
+    printf("%d\n", i);
+}
+```
+
+### 最佳实践
+
+#### 1. 花括号的使用
+```c
+// 不推荐:单行不加花括号
+if (condition)
+    do_something();
+
+// 推荐:总是加花括号
+if (condition) {
+    do_something();
+}
+
+// 原因:易于维护,避免错误
+if (condition)
+    do_something();
+    do_another();  // 总是执行!
+```
+
+#### 2. 避免魔法数字
+```c
+// 不推荐
+if (status == 1) {
+    // ...
+}
+
+// 推荐:使用有意义的常量
+#define STATUS_SUCCESS 1
+#define STATUS_FAILURE 0
+
+if (status == STATUS_SUCCESS) {
+    // ...
+}
+
+// 或使用enum
+enum Status {
+    SUCCESS = 0,
+    FAILURE = 1,
+    PENDING = 2
+};
+```
+
+#### 3. 提前返回,减少嵌套
+```c
+// 不推荐:深层嵌套
+int process(int *data, int size) {
+    if (data != NULL) {
+        if (size > 0) {
+            if (size <= MAX_SIZE) {
+                // 实际处理
+                return 1;
+            } else {
+                return -1;
+            }
+        } else {
+            return -1;
+        }
+    } else {
+        return -1;
+    }
+}
+
+// 推荐:提前返回
+int process_better(int *data, int size) {
+    if (data == NULL) {
+        return -1;
+    }
+    if (size <= 0 || size > MAX_SIZE) {
+        return -1;
+    }
+
+    // 实际处理
+    return 1;
+}
+```
+
+#### 4. 循环不变式提取
+```c
+// 不推荐:重复计算
+for (int i = 0; i < 1000; i++) {
+    int limit = expensive_calculation();  // 每次都计算
+    if (i < limit) {
+        process(i);
+    }
+}
+
+// 推荐:提取循环不变式
+int limit = expensive_calculation();  // 只计算一次
+for (int i = 0; i < 1000; i++) {
+    if (i < limit) {
+        process(i);
+    }
+}
+```
+
+#### 5. 条件表达式的可读性
+```c
+// 不推荐:复杂条件
+if (!(!(a > b) || !(c < d))) {
+    // ...
+}
+
+// 推荐:简化条件
+if (a > b && c < d) {
+    // ...
+}
+
+// 或提取为函数
+int is_valid_range(int a, int b, int c, int d) {
+    return a > b && c < d;
+}
+
+if (is_valid_range(a, b, c, d)) {
+    // ...
+}
+```
+
+### 实战项目示例
+
+#### 项目1: 菜单驱动的学生成绩管理系统
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_STUDENTS 50
+
+typedef struct {
+    int id;
+    char name[50];
+    float score;
+} Student;
+
+Student students[MAX_STUDENTS];
+int student_count = 0;
+
+void add_student() {
+    if (student_count >= MAX_STUDENTS) {
+        printf("错误: 学生数已达上限\n");
+        return;
+    }
+
+    Student *s = &students[student_count];
+    printf("输入学号: ");
+    scanf("%d", &s->id);
+    printf("输入姓名: ");
+    scanf("%s", s->name);
+    printf("输入成绩: ");
+    scanf("%f", &s->score);
+
+    student_count++;
+    printf("添加成功!\n");
+}
+
+void display_all() {
+    if (student_count == 0) {
+        printf("没有学生记录\n");
+        return;
+    }
+
+    printf("\n%-10s %-20s %-10s %-10s\n", "学号", "姓名", "成绩", "等级");
+    printf("----------------------------------------------------------\n");
+
+    for (int i = 0; i < student_count; i++) {
+        Student *s = &students[i];
+        char grade;
+
+        if (s->score >= 90) {
+            grade = 'A';
+        } else if (s->score >= 80) {
+            grade = 'B';
+        } else if (s->score >= 70) {
+            grade = 'C';
+        } else if (s->score >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+        printf("%-10d %-20s %-10.2f %-10c\n", s->id, s->name, s->score, grade);
+    }
+}
+
+void calculate_statistics() {
+    if (student_count == 0) {
+        printf("没有学生记录\n");
+        return;
+    }
+
+    float sum = 0;
+    float max = students[0].score;
+    float min = students[0].score;
+    int pass_count = 0;
+
+    for (int i = 0; i < student_count; i++) {
+        sum += students[i].score;
+
+        if (students[i].score > max) {
+            max = students[i].score;
+        }
+        if (students[i].score < min) {
+            min = students[i].score;
+        }
+        if (students[i].score >= 60) {
+            pass_count++;
+        }
+    }
+
+    printf("\n=== 统计信息 ===\n");
+    printf("总人数: %d\n", student_count);
+    printf("平均分: %.2f\n", sum / student_count);
+    printf("最高分: %.2f\n", max);
+    printf("最低分: %.2f\n", min);
+    printf("及格人数: %d\n", pass_count);
+    printf("及格率: %.2f%%\n", (float)pass_count / student_count * 100);
+}
+
+void search_student() {
+    int id;
+    printf("输入要查找的学号: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < student_count; i++) {
+        if (students[i].id == id) {
+            printf("\n找到学生:\n");
+            printf("学号: %d\n", students[i].id);
+            printf("姓名: %s\n", students[i].name);
+            printf("成绩: %.2f\n", students[i].score);
+            return;
+        }
+    }
+
+    printf("未找到学号为%d的学生\n", id);
+}
+
+int main() {
+    int choice;
+
+    while (1) {
+        printf("\n=== 学生成绩管理系统 ===\n");
+        printf("1. 添加学生\n");
+        printf("2. 显示所有学生\n");
+        printf("3. 查找学生\n");
+        printf("4. 统计信息\n");
+        printf("0. 退出\n");
+        printf("请选择: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("输入错误!\n");
+            while (getchar() != '\n');  // 清空缓冲区
+            continue;
+        }
+
+        switch (choice) {
+            case 1:
+                add_student();
+                break;
+            case 2:
+                display_all();
+                break;
+            case 3:
+                search_student();
+                break;
+            case 4:
+                calculate_statistics();
+                break;
+            case 0:
+                printf("感谢使用,再见!\n");
+                return 0;
+            default:
+                printf("无效选择,请重试\n");
+        }
+    }
+
+    return 0;
+}
+```
+
+#### 项目2: 数字猜谜游戏
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void play_game() {
+    int secret = rand() % 100 + 1;  // 1-100
+    int guess;
+    int attempts = 0;
+    int max_attempts = 7;
+
+    printf("\n我想了一个1-100之间的数字,你有%d次机会猜!\n", max_attempts);
+
+    while (attempts < max_attempts) {
+        printf("\n第%d次猜测: ", attempts + 1);
+
+        if (scanf("%d", &guess) != 1) {
+            printf("请输入有效的数字!\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (guess < 1 || guess > 100) {
+            printf("数字必须在1-100之间!\n");
+            continue;
+        }
+
+        attempts++;
+
+        if (guess == secret) {
+            printf("恭喜!你猜对了!用了%d次\n", attempts);
+            return;
+        } else if (guess < secret) {
+            printf("太小了!还有%d次机会\n", max_attempts - attempts);
+        } else {
+            printf("太大了!还有%d次机会\n", max_attempts - attempts);
+        }
+
+        // 给提示
+        if (attempts == max_attempts / 2) {
+            if (secret % 2 == 0) {
+                printf("提示: 这是一个偶数\n");
+            } else {
+                printf("提示: 这是一个奇数\n");
+            }
+        }
+    }
+
+    printf("\n游戏结束!正确答案是: %d\n", secret);
+}
+
+int main() {
+    char play_again;
+
+    srand(time(NULL));  // 初始化随机数种子
+
+    printf("=== 猜数字游戏 ===\n");
+
+    do {
+        play_game();
+
+        printf("\n要再玩一次吗? (y/n): ");
+        scanf(" %c", &play_again);
+    } while (play_again == 'y' || play_again == 'Y');
+
+    printf("感谢游玩,再见!\n");
+    return 0;
+}
+```
+
+#### 项目3: 简单的ATM模拟器
+```c
+#include <stdio.h>
+
+#define PIN 1234
+#define MAX_ATTEMPTS 3
+
+double balance = 1000.0;
+
+int verify_pin() {
+    int pin;
+    int attempts = 0;
+
+    while (attempts < MAX_ATTEMPTS) {
+        printf("请输入PIN码: ");
+        scanf("%d", &pin);
+
+        if (pin == PIN) {
+            return 1;  // 验证成功
+        }
+
+        attempts++;
+        printf("PIN码错误!还有%d次机会\n", MAX_ATTEMPTS - attempts);
+    }
+
+    return 0;  // 验证失败
+}
+
+void check_balance() {
+    printf("\n当前余额: $%.2f\n", balance);
+}
+
+void deposit() {
+    double amount;
+
+    printf("\n输入存款金额: $");
+    scanf("%lf", &amount);
+
+    if (amount <= 0) {
+        printf("金额必须大于0\n");
+        return;
+    }
+
+    balance += amount;
+    printf("存款成功!新余额: $%.2f\n", balance);
+}
+
+void withdraw() {
+    double amount;
+
+    printf("\n输入取款金额: $");
+    scanf("%lf", &amount);
+
+    if (amount <= 0) {
+        printf("金额必须大于0\n");
+        return;
+    }
+
+    if (amount > balance) {
+        printf("余额不足!当前余额: $%.2f\n", balance);
+        return;
+    }
+
+    balance -= amount;
+    printf("取款成功!新余额: $%.2f\n", balance);
+}
+
+int main() {
+    int choice;
+
+    printf("=== ATM系统 ===\n");
+
+    if (!verify_pin()) {
+        printf("验证失败!卡已被锁定\n");
+        return 1;
+    }
+
+    printf("验证成功!欢迎使用\n");
+
+    while (1) {
+        printf("\n=== 主菜单 ===\n");
+        printf("1. 查询余额\n");
+        printf("2. 存款\n");
+        printf("3. 取款\n");
+        printf("0. 退出\n");
+        printf("请选择: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("无效输入\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (choice) {
+            case 1:
+                check_balance();
+                break;
+            case 2:
+                deposit();
+                break;
+            case 3:
+                withdraw();
+                break;
+            case 0:
+                printf("感谢使用,再见!\n");
+                return 0;
+            default:
+                printf("无效选择\n");
+        }
+    }
+
+    return 0;
+}
+```
+
 ---
 
 ## 🤔 Q&A
@@ -885,11 +1447,35 @@ int search() {
 ```
 
 ## 🚀 Tasks
+
+### 基础练习
 - [ ] 编写程序判断一个年份是否为闰年
 - [ ] 实现一个简单的计算器(使用switch)
 - [ ] 打印九九乘法表(使用嵌套for循环)
 - [ ] 编写程序找出数组中的最大值和最小值
-- [ ] 实现一个猜数字游戏(使用while和if-else)
+- [ ] 实现数字金字塔打印程序
+
+### 循环练习
+- [ ] 计算1到100的和(for、while、do-while三种方式)
+- [ ] 打印斐波那契数列前n项
+- [ ] 找出所有100以内的素数
+- [ ] 实现数字反转程序
+- [ ] 计算最大公约数和最小公倍数
+
+### 控制流综合练习
+- [ ] 编写程序检查一个数是否为完美数
+- [ ] 实现数字阶乘计算(迭代和递归)
+- [ ] 编写程序打印星号图案(菱形、三角形)
+- [ ] 实现简单的进制转换(十进制转二进制/八进制/十六进制)
+
+### 实战项目
+- [x] 学生成绩管理系统(菜单驱动)
+- [x] 数字猜谜游戏(带提示)
+- [x] ATM模拟器(PIN验证+余额管理)
+- [ ] 简单的文本冒险游戏
+- [ ] 日历打印程序(任意年月)
+- [ ] Rock-Paper-Scissors游戏
+- [ ] 简易通讯录管理系统
 
 ## 📚 Reference
 * C Primer Plus (第6版) - Stephen Prata

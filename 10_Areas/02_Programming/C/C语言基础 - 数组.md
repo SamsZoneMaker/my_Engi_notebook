@@ -772,6 +772,398 @@ printf("%d\n", *ptr);  // 20
 > [!tip] 更多内容
 > 数组与指针的深入内容请参考 [[C语言进阶 - 指针详解]]
 
+### 常见陷阱和错误
+
+#### 陷阱1: 数组越界访问
+```c
+int arr[5] = {1, 2, 3, 4, 5};
+printf("%d\n", arr[5]);   // 越界!未定义行为
+printf("%d\n", arr[-1]);  // 越界!未定义行为
+
+// C语言不检查数组边界!程序员必须自己确保
+```
+
+#### 陷阱2: 未初始化数组
+```c
+int arr[100];  // 未初始化,包含随机值!
+
+// 正确做法
+int arr[100] = {0};  // 全部初始化为0
+```
+
+#### 陷阱3: sizeof在函数参数中失效
+```c
+void print_size(int arr[]) {
+    printf("%zu\n", sizeof(arr));  // 只返回指针大小!
+}
+
+int main() {
+    int numbers[10];
+    printf("%zu\n", sizeof(numbers));  // 40 (10 * 4)
+    print_size(numbers);  // 8 (64位系统指针大小)
+    return 0;
+}
+```
+
+#### 陷阱4: 数组赋值
+```c
+int arr1[5] = {1, 2, 3, 4, 5};
+int arr2[5];
+
+// arr2 = arr1;  // 错误!数组名是常量,不能赋值
+
+// 正确做法:逐元素复制
+for (int i = 0; i < 5; i++) {
+    arr2[i] = arr1[i];
+}
+
+// 或使用memcpy
+memcpy(arr2, arr1, sizeof(arr1));
+```
+
+#### 陷阱5: 返回局部数组
+```c
+// 危险!
+int* get_array() {
+    int arr[10] = {1, 2, 3};
+    return arr;  // 返回栈上数组地址,函数结束后失效!
+}
+
+// 正确做法1:静态数组
+int* get_array_static() {
+    static int arr[10] = {1, 2, 3};
+    return arr;  // 静态数组生命周期是整个程序
+}
+
+// 正确做法2:动态分配
+int* get_array_dynamic() {
+    int *arr = (int*)malloc(10 * sizeof(int));
+    // 初始化...
+    return arr;  // 调用者需要free
+}
+```
+
+### 最佳实践
+
+#### 1. 总是传递数组大小
+```c
+void process_array(int arr[], int size) {  // 明确传递size
+    for (int i = 0; i < size; i++) {
+        // 处理arr[i]
+    }
+}
+```
+
+#### 2. 使用const保护只读数组
+```c
+int sum_array(const int arr[], int size) {
+    // arr[0] = 10;  // 编译错误,不能修改
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];  // 只读访问OK
+    }
+    return sum;
+}
+```
+
+#### 3. 检查数组边界
+```c
+int safe_get(int arr[], int size, int index) {
+    if (index < 0 || index >= size) {
+        fprintf(stderr, "索引越界: %d\n", index);
+        return -1;  // 或返回错误码
+    }
+    return arr[index];
+}
+```
+
+#### 4. 使用宏简化数组操作
+```c
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+
+int numbers[] = {1, 2, 3, 4, 5};
+int size = ARRAY_SIZE(numbers);  // 5
+```
+
+#### 5. 字符串安全操作
+```c
+// 不安全
+char str[10];
+strcpy(str, "This is a very long string");  // 缓冲区溢出!
+
+// 安全
+char str[10];
+strncpy(str, "This is a very long string", sizeof(str) - 1);
+str[sizeof(str) - 1] = '\0';  // 确保以\0结尾
+```
+
+### 高级数组技巧
+
+#### 变长数组(C99)
+```c
+#include <stdio.h>
+
+void print_matrix(int rows, int cols, int matrix[rows][cols]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 3, cols = 4;
+    int matrix[rows][cols];  // VLA (Variable Length Array)
+
+    // 初始化
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            matrix[i][j] = i * cols + j;
+        }
+    }
+
+    print_matrix(rows, cols, matrix);
+    return 0;
+}
+```
+
+#### 数组与指针的等价性
+```c
+int arr[] = {10, 20, 30, 40, 50};
+
+// 以下都是等价的
+printf("%d\n", arr[2]);      // 30
+printf("%d\n", *(arr + 2));  // 30
+printf("%d\n", *(2 + arr));  // 30
+printf("%d\n", 2[arr]);      // 30 (奇怪但合法!)
+```
+
+### 实战项目示例
+
+#### 项目1: 动态数组实现
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    int *data;
+    int size;
+    int capacity;
+} DynamicArray;
+
+// 初始化
+DynamicArray* da_create(int initial_capacity) {
+    DynamicArray *da = (DynamicArray*)malloc(sizeof(DynamicArray));
+    da->data = (int*)malloc(initial_capacity * sizeof(int));
+    da->size = 0;
+    da->capacity = initial_capacity;
+    return da;
+}
+
+// 添加元素
+void da_push(DynamicArray *da, int value) {
+    if (da->size >= da->capacity) {
+        // 扩容(2倍)
+        da->capacity *= 2;
+        da->data = (int*)realloc(da->data, da->capacity * sizeof(int));
+    }
+    da->data[da->size++] = value;
+}
+
+// 获取元素
+int da_get(DynamicArray *da, int index) {
+    if (index < 0 || index >= da->size) {
+        fprintf(stderr, "索引越界\n");
+        return -1;
+    }
+    return da->data[index];
+}
+
+// 删除元素
+void da_remove(DynamicArray *da, int index) {
+    if (index < 0 || index >= da->size) {
+        return;
+    }
+
+    // 移动元素
+    for (int i = index; i < da->size - 1; i++) {
+        da->data[i] = da->data[i + 1];
+    }
+    da->size--;
+}
+
+// 销毁
+void da_destroy(DynamicArray *da) {
+    free(da->data);
+    free(da);
+}
+
+int main() {
+    DynamicArray *da = da_create(2);
+
+    // 添加元素
+    for (int i = 0; i < 10; i++) {
+        da_push(da, i * 10);
+    }
+
+    // 打印
+    printf("元素: ");
+    for (int i = 0; i < da->size; i++) {
+        printf("%d ", da_get(da, i));
+    }
+    printf("\n");
+
+    // 删除
+    da_remove(da, 5);
+    printf("删除后: ");
+    for (int i = 0; i < da->size; i++) {
+        printf("%d ", da_get(da, i));
+    }
+    printf("\n");
+
+    da_destroy(da);
+    return 0;
+}
+```
+
+#### 项目2: 矩阵运算库
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// 矩阵加法
+void matrix_add(int rows, int cols,
+                int a[rows][cols],
+                int b[rows][cols],
+                int result[rows][cols]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+}
+
+// 矩阵乘法
+void matrix_multiply(int m, int n, int p,
+                     int a[m][n],
+                     int b[n][p],
+                     int result[m][p]) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < n; k++) {
+                result[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+}
+
+// 打印矩阵
+void print_matrix(int rows, int cols, int matrix[rows][cols]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%4d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int b[3][2] = {{7, 8}, {9, 10}, {11, 12}};
+    int result[2][2];
+
+    printf("矩阵A (2x3):\n");
+    print_matrix(2, 3, a);
+
+    printf("\n矩阵B (3x2):\n");
+    print_matrix(3, 2, b);
+
+    matrix_multiply(2, 3, 2, a, b, result);
+
+    printf("\nA × B (2x2):\n");
+    print_matrix(2, 2, result);
+
+    return 0;
+}
+```
+
+#### 项目3: 简单的图像处理(灰度图)
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define WIDTH 10
+#define HEIGHT 10
+
+typedef unsigned char Pixel;  // 0-255
+
+// 创建图像
+void image_create(Pixel image[HEIGHT][WIDTH], Pixel value) {
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+            image[i][j] = value;
+        }
+    }
+}
+
+// 绘制矩形
+void image_draw_rect(Pixel image[HEIGHT][WIDTH],
+                     int x, int y, int w, int h, Pixel value) {
+    for (int i = y; i < y + h && i < HEIGHT; i++) {
+        for (int j = x; j < x + w && j < WIDTH; j++) {
+            image[i][j] = value;
+        }
+    }
+}
+
+// 反转颜色
+void image_invert(Pixel image[HEIGHT][WIDTH]) {
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+            image[i][j] = 255 - image[i][j];
+        }
+    }
+}
+
+// 显示图像(ASCII)
+void image_display(Pixel image[HEIGHT][WIDTH]) {
+    const char *chars = " .:-=+*#%@";
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+            int index = image[i][j] * 10 / 256;
+            printf("%c", chars[index]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    Pixel image[HEIGHT][WIDTH];
+
+    // 创建黑色图像
+    image_create(image, 0);
+
+    // 绘制矩形
+    image_draw_rect(image, 2, 2, 6, 6, 128);
+    image_draw_rect(image, 4, 4, 2, 2, 255);
+
+    printf("原图像:\n");
+    image_display(image);
+
+    // 反转
+    image_invert(image);
+
+    printf("\n反转后:\n");
+    image_display(image);
+
+    return 0;
+}
+```
+
 ---
 
 ## 🤔 Q&A
@@ -840,11 +1232,35 @@ ptr[0] = 'h';  // 运行时错误! 字符串字面量在只读内存
 ```
 
 ## 🚀 Tasks
+
+### 基础练习
 - [ ] 编写程序找出数组中的第二大值
-- [ ] 实现选择排序算法
+- [ ] 实现选择排序和插入排序算法
+- [ ] 数组元素的反转和旋转
+- [ ] 统计数组中每个元素出现的次数
+- [ ] 实现数组的合并和去重
+
+### 二维数组练习
 - [ ] 编写程序实现矩阵乘法
+- [ ] 实现矩阵转置
+- [ ] 打印螺旋矩阵
+- [ ] 实现二维数组的查找算法
+- [ ] 编写程序计算矩阵的行列式
+
+### 字符串练习
 - [ ] 实现一个函数统计字符串中各字符出现次数
-- [ ] 编写程序将数组向左旋转n个位置
+- [ ] 编写字符串比较函数(不用strcmp)
+- [ ] 实现字符串分割函数
+- [ ] 回文字符串检测
+- [ ] 最长公共子序列
+
+### 实战项目
+- [x] 动态数组实现(类似vector)
+- [x] 矩阵运算库
+- [x] 简单的图像处理
+- [ ] 字符串处理工具集
+- [ ] 简单的电子表格程序
+- [ ] 文本编辑器缓冲区
 
 ## 📚 Reference
 * C Primer Plus (第6版) - Stephen Prata
