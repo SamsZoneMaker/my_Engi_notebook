@@ -65,6 +65,448 @@ modified: 2025-11-18
 
 ---
 
+### ELF可执行文件格式
+
+在深入进程管理之前，需要理解Linux上的可执行文件格式。**ELF (Executable and Linkable Format)** 是Linux平台上通用的二进制文件格式。
+
+#### ELF文件类型
+
+| 类型 | 说明 | 后缀 | 用途 |
+|------|------|------|------|
+| **可重定位文件** (Relocatable File) | 包含编译器生成的代码和数据，等待链接 | `.o` | 目标文件，用于链接生成可执行文件或库 |
+| **可执行文件** (Executable File) | 可直接运行的程序 | 无或自定义 | Linux中执行的二进制程序 |
+| **共享目标文件** (Shared Object File) | 包含代码和数据的动态库 | `.so` | 运行时动态加载的共享库 |
+
+#### ELF文件的两种视角
+
+ELF文件在不同使用场景下有不同的组织方式：
+
+**链接视图（Linking View）**：
+- 用于编译链接过程
+- 链接器（ld）处理可重定位文件和共享库，生成新的目标文件
+- 关注节（Sections）：`.text`, `.data`, `.bss`, `.symtab` 等
+
+**执行视图（Execution View）**：
+- 用于程序加载和执行
+- 动态链接器将可执行文件和共享库加载到内存，生成进程镜像
+- 关注段（Segments）：可加载段、动态链接段等
+
+#### 常见ELF节（Sections）
+
+```bash
+# 查看ELF文件的节
+$ readelf -S /bin/ls
+
+常见节：
+.text      - 程序代码（可执行指令）
+.rodata    - 只读数据（字符串常量等）
+.data      - 已初始化的全局变量和静态变量
+.bss       - 未初始化的全局变量和静态变量（不占文件空间）
+.symtab    - 符号表
+.strtab    - 字符串表
+.rel.text  - 代码段的重定位信息
+.rel.data  - 数据段的重定位信息
+```
+
+#### 示例：查看ELF文件信息
+
+```bash
+# 查看ELF文件头
+$ readelf -h a.out
+
+# 查看程序头（段信息）
+$ readelf -l a.out
+
+# 查看节头
+$ readelf -S a.out
+
+# 查看符号表
+$ readelf -s a.out
+
+# 或使用objdump
+$ objdump -h a.out  # 查看节
+$ objdump -d a.out  # 反汇编
+```
+
+---
+
+### 进程内存布局
+
+当ELF可执行文件加载到内存后，形成进程的虚拟地址空间。典型的Linux进程内存布局如下（从低地址到高地址）：
+
+```
+高地址 (0xFFFFFFFF)
+┌─────────────────────┐
+│   内核空间          │  ← 内核代码和数据（用户进程不可访问）
+│   (Kernel Space)    │
+├─────────────────────┤  ← 0xC0000000 (32位系统)
+│                     │
+│   栈（Stack）       │  ← 向下生长，存储局部变量、函数参数
+│         ↓           │
+│                     │
+│    ...              │
+│                     │
+│         ↑           │
+│   堆（Heap）        │  ← 向上生长，动态分配（malloc）
+│                     │
+├─────────────────────┤
+│   BSS段             │  ← 未初始化的全局/静态变量
+├─────────────────────┤
+│   数据段 (.data)    │  ← 已初始化的全局/静态变量
+├─────────────────────┤
+│   只读数据 (.rodata)│  ← 字符串常量等
+├─────────────────────┤
+│   代码段 (.text)    │  ← 程序指令（只读、可共享）
+├─────────────────────┤
+│   保留区域          │
+└─────────────────────┘
+低地址 (0x00000000)
+```
+
+#### 各段详解
+
+| 内存区域 | 读写权限 | 内容 | 特性 |
+|---------|---------|------|------|
+| **代码段 (.text)** | 只读 | 编译后的机器指令 | 可被多个进程共享 |
+| **只读数据段 (.rodata)** | 只读 | 字符串常量、const变量 | 写入会触发段错误 |
+| **数据段 (.data)** | 读写 | 已初始化的全局变量和静态变量 | 占用文件空间 |
+| **BSS段** | 读写 | 未初始化的全局变量和静态变量 | 不占文件空间，加载时清零 |
+| **堆 (Heap)** | 读写 | 动态分配内存（malloc/new） | 向高地址增长 |
+| **栈 (Stack)** | 读写 | 局部变量、函数参数、返回地址 | 向低地址增长 |
+
+#### 示例：验证内存布局
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int global_init = 100;        // 数据段 .data
+int global_uninit;            // BSS段
+const char *str = "Hello";    // str在.data，"Hello"在.rodata
+static int static_var = 200;  // 数据段 .data
+
+void func() {
+    static int func_static = 300;  // 数据段 .data
+    int local = 400;               // 栈
+    int *heap_ptr = malloc(sizeof(int));  // 堆
+    *heap_ptr = 500;
+
+    printf("代码段地址 (func): %p\n", (void*)func);
+    printf("只读数据段地址 (str literal): %p\n", (void*)str);
+    printf("数据段地址 (global_init): %p\n", (void*)&global_init);
+    printf("数据段地址 (static_var): %p\n", (void*)&static_var);
+    printf("数据段地址 (func_static): %p\n", (void*)&func_static);
+    printf("BSS段地址 (global_uninit): %p\n", (void*)&global_uninit);
+    printf("堆地址 (malloc): %p\n", (void*)heap_ptr);
+    printf("栈地址 (local): %p\n", (void*)&local);
+
+    free(heap_ptr);
+}
+
+int main() {
+    func();
+    return 0;
+}
+```
+
+**运行结果示例**：
+```
+代码段地址 (func): 0x400546
+只读数据段地址 (str literal): 0x400610
+数据段地址 (global_init): 0x601034
+数据段地址 (static_var): 0x601038
+数据段地址 (func_static): 0x60103c
+BSS段地址 (global_uninit): 0x601040
+堆地址 (malloc): 0x1a4f010
+栈地址 (local): 0x7ffd1234abcd
+```
+
+**观察**：
+- 代码段地址最低
+- 数据段和BSS段紧挨着
+- 堆地址在中间区域
+- 栈地址接近高地址
+
+---
+
+### 栈（Stack）详解
+
+#### 栈的定义
+
+**栈** 是内存中一块特殊的、自动管理的区域，遵循 **"后进先出"（LIFO, Last-In First-Out）** 原则。
+
+#### 栈的作用
+
+- 存储函数的**局部变量**
+- 存储**函数参数**
+- 存储**函数返回地址**
+- 保存函数调用前的**寄存器状态**
+
+每次调用函数时，系统在栈上"压入"一个新的数据块（称为 **栈帧, Stack Frame**）；函数返回时，栈帧被"弹出"。
+
+#### 栈的管理
+
+- **自动管理**：由编译器生成的代码和CPU指令（`PUSH`, `POP`）完成
+- **无需手动释放**：不需要像堆那样使用 `malloc`/`free`
+- **生命周期**：局部变量在函数返回后自动销毁
+
+#### 栈指针（Stack Pointer）
+
+栈有一个特殊的指针寄存器，称为 **栈指针（SP）**：
+- **x86架构**：`ESP`（32位）/ `RSP`（64位）
+- **ARM架构**：`SP` 寄存器
+- **RISC-V架构**：`sp` (x2)
+
+栈指针指向 **栈顶**，即当前栈操作的位置。
+
+#### 栈的生长方向
+
+栈的生长方向由 **CPU的指令集架构（ISA）** 决定，是硬件层面的特性：
+
+**向下生长（Grows Down）** - 最常见：
+- 从高地址向低地址生长
+- 绝大多数现代CPU架构（x86, ARM, RISC-V）采用此方式
+- 执行 `PUSH` 操作时，栈指针 `SP` 的值会 **减小**
+- 数值变化：`0x8000` → `0x7FFC` → `0x7FF8` ...
+
+```
+高地址 (栈底，最高有效地址)
+┌─────────────┐  ← 0x8000 __stack_max (初始SP位置)
+│             │
+│    已使用   │
+│             │
+├─────────────┤  ← 0x7FF8 当前SP (向下增长)
+│             │
+│    空闲     │
+│             │
+└─────────────┘  ← 0x7000 __stack_min (栈边界，不可越过)
+低地址
+```
+
+**向上生长（Grows Up）** - 少见：
+- 从低地址向高地址生长
+- 一些旧架构或特殊架构
+- 执行 `PUSH` 操作时，`SP` 的值会 **增大**
+
+#### 栈帧（Stack Frame）
+
+每个函数调用都会创建一个栈帧，包含：
+
+```
+┌─────────────────┐  ← 高地址
+│   参数n         │
+│   参数2         │
+│   参数1         │
+├─────────────────┤
+│   返回地址      │  ← 调用函数后返回的位置
+├─────────────────┤
+│   旧的帧指针(BP)│  ← 保存调用者的栈帧基址
+├─────────────────┤  ← 当前帧指针(FP/BP)
+│   局部变量1     │
+│   局部变量2     │
+│   ...           │
+└─────────────────┘  ← 栈指针(SP)，低地址
+```
+
+**示例**：观察栈帧
+
+```c
+#include <stdio.h>
+
+void func(int a, int b) {
+    int local1 = 10;
+    int local2 = 20;
+    printf("func栈地址 - a: %p, b: %p\n", (void*)&a, (void*)&b);
+    printf("func栈地址 - local1: %p, local2: %p\n", (void*)&local1, (void*)&local2);
+}
+
+int main() {
+    int x = 1, y = 2;
+    printf("main栈地址 - x: %p, y: %p\n", (void*)&x, (void*)&y);
+    func(x, y);
+    return 0;
+}
+```
+
+**输出示例**（地址向下递减，证明栈向下生长）：
+```
+main栈地址 - x: 0x7ffd12345678, y: 0x7ffd12345674
+func栈地址 - a: 0x7ffd12345658, b: 0x7ffd1234565c
+func栈地址 - local1: 0x7ffd12345650, local2: 0x7ffd1234564c
+```
+
+#### 栈溢出（Stack Overflow）
+
+栈空间有限（通常1-8MB），超出限制会导致栈溢出：
+
+**原因**：
+1. **过深的递归调用**
+2. **过大的局部数组**
+
+**示例：递归导致栈溢出**
+
+```c
+#include <stdio.h>
+
+void infinite_recursion(int n) {
+    int large_array[1000];  // 每次调用占用约4KB栈空间
+    printf("递归深度: %d\n", n);
+    infinite_recursion(n + 1);  // 无限递归
+}
+
+int main() {
+    infinite_recursion(0);
+    return 0;
+}
+```
+
+**结果**：`Segmentation fault (core dumped)`
+
+**查看栈大小限制**：
+
+```bash
+$ ulimit -s
+8192  # 默认8MB
+
+# 临时修改栈大小为16MB
+$ ulimit -s 16384
+```
+
+**避免栈溢出**：
+- 避免深度递归，改用循环或尾递归优化
+- 大数组使用堆分配（`malloc`）而非栈
+- 使用静态或全局变量存储大数据
+
+---
+
+### 堆（Heap）详解
+
+#### 堆的定义
+
+**堆** 是用于 **动态内存分配** 的内存区域，由程序员手动管理。
+
+#### 堆 vs 栈
+
+| 特性 | 栈（Stack） | 堆（Heap） |
+|------|-----------|-----------|
+| **管理方式** | 自动（编译器） | 手动（malloc/free） |
+| **分配速度** | 快（移动指针） | 慢（内存管理算法） |
+| **生命周期** | 函数返回时销毁 | 显式释放前一直存在 |
+| **大小限制** | 较小（MB级） | 较大（GB级） |
+| **增长方向** | 向下（低地址） | 向上（高地址） |
+| **碎片化** | 无 | 可能产生内存碎片 |
+| **线程安全** | 每线程独立 | 需同步保护 |
+
+#### 堆的使用
+
+**C语言**：
+```c
+#include <stdlib.h>
+
+// 分配内存
+int *ptr = malloc(100 * sizeof(int));
+if (ptr == NULL) {
+    // 分配失败处理
+}
+
+// 使用内存
+ptr[0] = 42;
+
+// 释放内存
+free(ptr);
+ptr = NULL;  // 避免悬空指针
+```
+
+**C++**：
+```cpp
+// 分配单个对象
+int *p = new int(42);
+delete p;
+
+// 分配数组
+int *arr = new int[100];
+delete[] arr;
+```
+
+#### 堆内存管理函数
+
+| 函数 | 功能 | 是否初始化 |
+|------|------|----------|
+| `malloc(size)` | 分配 size 字节 | 否 |
+| `calloc(n, size)` | 分配 n*size 字节 | 是（清零） |
+| `realloc(ptr, size)` | 调整已分配内存大小 | 新增部分不初始化 |
+| `free(ptr)` | 释放内存 | - |
+
+#### 常见堆问题
+
+**1. 内存泄漏（Memory Leak）**
+
+分配后未释放：
+
+```c
+void func() {
+    int *ptr = malloc(100 * sizeof(int));
+    // 忘记 free(ptr)
+}  // ptr离开作用域，但内存未释放
+```
+
+**检测工具**：
+- Valgrind: `valgrind --leak-check=full ./program`
+- AddressSanitizer: `gcc -fsanitize=address`
+
+**2. 悬空指针（Dangling Pointer）**
+
+释放后继续使用：
+
+```c
+int *ptr = malloc(sizeof(int));
+free(ptr);
+*ptr = 10;  // ❌ 未定义行为
+```
+
+**3. 双重释放（Double Free）**
+
+```c
+int *ptr = malloc(sizeof(int));
+free(ptr);
+free(ptr);  // ❌ 导致崩溃
+```
+
+**4. 堆溢出（Heap Overflow）**
+
+```c
+int *arr = malloc(10 * sizeof(int));
+arr[100] = 42;  // ❌ 越界写入
+```
+
+#### 堆内存分配器
+
+Linux 使用 `ptmalloc2`（glibc默认分配器）：
+- 小块内存使用 **fastbins** 和 **small bins**
+- 大块内存使用 **large bins** 或直接 `mmap` 系统调用
+- 使用 **空闲链表** 管理已释放的内存块
+
+**其他分配器**：
+- **tcmalloc** (Google)：多线程优化
+- **jemalloc** (Facebook)：减少碎片化
+- **mimalloc** (Microsoft)：高性能
+
+---
+
+### 栈 vs 堆栈（术语澄清）
+
+**注意**："堆栈"一词容易引起混淆。
+
+- **栈（Stack）** 和 **堆（Heap）** 是两个 **不同的内存区域**
+- **"堆栈"** 有时被用来泛指"栈"，但技术上应将它们分开
+
+**明确用法**：
+- ✅ "栈上分配" → Stack allocation
+- ✅ "堆上分配" → Heap allocation
+- ❌ "堆栈分配" → 容易混淆，应避免
+
+---
+
 ## 🔧 函数详解
 
 ### 一、进程标识
