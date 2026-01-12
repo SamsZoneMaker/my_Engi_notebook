@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/intermediate"
-  - "#lang/c"
+  - "#language/c"
   - "#grain/stdlib"
   - "#tech/strings"
 status: 完成
@@ -16,7 +16,7 @@ related:
   - "[[C语言标准库 - stdlib.h详解]]"
   - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18
-modified: 2025-11-18
+modified: 2026-01-09  14:47:04
 ---
 
 # C语言标准库 - string.h详解

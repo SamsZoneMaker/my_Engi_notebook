@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/intermediate"
-  - "#lang/c"
+  - "#language/c"
   - "#grain/stdlib"
 status: 完善中
 complexity: 中级
@@ -14,7 +14,7 @@ related:
   - "[[C语言标准库 - stdlib.h详解]]"
   - "[[C语言进阶 - 文件IO]]"
 created: 2025-11-18 22:00:00
-modified: 2025-11-18 22:00:00
+modified: 2026-01-09  14:47:03
 ---
 # C语言标准库 - stdio.h详解
 

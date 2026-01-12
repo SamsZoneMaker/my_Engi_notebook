@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/basic"
-  - "#lang/c"
+  - "#language/c"
 status: 完善中
 complexity: 基础
 notetype: 学习笔记
@@ -13,7 +13,7 @@ related:
   - "[[C语言基础 - 函数]]"
   - "[[C语言基础 - 数组]]"
 created: 2025-11-18 22:00:00
-modified: 2025-11-18 22:00:00
+modified: 2026-01-09  14:47:03
 ---
 # C语言基础 - 控制流
 

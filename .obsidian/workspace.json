@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Areas/02_Programming/C/C Programme.md",
+                "file": "10_Areas/02_Programming/C/C语言基础 - 数据类型与变量.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "C Programme"
+              "title": "C语言基础 - 数据类型与变量"
+            }
+          },
+          {
+            "id": "90b03a189691f6df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Inbox/2026-01-12-1521.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2026-01-12-1521"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -63,13 +88,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/2025-11-11-1726.md",
+                "file": "00_Inbox/2026-01-12-1521.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-11-11-1726 的大纲"
+              "title": "2026-01-12-1521 的大纲"
             }
           },
           {
@@ -78,7 +103,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"type\"]",
+                "query": "[\"modified\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +124,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -224,7 +250,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "periodic-notes:Open today": false,
       "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -234,57 +259,58 @@
       "zk-prefixer:创建时间戳笔记": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "homepage:Open homepage": false
+      "homepage:Open homepage": false,
+      "periodic-notes:Open today": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "90b03a189691f6df",
   "lastOpenFiles": [
+    "10_Areas/02_Programming/C/C语言基础 - 数据类型与变量.md",
+    "00_Inbox/2026-01-12-1521.md",
+    "10_Areas/02_Programming/C/CPP-章节后习题.md",
+    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
+    "10_Areas/02_Programming/C/C语言进阶 - 指针详解.md",
+    "10_Areas/02_Programming/C/C语言基础 - 函数.md",
+    "10_Areas/02_Programming/C/C语言基础 - 控制流.md",
+    "00_Inbox/2025-11-26-1555.md",
+    "00_Inbox/2025-10-28-1902.md",
+    "未命名 1.base",
+    "未命名.md",
+    "未命名.base",
+    "20_Project/Log System Makefile 详细解析.md",
+    "00_Inbox/202508141800.md",
+    "00_Inbox/2025-11-11-1726.md",
+    "90_obsystem/Templates/Template for daily notes.md",
+    "90_obsystem/Templates/template for quick notes.md",
+    "90_obsystem/Templates/Template for notes.md",
+    "90_obsystem/Templates/Template for MOC.md",
+    "00_Inbox/Basic.md",
+    "00_Inbox/202509261030.md",
+    "00_Inbox/202508211039.md",
+    "00_Inbox/figures/cdr.png",
+    "00_Inbox/figures/PHY层结构.png",
+    "00_Inbox/figures/image-20250718141501736.png",
+    "10_Areas/02_Programming/C/C语言标准库 - string.h详解.md",
+    "10_Areas/02_Programming/Shell/Shell脚本编程基础.md",
+    "10_Areas/02_Programming/Python/Python基础 - 控制流.md",
+    "10_Areas/02_Programming/Python/Python基础 - 类与面向对象.md",
+    "10_Areas/02_Programming/Python/Python高级 - 异常处理.md",
+    "10_Areas/02_Programming/C/Linux系统编程 - 文件IO.md",
     "00_Inbox/figures/v2-437fd9d7112a81cd32b6325aec131606_r.jpg",
     "00_Inbox/figures/why_Equalizer",
     "00_Inbox/figures/Tx_block.png",
     "00_Inbox/figures/rx_block.png",
-    "00_Inbox/figures/PHY层结构.png",
     "00_Inbox/figures/OSI_7层模型.png",
-    "00_Inbox/figures/image-20250718141501736.png",
-    "00_Inbox/figures/cdr.png",
     "00_Inbox/figures",
-    "00_Inbox/知识类笔记.md",
-    "00_Inbox/误码仪设计.md",
-    "00_Inbox/温度监控（连接误码仪版本）.md",
-    "00_Inbox/wAPI_Study_Notes.md",
-    "00_Inbox/wAPI Exanples 开发记录.md",
-    "00_Inbox/swpedia_50_0016_vscode.md",
-    "00_Inbox/socArch_training.md",
-    "00_Inbox/SoC FW review records.md",
-    "00_Inbox/Shell_basic.md",
-    "00_Inbox/SerDes_study_notes.md",
-    "00_Inbox/SerDes_fw_training.md",
-    "00_Inbox/README.md",
-    "00_Inbox/Python Study Notes.md",
-    "00_Inbox/MPRO Study Notes.md",
     "00_Inbox/ci_runner.py",
-    "00_Inbox/Basic.md",
-    "00_Inbox/baikal简介.md",
-    "00_Inbox/Arch&SerDes.md",
     "00_Inbox/makefile/figures/flow_chart",
     "00_Inbox/makefile/figures",
     "00_Inbox/makefile/最新版本，翻译手册.pdf",
-    "00_Inbox/makefile/makefile_others.md",
     "00_Inbox/makefile/makefile_example2.mak",
     "00_Inbox/makefile/makefile_example1.mak",
-    "00_Inbox/makefile/Makefile.pdf",
-    "00_Inbox/makefile/Makefile.md",
-    "00_Inbox/makefile/GNU make v3.80完整版中文指南.pdf",
-    "10_Areas/02_Programming/C/pointer.md",
-    "10_Areas/02_Programming/C/C Programme.md",
-    "10_Areas/02_Programming/Python/数据类型.md",
-    "10_Areas/02_Programming/Python/🐍 00_Python_MOC.md",
-    "00_Inbox/2025-10-28-1902.md",
-    "00_Inbox/2025-11-11-1726.md",
     "10_Areas/03_Embeded_System/Toolchain/figures/image-20251024182455155.png",
     "10_Areas/03_Embeded_System/Toolchain/figures/ld_1.svg",
     "50_Attachments/Figures/10_03_Embeded_System/ld_1.svg",
-    "50_Attachments/Figures/10_03_Embeded_System/ld_1.png",
     "未命名.canvas"
   ]
 }

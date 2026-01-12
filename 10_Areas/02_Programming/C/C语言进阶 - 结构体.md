@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/intermediate"
-  - "#lang/c"
+  - "#language/c"
 status: 完善中
 complexity: 中级
 notetype: 学习笔记
@@ -13,7 +13,7 @@ related:
   - "[[C语言基础 - 数组]]"
   - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18 22:00:00
-modified: 2025-11-18 22:00:00
+modified: 2026-01-09  14:47:04
 ---
 # C语言进阶 - 结构体
 

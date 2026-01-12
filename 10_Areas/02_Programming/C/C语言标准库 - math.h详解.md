@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/intermediate"
-  - "#lang/c"
+  - "#language/c"
   - "#grain/stdlib"
   - "#tech/math"
 status: 完成
@@ -14,7 +14,7 @@ related:
   - "[[C语言标准库 - stdlib.h详解]]"
   - "[[C语言基础 - 数据类型与变量]]"
 created: 2025-11-18
-modified: 2025-11-18
+modified: 2026-01-09  14:47:03
 ---
 
 # C语言标准库 - math.h详解

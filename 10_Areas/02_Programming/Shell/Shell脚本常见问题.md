@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/qa"
   - "#tech/shell"
-  - "#lang/bash"
+  - "#language/bash"
   - "#grain/scripting"
   - "#level/basic"
 aliases:
@@ -11,6 +11,7 @@ aliases:
   - Bash常见问题
 create_date: 2025-11-19
 notetype: 技术问答
+modified: 2026-01-09  14:47:05
 ---
 
 # Shell脚本常见问题

@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/advanced"
-  - "#lang/c"
+  - "#language/c"
   - "#tech/linux"
   - "#tech/process"
   - "#grain/system-programming"
@@ -16,7 +16,7 @@ related:
   - "[[Linux系统编程 - 进程间通信]]"
   - "[[C语言标准库 - stdlib.h详解]]"
 created: 2025-11-18
-modified: 2025-11-18
+modified: 2026-01-09  14:47:04
 ---
 
 # Linux系统编程 - 进程管理

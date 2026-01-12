@@ -2,9 +2,9 @@
 tags:
   - "#domain/programming"
   - "#type/moc"
-  - "#lang/c"
+  - "#language/c"
 status: 维护中
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:03
 ---
 # 🔧 C语言知识地图 (MOC)
 

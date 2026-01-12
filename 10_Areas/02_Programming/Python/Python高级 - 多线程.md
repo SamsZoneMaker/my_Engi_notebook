@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/advanced"
-  - "#lang/python"
+  - "#language/python"
 status: 完善中
 complexity: 高级
 notetype: 学习笔记
@@ -12,7 +12,7 @@ related:
   - "[[🐍 00_Python_MOC]]"
   - "[[Python基础 - 类与面向对象]]"
 created: 2025-11-18 21:46:54
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:05
 ---
 # Python高级 - 多线程
 

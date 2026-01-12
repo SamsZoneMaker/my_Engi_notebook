@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/basic"
-  - "#lang/c"
+  - "#language/c"
 status: 完善中
 complexity: 基础
 notetype: 学习笔记
@@ -11,7 +11,7 @@ resource: C语言程序设计
 related:
   - "[[00_C_MOC]]"
 created: 2025-11-18 21:46:54
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:03
 ---
 # C语言基础 - 数据类型与变量
 

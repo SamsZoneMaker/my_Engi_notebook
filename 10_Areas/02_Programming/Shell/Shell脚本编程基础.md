@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/basic"
-  - "#lang/shell"
+  - "#language/shell"
 status: 完善中
 complexity: 基础
 notetype: 学习笔记
@@ -12,7 +12,7 @@ related:
   - "[[00_Shell_MOC]]"
   - "[[00_Linux_MOC]]"
 created: 2025-11-18 21:46:54
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:05
 ---
 # Shell脚本编程基础
 

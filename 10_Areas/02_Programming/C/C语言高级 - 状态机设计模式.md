@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/advanced"
-  - "#lang/c"
+  - "#language/c"
   - "#tech/design-patterns"
   - "#grain/advanced"
 status: 完成
@@ -15,7 +15,7 @@ related:
   - "[[C语言进阶 - 结构体]]"
   - "[[C语言进阶 - 函数]]"
 created: 2025-11-18
-modified: 2025-11-18
+modified: 2026-01-09  14:47:04
 ---
 
 # C语言高级 - 状态机设计模式

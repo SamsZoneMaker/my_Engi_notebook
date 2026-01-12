@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/reference"
   - "#level/advanced"
-  - "#lang/c"
+  - "#language/c"
   - "#tech/linux"
   - "#tech/syscall"
   - "#grain/system-programming"
@@ -16,7 +16,7 @@ related:
   - "[[Linux系统编程 - 进程管理]]"
   - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18
-modified: 2025-11-18
+modified: 2026-01-09  14:47:04
 ---
 
 # Linux系统编程 - 文件IO

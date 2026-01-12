@@ -2,9 +2,9 @@
 tags:
   - "#domain/programming"
   - "#type/moc"
-  - "#lang/shell"
+  - "#language/shell"
 status: 维护中
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:05
 ---
 # 🐚 Shell脚本知识地图 (MOC)
 

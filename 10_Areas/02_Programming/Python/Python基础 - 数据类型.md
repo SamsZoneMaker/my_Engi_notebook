@@ -3,7 +3,7 @@ tags:
   - "#domain/programming"
   - "#type/knowledge"
   - "#level/basic"
-  - "#lang/python"
+  - "#language/python"
 status: 完善中
 complexity: 基础
 notetype: 学习笔记
@@ -12,7 +12,7 @@ related:
   - "[[🐍 00_Python_MOC]]"
   - "[[Python基础 - 列表与元组]]"
 created: 2025-11-18 21:46:54
-modified: 2025-11-18 21:46:54
+modified: 2026-01-09  14:47:05
 ---
 # Python基础 - 数据类型
 
