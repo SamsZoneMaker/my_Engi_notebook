@@ -11,52 +11,15 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "10_Areas/02_Programming/C/C语言基础 - 数据类型与变量.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "currentVersion": "1.12.4"
               },
-              "icon": "lucide-file",
-              "title": "C语言基础 - 数据类型与变量"
-            }
-          },
-          {
-            "id": "90b03a189691f6df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_Inbox/2026-01-12-1521.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2026-01-12-1521"
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.4"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -124,8 +87,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -250,7 +212,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -263,39 +225,39 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "90b03a189691f6df",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "10_Areas/02_Programming/C/C语言基础 - 数据类型与变量.md",
     "00_Inbox/2026-01-12-1521.md",
+    "00_Inbox/2026-02-10-1151.md",
+    "00_Inbox/202508211039.md",
+    "00_Inbox/202509261030.md",
+    "00_Inbox/知识类笔记.md",
+    "00_Inbox/Basic.md",
+    "00_Inbox/README.md",
+    "00_Inbox/swpedia_50_0016_vscode.md",
+    "00_Inbox/2025-11-11-1726.md",
+    "00_Inbox/2025-10-28-1902.md",
+    "00_Inbox/2025-11-26-1555.md",
+    "10_Areas/02_Programming/C/C语言基础 - 数据类型与变量.md",
     "10_Areas/02_Programming/C/CPP-章节后习题.md",
     "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
     "10_Areas/02_Programming/C/C语言进阶 - 指针详解.md",
     "10_Areas/02_Programming/C/C语言基础 - 函数.md",
     "10_Areas/02_Programming/C/C语言基础 - 控制流.md",
-    "00_Inbox/2025-11-26-1555.md",
-    "00_Inbox/2025-10-28-1902.md",
     "未命名 1.base",
     "未命名.md",
     "未命名.base",
     "20_Project/Log System Makefile 详细解析.md",
     "00_Inbox/202508141800.md",
-    "00_Inbox/2025-11-11-1726.md",
     "90_obsystem/Templates/Template for daily notes.md",
     "90_obsystem/Templates/template for quick notes.md",
     "90_obsystem/Templates/Template for notes.md",
     "90_obsystem/Templates/Template for MOC.md",
-    "00_Inbox/Basic.md",
-    "00_Inbox/202509261030.md",
-    "00_Inbox/202508211039.md",
     "00_Inbox/figures/cdr.png",
     "00_Inbox/figures/PHY层结构.png",
     "00_Inbox/figures/image-20250718141501736.png",
     "10_Areas/02_Programming/C/C语言标准库 - string.h详解.md",
     "10_Areas/02_Programming/Shell/Shell脚本编程基础.md",
-    "10_Areas/02_Programming/Python/Python基础 - 控制流.md",
-    "10_Areas/02_Programming/Python/Python基础 - 类与面向对象.md",
-    "10_Areas/02_Programming/Python/Python高级 - 异常处理.md",
-    "10_Areas/02_Programming/C/Linux系统编程 - 文件IO.md",
     "00_Inbox/figures/v2-437fd9d7112a81cd32b6325aec131606_r.jpg",
     "00_Inbox/figures/why_Equalizer",
     "00_Inbox/figures/Tx_block.png",
