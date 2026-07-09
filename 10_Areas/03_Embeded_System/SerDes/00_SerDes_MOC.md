@@ -4,7 +4,7 @@ tags:
   - "#type/moc"
   - "#tech/serdes"
 status: 维护中
-modified: 2025-11-18 22:00:00
+modified: 2026-06-04  17:04:13
 ---
 # ⚡ SerDes知识地图 (MOC)
 

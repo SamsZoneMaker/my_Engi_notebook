@@ -1,5 +1,5 @@
 ---
-modified: 2025-11-17  21:18:12
+modified: 2026-07-09  15:30:29
 ---
 # WW_LOG 模块设计文档
 
@@ -58,12 +58,12 @@ flowchart TD
 
 ## 4. 模块划分
 
-| 模块           | 文件         | 说明                                                   |
-| -------------- | ------------ | ------------------------------------------------------ |
-| 核心日志实现   | `ww_log.c/h` | `ww_Log` 函数、宏定义、断言                            |
-| 子模块宏       | `ww_log.h`   | INIT、REG、VDC、IMG_UPG、DFX 等                        |
-| 配置宏         | `config.h`   | `CONFIG_WW_LOG_LEVEL_DEFT`、`CONFIG_WW_LOG_MOD_XXX_EN` |
-| 对应缓冲区定义 | `ww_log.c`   | `WW_LOG_RAM_T` 结构体及操作函数（可抽象）              |
+| 模块      | 文件           | 说明                                                    |
+| ------- | ------------ | ----------------------------------------------------- |
+| 核心日志实现  | `ww_log.c/h` | `ww_Log` 函数、宏定义、断言                                    |
+| 子模块宏    | `ww_log.h`   | INIT、REG、VDC、IMG_UPG、DFX 等                            |
+| 配置宏     | `config.h`   | `CONFIG_WW_LOG_LEVEL_DEFT`、`CONFIG_WW_LOG_MOD_XXX_EN` |
+| 对应缓冲区定义 | `ww_log.c`   | `WW_LOG_RAM_T` 结构体及操作函数（可抽象）                          |
 
 ---
 

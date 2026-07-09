@@ -1,3 +1,6 @@
+---
+modified: 2026-07-09  14:08:41
+---
 % Makefile 教程
 % 支持原创，请移步陈浩大神博客： http://blog.csdn.net/haoel/article/details/2886
 % 转载 2012年07月31日 15:28:42 标签：makefile /编译器 /unix /include /shell 410932

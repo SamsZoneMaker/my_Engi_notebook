@@ -32,7 +32,7 @@
     "00_Inbox/2025-10-28-1902.md": "8486ad00f01b07df30c15237bc8a03b3c7cafa48ef682d20a7e0c06e85a78d87",
     "00_Inbox/2025-11-11-1726.md": "1b5f84fba565743336e6859920bfe6db601d7f9188692e7f829c085885653b1f",
     "20_Project/01_Dragon/日志模块重构设计方案.md": "ad60e02ae9939e0b9387fcb83d622c9fae6853b7cce086c97eeef513d5f75351",
-    "20_Project/01_Dragon/本地ai生成内容.md": "03b0a7cb4dd1e477d30e0c9c66547ebb51a0fe15fdb56f88adbdf442e754a3a7",
+    "20_Project/01_Dragon/本地ai生成内容.md": "6e7b3653da654f28ae7033ed0e6a7ceb62fd1ee042d3b7c76ca518464af5b6e5",
     "20_Project/01_Dragon/claude初稿.md": "7a31eff305ff821e7a3aa87cfd6a0eb744d1c8aa25fa715a6e9d3e788c1daca8",
     "10_Areas/02_Programming/C/C语言标准库 - math.h详解.md": "3b824c7f3d6f793d2f90f870d4757b00e3f1afd45d0aee625c3d7c9df5a09c2f",
     "10_Areas/02_Programming/C/C语言标准库 - string.h详解.md": "857cfed9e949ed2954afdb05a869d837def34d9d0b88f4c0240e449787e6dafc",
@@ -57,7 +57,7 @@
     "10_Areas/02_Programming/C/C语言进阶 - 结构体.md": "678d8268b5ee030d47604cbc6857df56971123da25c4862e17baf737b0bef6a6",
     "10_Areas/02_Programming/C/C语言高级 - 状态机设计模式.md": "4206c13de4e6a3205c1f21be7b94c44fcdf6cd260b3edf5cdf5e2514bf967e83",
     "10_Areas/02_Programming/C/Linux系统编程 - 进程管理.md": "7c39606cd0e3d53e4838d75c2fbe4e7dea984cc0e9f3fe4f3185a06ae55c4f32",
-    "10_Areas/02_Programming/Python/Python基础 - 函数.md": "6d56bb3a56d861aaffd11d0a78bc256e7fb80675b4101c1a5629a052cde44ca8",
+    "10_Areas/02_Programming/Python/Python基础 - 函数.md": "220d9a855d7e1b6afc3f3f6f394a1502b6f4fb946684ab49115a4f22bee59933",
     "10_Areas/02_Programming/Python/Python基础 - 列表与元组.md": "854bf71f52df23f159028a3f40f0bb0e350850207d7b0d8891b54a711e7e37bb",
     "10_Areas/02_Programming/Python/Python基础 - 字典.md": "b42ce66b74d096405ac0c3ed9761c51df8cd0b4318a3b028381aec31561de108",
     "10_Areas/02_Programming/Python/Python基础 - 数据类型.md": "72eadb4c6982c9aeb37297f55b033a8feb8da80d0728f9076ab95edb3b80a978",
@@ -67,6 +67,12 @@
     "00_Inbox/2026-02-10-1151.md": "59d85337e57cd3dc1b5c2c46a1afe8d3149cc8125fa74a908d535bd046669d68",
     "00_Inbox/swpedia_50_0016_vscode.md": "f7268d0da093ec4daeea680b0ed5c50f377d32e74bbf296f8c6fbe62e0cc9cef",
     "00_Inbox/README.md": "c6e4f1f3b2d7cbc663831e35ab966a85bb77c237fd7c912e2bb7da0fa05cb9da",
-    "00_Inbox/知识类笔记.md": "780a1faab8f6efcb063941a9064139ade8e6ec37ccec761974309c8600ae117d"
+    "00_Inbox/知识类笔记.md": "780a1faab8f6efcb063941a9064139ade8e6ec37ccec761974309c8600ae117d",
+    "10_Areas/02_Programming/Python/Python基础 - 基本结构.md": "2da29b84e64d3db8b0319676b8772a47797196c5a58e4b52356efa443d5a8604",
+    "10_Areas/03_Embeded_System/SerDes/SerDes基础 - 并行与串行数据传输.md": "f16858efbe90a6c87f884a677f34bf0a10a7013ecbfd63d990dc1c9d8c144068",
+    "00_Inbox/2026-06-04-1606.md": "264e863042443db3c1e8b33894e586ad70fc6e43a3cb8e9e5670ae9d20aaa1eb",
+    "10_Areas/03_Embeded_System/SerDes/00_SerDes_MOC.md": "991130163cb5d2ec1c150e96cb169e5bebe9bdcfc536aab37e86096f789b1c06",
+    "00_Inbox/makefile/Makefile.md": "cc6e7ecde7a22083cc8838db2fe7b118a893cdd56ead2b767263a5ac1ecd19ce",
+    "00_Inbox/makefile/makefile_others.md": "7a57c51a5f7416a329aa1b67985ef899a058ae92e2d9056cdf14477e043a8a0c"
   }
 }
