@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/python"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 控制流]]"
-created: 2025-11-18 21:46:54
-modified: 2026-03-30  14:44:16
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 函数
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的函数定义、参数传递、返回值、模块化等核心概念和最佳实践。
 
@@ -1215,7 +1203,7 @@ first, last = get_name()  # 元组解包
 * PEP 8 -- Style Guide for Python Code
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的核心部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的核心部分
 * 在[[Python基础 - 类与面向对象]]中,方法本质上就是与对象关联的函数
 * [[Python高级 - 异常处理]]可以让函数更加健壮
 

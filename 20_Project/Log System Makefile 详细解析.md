@@ -1,5 +1,7 @@
-# Log System Makefile 详细解析
-
+---
+tags:
+  - type/project
+---
 ## 目录
 
 1. [整体结构概览](https://claude.ai/chat/bf860fab-88b8-4d14-a167-b9f8c09e6f69#1-整体结构概览)

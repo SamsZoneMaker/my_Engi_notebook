@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#language/python"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 函数]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 类与面向对象
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的类(Class)和面向对象编程(OOP),包括类的定义、实例创建、继承、组合和模块化等核心概念。
 
@@ -400,6 +388,6 @@ class Dog:
 * Effective Python: 90 Specific Ways to Write Better Python
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的进阶部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的进阶部分
 * [[Python基础 - 函数]]是理解方法的基础
 * [[Python高级 - 异常处理]]可以让类的方法更加健壮

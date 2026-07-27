@@ -1,76 +1,45 @@
 ---
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags:
-status:
-notetype: Structure
-created: ${tp.date.now("YYYY-MM-DD HH:mm")}
-modified:
+  - type/project
+status: active
 ---
-# 🎯 Project Name
-
 > [!abstract] 项目概述
-> 
+> 说明项目要解决的问题、预期结果和当前边界。
 
----
+## 目标与成功标准
 
-## 📋 项目信息
+- 目标：
+- 完成标准：
 
-- **负责人**: 
-- **开始时间**: 
-- **目标完成**: 
-- **当前状态**: 
-- **优 先 级**: <%* tR += DataviewAPI.page(tp.file.title).priority %>
+## 当前状态
 
----
+- 截止日期：
+- 当前阻塞：
+- 下一检查点：
 
-## 🎯 项目目标 (Goals & Success Criteria)
+## 下一步行动
 
-### 主要目标
-- 
+- [ ]
 
-### 成功标准 (如何算成功?)
-- 
+## 项目任务
 
----
-
-## ✅ 任务清单 (Actionable Tasks)
-
-所有链接到此项目并且是待办事项的任务都会被汇总在这里。
-
-```dataview
-TASK
-FROM [[<%* tR += tp.file.title %>]]
-WHERE !completed
-GROUP BY file.link
+```tasks
+not done
+folder includes <% tp.file.folder(true) %>
+sort by due
 ```
 
----
+## 决策与问题
 
-## 📚 相关笔记与文档 (Related Notes & Documents)
+-
 
-所有链接到此项目的笔记（不包括项目本身和任务）都会被汇总在这里。
-
-```dataview
-TABLE WITHOUT ID
-  file.link as "笔记名称",
-  file.cday as "创建日期"
-FROM [[<%* tR += tp.file.title %>]]
-WHERE file.name != this.file.name AND !file.tasks
-SORT file.cday DESC
-```
-
----
-
-## 🔍 问题与决策 (Issues & Decisions)
-
-手动记录遇到的关键问题和做出的重要决策。
+## 相关资料
 
 - [[ ]]
-- [[ ]]
 
----
+## 过程记录
 
-## 🎉 项目里程碑 (Milestones)
+### <% tp.date.now("YYYY-MM-DD") %>
 
-- [ ] 里程碑1：
-- [ ] 里程碑2：
-
+-

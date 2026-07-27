@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#language/python"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 函数]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python高级 - 异常处理
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的异常处理机制,包括try-except-else-finally语句的使用和常见异常类型的处理方法。
 
@@ -341,6 +329,6 @@ with open('file.txt', 'r') as file:
 * Python官方文档 - Built-in Exceptions
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的重要部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的重要部分
 * 与[[Python基础 - 函数]]结合使用,编写更健壮的函数
 * 在[[Python基础 - 类与面向对象]]中,方法也需要适当的异常处理

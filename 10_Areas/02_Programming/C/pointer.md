@@ -1,14 +1,10 @@
 ---
+created: 2025-10-20
 tags:
+  - type/knowledge
+  - topic/programming/c
 aliases:
-status:
-related: []
-resource:
-created: 2025-10-20 17:43:19
-modified: 2025-11-18  21:48:31
 ---
-# pointer
-
 > [!abstract] 摘要 
 > 在这里用一两句话总结这篇笔记的核心目的或关键结论。
 

@@ -1,8 +1,11 @@
 ---
-status: 📥 收集 (Inbox)
-created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
-modified:
+created: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - type/inbox
 ---
-**Relative to:**
+## 记录
 
-# title:
+
+## 后续处理
+
+- [ ] 决定归档目录，并补充合适的 `topic/...` 标签

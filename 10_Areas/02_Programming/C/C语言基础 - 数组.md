@@ -1,23 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/c"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: C Primer Plus、C程序设计语言
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 函数]]"
-  - "[[C语言基础 - 控制流]]"
-  - "[[C语言进阶 - 指针详解]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:03
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言基础 - 数组
-
 > [!abstract] 摘要
 > 本笔记详细介绍C语言数组的定义、初始化、访问、多维数组以及数组与指针的关系,帮助你掌握批量数据处理的基础。
 
@@ -1268,7 +1254,7 @@ ptr[0] = 'h';  // 运行时错误! 字符串字面量在只读内存
 * C和指针 - Kenneth A. Reek
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言基础 - 数据类型与变量]] - 数组是同类型数据的集合
 * [[C语言基础 - 控制流]] - 循环用于遍历数组
 * [[C语言基础 - 函数]] - 函数用于处理数组

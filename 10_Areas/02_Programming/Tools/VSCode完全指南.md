@@ -1,19 +1,12 @@
 ---
+created: 2025-11-19
 tags:
-  - "#domain/tools"
-  - "#type/reference"
-  - "#tech/editor"
-  - "#grain/guide"
-  - "#level/basic"
+  - type/reference
+  - topic/tools
 aliases:
   - VSCode使用指南
   - Visual Studio Code
-create_date: 2025-11-19
-notetype: 开发工具指南
 ---
-
-# VSCode完全指南
-
 Visual Studio Code 是微软推出的开源代码编辑器，以丰富的插件生态系统和灵活的配置能力著称。本指南涵盖VSCode的安装、配置、插件使用和常用快捷键。
 
 ## 目录
@@ -591,8 +584,8 @@ ssh-copy-id user@10.1.3.228
 ## 相关资源
 
 - [[Makefile完全指南]]：构建系统配置
-- [[Git使用手册]]：版本控制最佳实践
-- [[GDB调试技巧]]：命令行调试工具
+- Git使用手册：版本控制最佳实践
+- GDB调试技巧：命令行调试工具
 
 ## 参考链接
 

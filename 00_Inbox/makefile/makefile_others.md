@@ -1,5 +1,6 @@
 ---
-modified: 2026-07-09  14:08:41
+tags:
+  - type/inbox
 ---
 % Makefile 教程
 % 支持原创，请移步陈浩大神博客： http://blog.csdn.net/haoel/article/details/2886

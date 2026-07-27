@@ -1,25 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#tech/build-tools"
-  - "#tech/makefile"
-  - "#grain/automation"
-status: 完成
-complexity: 中级
-notetype: 技术参考
-resource: GNU Make Manual
-related:
-  - "[[Linux系统编程 - 文件IO]]"
-  - "[[C语言基础 - 数据类型与变量]]"
-  - "[[Shell脚本编程基础]]"
 created: 2025-11-18
-modified: 2025-11-18
+tags:
+  - type/reference
+  - topic/tools
 ---
-
-# Makefile完全指南
-
 ## 📋 概述
 
 Makefile 是用于自动化构建和管理项目依赖关系的强大工具。
@@ -707,7 +691,7 @@ include $(CURDIR)/../common.mk
 - [[Linux系统编程 - 文件IO]] - 文件操作
 - [[Shell脚本编程基础]] - Shell命令
 - [[C语言基础 - 数据类型与变量]] - C语言基础
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
@@ -746,3 +730,9 @@ include $(CURDIR)/../common.mk
 ---
 
 *最后更新: 2025-11-18*
+
+## 相关笔记
+
+- [[Linux系统编程 - 文件IO]]
+- [[C语言基础 - 数据类型与变量]]
+- [[Shell脚本编程基础]]

@@ -1,12 +1,11 @@
 ---
 tags:
-  - shell
-  - Linux
-  - "#proj_Dragon"
+  - type/project
+  - project/dragon
+  - topic/programming/shell
 aliases:
 create date: 2025-08-22 16:20:48
 modify date: 2025-10-15  16:56:37
-modified: 2025-10-27  16:25:59
 ---
 # 📝 笔记内容
 

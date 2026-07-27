@@ -1,40 +1,24 @@
 ---
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags:
-status:
-complexity:
-notetype:
-resource:
-related: []
-created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
-modified:
+  - type/knowledge
 ---
-# <% tp.file.title %>
+> [!abstract] 核心结论
+> 用一两句话写下这篇笔记最重要的结论。
 
-> [!abstract] 摘要 
-> 在这里用一两句话总结这篇笔记的核心目的或关键结论。
-
-## 🎯 Target
-- [ ] Target 1
-- [ ] Target 2
+## 核心内容
 
 
-
-## 📝 Core
-
+## 示例与实践
 
 
----
-## 🤔 Q&A
-
-### Q1: 
-**A**:
+## 问题与思考
 
 
-## 🚀 Tasks
-- [ ] 由本笔记内容产生的、需要在现实中完成的行动项。
+## 相关笔记
 
-## 📚 Reference
-* 
+- [[ ]]
 
-## 🕸️ Relation
-* 这篇笔记与 [另一篇笔记] 的关系是... (在这里描述上下文)
+## 来源
+
+-

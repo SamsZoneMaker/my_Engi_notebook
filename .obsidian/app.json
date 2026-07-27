@@ -1,10 +1,12 @@
 {
   "showLineNumber": true,
+  "showInlineTitle": true,
   "readableLineLength": false,
   "promptDelete": false,
   "foldHeading": true,
   "alwaysUpdateLinks": true,
-  "strictLineBreaks": true,
+  "strictLineBreaks": false,
   "showUnsupportedFiles": false,
-  "focusNewTab": true
+  "focusNewTab": true,
+  "attachmentFolderPath": "assets"
 }

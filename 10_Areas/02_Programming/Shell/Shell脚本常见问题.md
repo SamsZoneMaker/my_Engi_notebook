@@ -1,21 +1,12 @@
 ---
+created: 2025-11-19
 tags:
-  - "#domain/programming"
-  - "#type/qa"
-  - "#tech/shell"
-  - "#language/bash"
-  - "#grain/scripting"
-  - "#level/basic"
+  - type/knowledge
+  - topic/programming/shell
 aliases:
   - Shell Q&A
   - Bash常见问题
-create_date: 2025-11-19
-notetype: 技术问答
-modified: 2026-01-09  14:47:05
 ---
-
-# Shell脚本常见问题
-
 本文档汇总Shell脚本编写中的常见问题和解答，涵盖变量、参数、命令执行、错误处理等核心主题。
 
 ## 目录
@@ -633,7 +624,7 @@ echo "脚本结束"
 
 ## 相关资源
 
-- [[00_Shell_MOC]] - Shell编程知识体系
+- [[Shell 知识地图]] - Shell编程知识体系
 - [[Shell脚本编程基础]] - Shell基础语法和结构
 - [[Makefile完全指南]] - 构建脚本最佳实践
 - [[Linux系统编程 - 进程管理]] - 进程和Shell交互、fork/exec

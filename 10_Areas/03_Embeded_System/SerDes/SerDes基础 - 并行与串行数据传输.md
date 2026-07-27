@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/embedded"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#tech/serdes"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: SerDes技术文档
-related:
-  - "[[00_SerDes_MOC]]"
-  - "[[SerDes架构 - 芯片架构与工作原理]]"
-created: 2025-11-18 22:00:00
-modified: 2026-06-04  15:55:16
+  - type/knowledge
+  - topic/embedded/serdes
 ---
-# SerDes基础 - 并行与串行数据传输
-
 > [!abstract] 摘要
 > 本笔记介绍SerDes的基本概念,详细对比并行数据传输和串行数据传输的特点、优缺点和应用场景。
 
@@ -181,6 +169,6 @@ D3 D2 D1 D0     |  逐位传输  |     重组还原
 * PCIe Base Specification
 
 ## 🕸️ Relation
-* 这篇笔记是[[00_SerDes_MOC|SerDes知识体系]]的基础入门部分
+* 这篇笔记是[[SerDes 知识地图|SerDes知识体系]]的基础入门部分
 * [[SerDes架构 - 芯片架构与工作原理]] - 了解SerDes如何实现串并转换
 * [[SerDes技术 - 均衡器与信号完整性]] - 深入理解串行传输中的信号处理

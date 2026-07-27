@@ -3,22 +3,22 @@
   "hasMigratedDailyNoteSettings": false,
   "hasMigratedWeeklyNoteSettings": false,
   "daily": {
-    "format": "",
+    "format": "YYYY-MM-DD",
     "template": "90_obsystem/Templates/Template for daily notes.md",
-    "folder": "50_Periodic_notes/Daily",
+    "folder": "40_Periodic_notes/Daily",
     "enabled": true
   },
   "weekly": {
-    "format": "",
-    "template": "90_obsystem/Templates/Template for daily notes.md",
-    "folder": "50_Periodic_notes/Weekly",
-    "enabled": true
+    "format": "YYYY-[W]ww",
+    "template": "",
+    "folder": "40_Periodic_notes/Weekly",
+    "enabled": false
   },
   "monthly": {
-    "format": "",
-    "template": "90_obsystem/Templates/Template for daily notes.md",
-    "folder": "50_Periodic_notes/Monthly",
-    "enabled": true
+    "format": "YYYY-MM",
+    "template": "",
+    "folder": "40_Periodic_notes/Monthly",
+    "enabled": false
   },
   "quarterly": {
     "format": "",

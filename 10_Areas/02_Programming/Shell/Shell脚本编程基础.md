@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/shell"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Shell教程 - 菜鸟教程
-related:
-  - "[[00_Shell_MOC]]"
-  - "[[00_Linux_MOC]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/shell
 ---
-# Shell脚本编程基础
-
 > [!abstract] 摘要
 > 本笔记介绍Shell脚本编程的基础知识,包括变量、数组、运算符、控制流程和常用命令的使用方法。
 
@@ -450,6 +438,6 @@ source "$(dirname "$0")/config.sh"
 * Advanced Bash-Scripting Guide
 
 ## 🕸️ Relation
-* 这篇笔记是[[00_Shell_MOC|Shell知识体系]]的基础部分
+* 这篇笔记是[[Shell 知识地图|Shell知识体系]]的基础部分
 * [[00_Linux_MOC|Linux知识体系]] - Shell是Linux系统管理的核心工具
 * [[00_Programming_MOC]] - Shell脚本编程也是编程的一部分

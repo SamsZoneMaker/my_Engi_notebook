@@ -2,7 +2,6 @@
   "code-block-from-selection",
   "templater-obsidian",
   "dataview",
-  "update-time-on-edit",
   "calendar",
   "obsidian-tasks-plugin",
   "tag-wrangler",
@@ -13,6 +12,5 @@
   "homepage",
   "quickadd",
   "metadata-menu",
-  "periodic-notes",
-  "obsidian-citation-plugin"
+  "periodic-notes"
 ]

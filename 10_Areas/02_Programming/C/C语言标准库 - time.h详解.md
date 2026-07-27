@@ -1,24 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#language/c"
-  - "#grain/stdlib"
-  - "#tech/time"
-status: 完成
-complexity: 中级
-notetype: 技术参考
-resource: C标准库文档
-related:
-  - "[[C语言标准库 - stdlib.h详解]]"
-  - "[[C语言标准库 - stdio.h详解]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
 ---
-
-# C语言标准库 - time.h详解
-
 ## 📋 概述
 
 `time.h` 提供了时间和日期相关的函数，包括：
@@ -942,13 +927,13 @@ mktime(&t);
 - [[C语言标准库 - stdio.h详解]] - 文件操作
 - [[C语言标准库 - stdlib.h详解]] - 实用工具
 - [[C语言进阶 - 结构体]] - struct tm结构
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
 ## 相关资源
 
-- [[00_C_MOC]] - C语言知识体系
+- [[C 语言知识地图]] - C语言知识体系
 - [[C语言标准库 - stdio.h详解]] - 时间格式化输出
 - [[C语言标准库 - stdlib.h详解]] - srand()随机数种子
 - [[Linux系统编程 - 进程管理]] - 进程时间统计

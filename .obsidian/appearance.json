@@ -2,14 +2,12 @@
   "nativeMenus": false,
   "baseFontSize": 16,
   "monospaceFontFamily": "Cascadia Code",
-  "cssTheme": "Obsidian Nord",
-  "accentColor": "#24c6ab",
+  "cssTheme": "Things",
+  "accentColor": "#a4d5ce",
   "theme": "system",
-  "interfaceFontFamily": "",
-  "textFontFamily": "Fira Code Retina",
+  "interfaceFontFamily": "Noto Sans SC",
+  "textFontFamily": "Cascadia Mono",
   "enabledCssSnippets": [
-    "codelinenum",
-    "cunstom_style_v2",
     "vscode_search",
     "cunstom_style"
   ]

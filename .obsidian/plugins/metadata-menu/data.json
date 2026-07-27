@@ -3,85 +3,35 @@
     {
       "type": "Multi",
       "tagName": "multi",
-      "icon": "bullet-list",
-      "tooltip": "Accepts multiple values from a list",
+      "icon": "tags",
+      "tooltip": "选择笔记类型、主题和项目标签",
       "colorClass": "multi",
       "options": {
         "sourceType": "ValuesList",
         "valuesList": {
-          "1": "doc",
-          "2": "code",
-          "3": "paper",
-          "4": "course",
-          "5": "article",
-          "6": "video"
-        }
-      },
-      "name": "resource",
-      "id": "7jnzgZ",
-      "path": ""
-    },
-    {
-      "type": "Select",
-      "tagName": "select",
-      "icon": "right-triangle",
-      "tooltip": "Accepts a single value from a list",
-      "colorClass": "select",
-      "options": {
-        "sourceType": "ValuesList",
-        "valuesList": {
-          "1": "📥 收集 (Inbox)",
-          "2": "🌱 孵化中 (Seedling)",
-          "3": "🌿 成长中 (Growing)",
-          "4": "🌲 已完成 (Evergreen)",
-          "5": "📦 归档 (Archived)"
-        }
-      },
-      "name": "status",
-      "id": "TctETK",
-      "path": ""
-    },
-    {
-      "type": "Select",
-      "tagName": "select",
-      "icon": "right-triangle",
-      "tooltip": "Accepts a single value from a list",
-      "colorClass": "select",
-      "options": {
-        "sourceType": "ValuesList",
-        "valuesList": {
-          "1": "⚛️ Atomic",
-          "2": "🏗️ Structure",
-          "3": "🗺️ MOC "
-        }
-      },
-      "name": "notetype",
-      "id": "iOvmR4",
-      "path": ""
-    },
-    {
-      "type": "Multi",
-      "tagName": "multi",
-      "icon": "bullet-list",
-      "tooltip": "Accepts multiple values from a list",
-      "colorClass": "multi",
-      "options": {
-        "sourceType": "ValuesList",
-        "valuesList": {
-          "1": "domain/Chip-arch",
-          "2": "domain/RISC-V",
-          "3": "domain/Boot",
-          "4": "domain/fpga",
-          "5": "domain/C",
-          "6": "domain/Python",
-          "7": "domain/Shell",
-          "8": "domain/Linux",
-          "9": "domain/PCIe",
-          "10": "domain/SerDes",
-          "11": "domain/DDR",
-          "12": "domain/Toolchain",
-          "13": "domain/debug",
-          "18": "proj/Retimer"
+          "1": "type/knowledge",
+          "2": "type/reference",
+          "3": "type/moc",
+          "4": "type/project",
+          "5": "type/daily",
+          "6": "type/inbox",
+          "7": "type/weekly",
+          "8": "topic/programming/c",
+          "9": "topic/programming/python",
+          "10": "topic/programming/shell",
+          "11": "topic/tools",
+          "12": "topic/computer-science/architecture",
+          "13": "topic/computer-science/algorithms",
+          "14": "topic/computer-science/data-structures",
+          "15": "topic/computer-science/networks",
+          "16": "topic/embedded",
+          "17": "topic/embedded/serdes",
+          "18": "topic/embedded/toolchain",
+          "19": "topic/system/linux",
+          "20": "topic/hardware",
+          "21": "topic/personal-development",
+          "22": "project/dragon",
+          "23": "project/songshan"
         }
       },
       "name": "tags",
@@ -94,39 +44,20 @@
     {
       "type": "Select",
       "tagName": "select",
-      "icon": "right-triangle",
-      "tooltip": "Accepts a single value from a list",
+      "icon": "circle-dot",
+      "tooltip": "仅用于项目笔记",
       "colorClass": "select",
       "options": {
         "sourceType": "ValuesList",
         "valuesList": {
-          "1": "⭐⭐⭐⭐⭐",
-          "2": "⭐⭐⭐⭐",
-          "3": "⭐⭐⭐",
-          "4": "⭐⭐",
-          "5": "⭐"
+          "1": "active",
+          "2": "on-hold",
+          "3": "done",
+          "4": "archived"
         }
       },
-      "name": "rating",
-      "id": "vympW5",
-      "path": ""
-    },
-    {
-      "type": "Select",
-      "tagName": "select",
-      "icon": "right-triangle",
-      "tooltip": "Accepts a single value from a list",
-      "colorClass": "select",
-      "options": {
-        "sourceType": "ValuesList",
-        "valuesList": {
-          "1": "⭐️Foundational ",
-          "2": "⭐️⭐️Intermediate",
-          "3": "⭐️⭐️⭐️Advanced "
-        }
-      },
-      "name": "complexity",
-      "id": "aXcU8e",
+      "name": "status",
+      "id": "TctETK",
       "path": ""
     }
   ],
@@ -155,11 +86,10 @@
   "fileIndexingExcludedExtensions": [
     ".excalidraw.md"
   ],
-  "fileIndexingExcludedRegex": [],
-  "frontmatterOnly": false,
-  "showFileClassSelectInModal": true,
+  "frontmatterOnly": true,
+  "showFileClassSelectInModal": false,
   "chooseFileClassAtFileCreation": false,
-  "autoInsertFieldsAtFileClassInsertion": true,
+  "autoInsertFieldsAtFileClassInsertion": false,
   "fileClassIcon": "package",
-  "isAutoCalculationEnabled": true
+  "isAutoCalculationEnabled": false
 }

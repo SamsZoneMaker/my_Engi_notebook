@@ -1,23 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#language/c"
-  - "#grain/stdlib"
-status: 完善中
-complexity: 中级
-notetype: 参考手册
-resource: C标准库文档
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言标准库 - stdlib.h详解]]"
-  - "[[C语言进阶 - 文件IO]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:03
+  - type/reference
+  - topic/programming/c
 ---
-# C语言标准库 - stdio.h详解
-
 > [!abstract] 摘要
 > stdio.h是C语言标准输入输出库,提供了文件操作、格式化输入输出、字符IO等核心功能。本笔记详细介绍stdio.h中所有重要函数的使用方法、参数说明和最佳实践。
 
@@ -930,7 +916,7 @@ free(content);
 * C Primer Plus - Stephen Prata
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言标准库 - stdlib.h详解]] - 内存管理、类型转换
 * [[C语言标准库 - string.h详解]] - 字符串操作函数
 * [[Linux系统编程 - 文件IO]] - 系统调用层文件操作（open/read/write）

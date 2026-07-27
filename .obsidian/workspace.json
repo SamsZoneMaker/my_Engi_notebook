@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Inbox/2026-06-04-1606.md",
+                "file": "10_Areas/02_Programming/C/C语言标准库 - stdio.h详解.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-06-04-1606"
+              "title": "C语言标准库 - stdio.h详解"
             }
           }
         ]
@@ -63,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_Inbox/2026-01-12-1521.md",
+                "file": "10_Areas/02_Programming/C/C语言标准库 - stdio.h详解.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-01-12-1521 的大纲"
+              "title": "C语言标准库 - stdio.h详解 的大纲"
             }
           },
           {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"modified\"]",
+                "query": "tag:#topic/programming/c",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +99,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -199,7 +200,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       },
       {
         "id": "dca79d4e366eddf1",
@@ -220,8 +221,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5,
-    "collapsed": true
+    "width": 347.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,54 +238,54 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "b285f0827c399527",
   "lastOpenFiles": [
-    "20_Project/01_Dragon/本地ai生成内容.md",
-    "00_Inbox/2025-11-26-1555.md",
-    "00_Inbox/2025-11-11-1726.md",
-    "00_Inbox/2025-10-28-1902.md",
-    "00_Inbox/makefile/makefile_others.md",
-    "00_Inbox/makefile/Makefile.md",
-    "00_Inbox/2026-06-04-1606.md",
-    "00_Inbox/202508211039.md",
-    "10_Areas/03_Embeded_System/SerDes/00_SerDes_MOC.md",
-    "10_Areas/02_Programming/Python/Python基础 - 函数.md",
-    "10_Areas/02_Programming/00_Programming_MOC.md",
-    "10_Areas/03_Hardware/00_Hardware_MOC.md",
-    "10_Areas/02_Programming/Python/Python基础 - 类与面向对象.md",
-    "30_Resources/@pci-sig2010.md",
-    "10_Areas/02_Programming/Python/Python高级 - 异常处理.md",
+    "90_obsystem/笔记系统规范.md",
+    "链接脚本文件（.ld).md",
+    "待办.md",
     "未命名.base",
-    "未命名 2.md",
-    "未命名.md",
-    "10_Areas/03_Embeded_System/SerDes/SerDes基础 - 并行与串行数据传输.md",
-    "未命名 1.md",
-    "10_Areas/02_Programming/Python/Python基础 - 基本结构.md",
-    "00_Inbox/2026-01-12-1521.md",
-    "00_Inbox/2026-02-10-1151.md",
-    "00_Inbox/202509261030.md",
-    "00_Inbox/知识类笔记.md",
-    "00_Inbox/Basic.md",
-    "00_Inbox/README.md",
-    "未命名 1.base",
-    "00_Inbox/figures/cdr.png",
-    "00_Inbox/figures/PHY层结构.png",
-    "00_Inbox/figures/image-20250718141501736.png",
-    "00_Inbox/figures/v2-437fd9d7112a81cd32b6325aec131606_r.jpg",
-    "00_Inbox/figures/why_Equalizer",
-    "00_Inbox/figures/Tx_block.png",
-    "00_Inbox/figures/rx_block.png",
-    "00_Inbox/figures/OSI_7层模型.png",
-    "00_Inbox/figures",
-    "00_Inbox/ci_runner.py",
-    "00_Inbox/makefile/figures/flow_chart",
-    "00_Inbox/makefile/figures",
-    "00_Inbox/makefile/最新版本，翻译手册.pdf",
-    "00_Inbox/makefile/makefile_example2.mak",
-    "00_Inbox/makefile/makefile_example1.mak",
-    "10_Areas/03_Embeded_System/Toolchain/figures/image-20251024182455155.png",
-    "10_Areas/03_Embeded_System/Toolchain/figures/ld_1.svg",
-    "50_Attachments/Figures/10_03_Embeded_System/ld_1.svg",
+    "Dashboard.md",
+    "assets/20_02_Songshan/boot_flash_flow.png",
+    "assets/20_02_Songshan/boot_rom_smbus.png",
+    "assets/20_02_Songshan/boot_rom_eeprom.png",
+    "assets/20_02_Songshan/boot_rom_flow.png",
+    "assets/20_02_Songshan/boot_mode_selection.png",
+    "assets/20_02_Songshan",
+    "10_Areas/05_Hardware/硬件知识地图.md",
+    "10_Areas/03_Embeded_System/SerDes/SerDes 知识地图.md",
+    "10_Areas/02_Programming/Tools/开发工具知识地图.md",
+    "10_Areas/02_Programming/Shell/Shell 知识地图.md",
+    "10_Areas/02_Programming/Python/Python 知识地图.md",
+    "10_Areas/02_Programming/C/C 语言知识地图.md",
+    "90_obsystem/Templates/template for quick notes.md",
+    "90_obsystem/Templates/Template for daily notes.md",
+    "90_obsystem/Templates/Template for project notes.md",
+    "90_obsystem/Templates/Template for MOC.md",
+    "90_obsystem/Templates/Template for notes.md",
+    "Homepage.md",
+    "40_Periodic_notes/Daily/2026-07-26.md",
+    "20_Project/ww_songshan/温度监控（连接误码仪版本）.md",
+    "20_Project/01_Dragon/本地ai生成内容.md",
+    "assets/README.md",
+    "assets/01_03_Toolchain/linker_flow.drawio",
+    "assets/01_03_Toolchain/linker_flow.svg",
+    "assets/01_03_Toolchain/linker_flow.png",
+    "assets/01_03_SerDes/equalizer_bandwidth_effect.jpg",
+    "assets/01_03_SerDes/clock_data_recovery.png",
+    "assets/01_03_SerDes/ethernet_phy_sublayers.png",
+    "assets/01_03_Toolchain",
+    "assets/01_02_Build_Tools",
+    "assets/01_03_Boot",
+    "assets/01_01_Networks",
+    "assets/01_03_SerDes",
+    "assets",
+    "30_Resources/@pci-sig2010.md",
+    "40_Periodic_notes/Daily/2025-10-22.md",
+    "40_Periodic_notes/Weekly/2025-W43.md",
+    "99_Archives/socArch_training.md",
+    "20_Project/01_Dragon/日志模块重构方案.md",
+    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
+    "structure.txt",
     "未命名.canvas"
   ]
 }

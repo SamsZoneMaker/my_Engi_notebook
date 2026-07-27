@@ -1,3 +1,8 @@
+---
+tags:
+  - type/project
+  - project/dragon
+---
 ## 设计要求
 
 ### 总体目标

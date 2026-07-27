@@ -1,26 +1,10 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/advanced"
-  - "#language/c"
-  - "#tech/linux"
-  - "#tech/process"
-  - "#grain/system-programming"
-status: 完成
-complexity: 高级
-notetype: 技术参考
-resource: Linux系统编程手册
-related:
-  - "[[Linux系统编程 - 文件IO]]"
-  - "[[Linux系统编程 - 进程间通信]]"
-  - "[[C语言标准库 - stdlib.h详解]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
+  - topic/system/linux
 ---
-
-# Linux系统编程 - 进程管理
-
 ## 📋 概述
 
 进程是Linux系统中程序执行的实例。本文涵盖：
@@ -1572,9 +1556,9 @@ for (int i = 0; i < 10; i++) {
 ## 🔗 相关链接
 
 - [[Linux系统编程 - 文件IO]] - 文件操作
-- [[Linux系统编程 - 进程间通信]] - IPC机制
+- Linux系统编程 - 进程间通信 - IPC机制
 - [[C语言标准库 - stdlib.h详解]] - exit函数
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
@@ -1600,3 +1584,9 @@ for (int i = 0; i < 10; i++) {
 ---
 
 *最后更新: 2025-11-18*
+
+## 相关笔记
+
+- [[Linux系统编程 - 文件IO]]
+- Linux系统编程 - 进程间通信
+- [[C语言标准库 - stdlib.h详解]]

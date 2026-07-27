@@ -1,18 +1,9 @@
 ---
+created: 2026-01-09
 tags:
-  - domain/programming
-  - type/practice
-  - level/advanced
-status: 🌿 成长中 (Growing)
-complexity:
-notetype:
-resource:
-related: []
-created: 2026-01-09 14:45:14
-modified: 2026-01-12  15:20:47
+  - type/knowledge
+  - topic/programming/c
 ---
-# CPP-章节后习题
-
 > [!abstract] 摘要 
 > 这篇笔记用于记录《C Primer Plus》一书的课后习题及一些问题的解答
 

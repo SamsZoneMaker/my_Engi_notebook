@@ -1,5 +1,6 @@
 ---
-modified: 2026-07-09  13:57:20
+tags:
+  - type/inbox
 ---
 swpedia_keyword: [Makefile] 
 
@@ -147,7 +148,7 @@ make命令执行后有三个退出码：
    有依赖发生变化的目标需要重建。
 5. **生成目标文件与最终执行文件**
 
-<img src="figures/flow_chart" alt="image-20250519112640465" style="zoom:50%;" />
+![[assets/01_02_Build_Tools/make_workflow.png]]
 
 **增量编译机制总结：**
 

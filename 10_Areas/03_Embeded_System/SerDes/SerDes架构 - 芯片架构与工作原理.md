@@ -1,23 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/embedded"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#tech/serdes"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: SerDes技术文档
-related:
-  - "[[00_SerDes_MOC]]"
-  - "[[SerDes基础 - 并行与串行数据传输]]"
-  - "[[SerDes技术 - Tx发送器模块]]"
-  - "[[SerDes技术 - Rx接收器模块]]"
-created: 2025-11-18 22:00:00
-modified: 2025-11-18 22:00:00
+  - type/knowledge
+  - topic/embedded/serdes
 ---
-# SerDes架构 - 芯片架构与工作原理
-
 > [!abstract] 摘要
 > 本笔记介绍SerDes芯片的整体架构设计,包括串行器、解串器、时钟管理、信号调节等核心模块的组成和工作原理。
 
@@ -295,9 +281,9 @@ SerDes本质上是**PHY层器件**,工作在OSI模型的物理层。
 * Xilinx/Intel FPGA SerDes User Guide
 
 ## 🕸️ Relation
-* 这篇笔记是[[00_SerDes_MOC|SerDes知识体系]]的核心部分
+* 这篇笔记是[[SerDes 知识地图|SerDes知识体系]]的核心部分
 * [[SerDes基础 - 并行与串行数据传输]] - 理解SerDes存在的必要性
-* [[SerDes技术 - Tx发送器模块]] - 详细了解发送器的实现
-* [[SerDes技术 - Rx接收器模块]] - 详细了解接收器的实现
-* [[SerDes技术 - 时钟与同步]] - 深入理解CDR和PLL
+* SerDes技术 - Tx发送器模块 - 详细了解发送器的实现
+* SerDes技术 - Rx接收器模块 - 详细了解接收器的实现
+* SerDes技术 - 时钟与同步 - 深入理解CDR和PLL
 * [[SerDes技术 - 均衡器与信号完整性]] - 深入理解均衡技术

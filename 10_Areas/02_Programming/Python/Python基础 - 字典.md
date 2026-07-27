@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/python"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 列表与元组]]"
-  - "[[Python基础 - 控制流]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 字典
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的字典(dict)数据结构,包括创建、访问、修改、遍历和嵌套使用的方法。
 
@@ -325,6 +312,6 @@ for username, user_info in users.items():
 * Python官方文档 - Dictionaries
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的核心部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的核心部分
 * 与[[Python基础 - 列表与元组]]共同构成Python的主要数据结构
 * 在[[Python基础 - 类与面向对象]]中,实例属性存储在特殊的字典`__dict__`中

@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/embedded"
-  - "#type/knowledge"
-  - "#level/advanced"
-  - "#tech/serdes"
-status: 完善中
-complexity: 高级
-notetype: 学习笔记
-resource: SerDes技术文档
-related:
-  - "[[00_SerDes_MOC]]"
-  - "[[SerDes架构 - 芯片架构与工作原理]]"
-created: 2025-11-18 22:00:00
-modified: 2025-11-18 22:00:00
+  - type/knowledge
+  - topic/embedded/serdes
 ---
-# SerDes技术 - 均衡器与信号完整性
-
 > [!abstract] 摘要
 > 本笔记深入介绍SerDes中的均衡器技术,包括为什么需要均衡器、信号失真的原因、ISI码间干扰、常见均衡器类型及其工作原理。
 
@@ -409,7 +397,7 @@ Rx: 接收 → [CTLE] → [DFE] → 输出
 * Xilinx GTX/GTH Transceiver User Guide
 
 ## 🕸️ Relation
-* 这篇笔记是[[00_SerDes_MOC|SerDes知识体系]]的高级技术部分
+* 这篇笔记是[[SerDes 知识地图|SerDes知识体系]]的高级技术部分
 * [[SerDes架构 - 芯片架构与工作原理]] - 均衡器在整体架构中的位置
-* [[SerDes技术 - Tx发送器模块]] - FFE在Tx端的应用
-* [[SerDes技术 - Rx接收器模块]] - CTLE和DFE在Rx端的应用
+* SerDes技术 - Tx发送器模块 - FFE在Tx端的应用
+* SerDes技术 - Rx接收器模块 - CTLE和DFE在Rx端的应用

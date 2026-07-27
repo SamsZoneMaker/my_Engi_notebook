@@ -1,25 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#language/c"
-  - "#grain/stdlib"
-  - "#tech/memory"
-status: 完成
-complexity: 中级
-notetype: 技术参考
-resource: C标准库文档
-related:
-  - "[[C语言标准库 - stdio.h详解]]"
-  - "[[C语言标准库 - string.h详解]]"
-  - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
 ---
-
-# C语言标准库 - stdlib.h详解
-
 ## 📋 概述
 
 `stdlib.h` 是C标准库中最重要的头文件之一，提供了通用工具函数，包括：
@@ -1512,13 +1496,13 @@ system(cmd);
 - [[C语言进阶 - 指针详解]] - 指针是动态内存管理的基础
 - [[C语言标准库 - string.h详解]] - 字符串操作函数
 - [[C语言标准库 - stdio.h详解]] - 文件和IO操作
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
 ## 相关资源
 
-- [[00_C_MOC]] - C语言知识体系
+- [[C 语言知识地图]] - C语言知识体系
 - [[C语言标准库 - stdio.h详解]] - 文件IO和格式化输入输出
 - [[C语言标准库 - string.h详解]] - 字符串操作（配合malloc使用）
 - [[C语言进阶 - 指针详解]] - 动态内存分配详解

@@ -245,7 +245,7 @@ PCS层：
 
 **Encoder and Scrambler:** 用于加编码和加扰码，用8b/10b的编码方法防止数据产生连续的0和1。（数据在长时间没有跳动的情况下，采样的时钟会发生漂移）
 
-![Tx_block](figures/Tx_block.png)
+![[assets/01_03_SerDes/serdes_tx_block.png]]
 
 PMA层：
 
@@ -265,7 +265,7 @@ PMA层：
 
 结构与Tx端类似，作用也差不多，多了一个弹性fifo
 
-![rx_block](figures/rx_block.png)
+![[assets/01_03_SerDes/serdes_rx_block.png]]
 
 
 
@@ -275,7 +275,7 @@ PMA：
 
 CDR (Clock data recover) 时钟恢复期，这是SerDes中的一大关键组成部分.
 
-<img src="/figures/cdr.png" alt="cdr" style="zoom:50%;" />
+![[assets/01_03_SerDes/clock_data_recovery.png]]
 
 SerDes和一般传输不一样的地方在于，SerDes没有单独的时钟信号，时钟信号并入数据信号一起传输，好处在于减去了时钟线，不会有其他通信常遇到的时钟边缘和数据中心不对齐的现象（自同步技术）。
 
@@ -289,9 +289,9 @@ SerDes和一般传输不一样的地方在于，SerDes没有单独的时钟信�
 
 **物理层**（Physical Layer）是[计算机网络](https://zh.wikipedia.org/wiki/计算机网络)  [OSI模型](https://zh.wikipedia.org/wiki/OSI模型)中最低的一层，也是最基本的一层。简单的说，网络的物理层面确保原始的数据可在各种物理媒体上传输。物理层器件PHY(Physical Layer Interface Devices)是将各网元连接到物理介质上的关键部件。负责完成互连参考模型(OSI)第1层中的功能，即为链路层实体之间进行bit传输提供物理连接所需的机械、电气、光电转换和规程手段。实现物理层比特bit流的透明传输等。
 
-<img src="./figures/OSI_7层模型.png" alt="OSI_7层模型" style="zoom: 67%;" />
+![[assets/01_01_Networks/osi_7_layer_model.png]]
 
-<img src="./figures/PHY层结构.png" alt="物理层结构" style="zoom:67%;" />
+![[assets/01_03_SerDes/ethernet_phy_sublayers.png]]
 
 如图，上图是OSI的七层模型，下图是物理层的结构。物理层包括四个功能层和两个层接口，四个功能层为：物理编码子层、物理介质连接子层、物理介质相关子层和自动协商子层；两个层接口为物理介质无关层接口（MII）和物理介质相关层接口（MDI），在MII的上层是逻辑数据链路层（DLL），而MDI的下层则直接与传输介质相连，以太网物理层PHY芯片实现的功能就是上面所提到的四层和两个接口的功能。
 
@@ -303,7 +303,7 @@ SerDes和一般传输不一样的地方在于，SerDes没有单独的时钟信�
 
 ### Equalizer 均衡器
 
-<img src="figures/why_Equalizer" alt="why_Equalizer" style="zoom:67%;" />
+![[assets/01_03_SerDes/equalizer_bandwidth_effect.jpg]]
 
 这个图展示的是在不同传输速率（2 Gbps, 8 Gbps, 32 Gbps）下信号经过通道（channel）后的波形对比，以及原始发送信号（Tx）波形。横轴是时间（单位为 UI，Unit Interval，单位间隔），纵轴是电压（V）。
 

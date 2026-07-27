@@ -1,48 +1,53 @@
 ---
-tags:
-  - grain/daily
 date: <% tp.date.now("YYYY-MM-DD") %>
-day: <% tp.date.now("dddd") %>
-week: <% tp.date.now("YYYY-[W]ww") %>
-created: <% tp.date.now("YYYY-MM-DD HH:mm:ss") %>
+tags:
+  - type/daily
 ---
-# <% tp.date.now("YYYY-MM-DD dddd") %>
+## 今日聚焦
 
-> [!quote] 💭 今日一言
-> 
-
----
-
-## ✅ 今日三件要事 (Top 3 Priorities)
 - [ ] 
 - [ ] 
 - [ ] 
 
-## 📝 今日完成的任务
-```dataview
-TASK
-FROM ""
-WHERE completed AND completion = this.file.date
-SORT file.ctime asc
+## 今日到期任务
+
+```tasks
+not done
+due today
+sort by priority
 ```
 
-## 📚 今日小结
+## 今日记录
 
-### 学到的关键知识
+
+## 今日复盘
+
+### 学到的内容
+
 
 ### 遇到的问题
 
-### 思考与想法
 
----
+### 下一步
 
-## 📌 今日新增或修改的笔记
+
+## 今日新增或修改的笔记
+
 ```dataview
 TABLE WITHOUT ID
-  file.link as "笔记",
-  choice(dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd"), "✨ 新增", "🔄 更新") as "类型",
-  file.mtime as "修改时间"
+  file.link AS "笔记",
+  choice(
+    dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd"),
+    "新增",
+    "更新"
+  ) AS "类型",
+  file.mtime AS "修改时间"
 FROM ""
-WHERE (dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd") OR dateformat(file.mday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-DD")) AND file.name != this.file.name
+WHERE (
+  dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd")
+  OR dateformat(file.mday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd")
+)
+AND file.name != this.file.name
+AND !contains(file.path, "90_obsystem/Templates")
 SORT file.mtime DESC
 ```

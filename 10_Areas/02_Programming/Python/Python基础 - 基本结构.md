@@ -1,15 +1,9 @@
 ---
+created: 2026-03-30
 tags:
-status:
-complexity:
-notetype:
-resource:
-related: []
-created: 2026-03-30 11:45:11
-modified: 2026-03-30  14:56:56
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 基本结构
-
 > [!abstract] 摘要 
 > 在这里用一两句话总结这篇笔记的核心目的或关键结论。
 

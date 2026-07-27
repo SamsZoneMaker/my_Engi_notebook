@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/python"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 数据类型]]"
-  - "[[Python基础 - 控制流]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 列表与元组
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的列表(list)和元组(tuple)数据结构,包括创建、访问、修改、管理和高级操作技巧。
 
@@ -1135,6 +1122,6 @@ def grade_analyzer():
 * Python官方文档 - Data Structures
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的核心部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的核心部分
 * 与[[Python基础 - 控制流]]结合使用,可以实现列表的遍历和过滤
 * [[Python基础 - 字典]]是另一种重要的数据结构,与列表互补

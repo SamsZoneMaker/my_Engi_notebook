@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#language/c"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: C Primer Plus、C和指针
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 数组]]"
-  - "[[C语言进阶 - 指针详解]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:04
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言进阶 - 结构体
-
 > [!abstract] 摘要
 > 本笔记深入介绍C语言结构体的定义、使用、内存布局、嵌套、位域、联合体以及链表等数据结构的实现,帮助你掌握复杂数据类型的设计。
 
@@ -867,7 +854,7 @@ typedef struct Node {
 * 数据结构(C语言版) - 严蔚敏
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言基础 - 数组]] - 结构体数组
 * [[C语言进阶 - 指针详解]] - 结构体指针、链表
 * [[C语言进阶 - 字符串]] - 结构体中的字符串成员

@@ -1,9 +1,9 @@
 ---
 tags:
+  - type/reference
 aliases:
 create date: 2025-10-10 10:45:08
 modify date: 2025-10-15  17:18:30
-modified: 2025-10-22  16:17:44
 ---
 # 📝 笔记内容
 
@@ -55,7 +55,5 @@ callout的用法
 注释可以是单行的，也可以是多行的
 1. 方法1：<!-- 这里是注释的内容 -->
 2. 方法2： %% 注释内容 %%
-
-[[@pci-sig2010]]
 
 [^1]: This is the first footnote.

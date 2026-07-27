@@ -1,24 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#language/c"
-  - "#grain/stdlib"
-  - "#tech/math"
-status: 完成
-complexity: 中级
-notetype: 技术参考
-resource: C标准库文档
-related:
-  - "[[C语言标准库 - stdlib.h详解]]"
-  - "[[C语言基础 - 数据类型与变量]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:03
+tags:
+  - type/reference
+  - topic/programming/c
 ---
-
-# C语言标准库 - math.h详解
-
 ## 📋 概述
 
 `math.h` 提供了标准数学函数，包括：
@@ -1000,13 +985,13 @@ if (input < 0) {
 
 - [[C语言标准库 - stdlib.h详解]] - 数值转换、随机数
 - [[C语言基础 - 数据类型与变量]] - 浮点类型
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
 ## 相关资源
 
-- [[00_C_MOC]] - C语言知识体系
+- [[C 语言知识地图]] - C语言知识体系
 - [[C语言标准库 - stdlib.h详解]] - 数值转换和随机数
 - [[C语言标准库 - stdio.h详解]] - 数学结果的格式化输出
 

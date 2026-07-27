@@ -1,25 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/advanced"
-  - "#language/c"
-  - "#tech/design-patterns"
-  - "#grain/advanced"
-status: 完成
-complexity: 高级
-notetype: 技术参考
-resource: C语言设计模式
-related:
-  - "[[C语言进阶 - 指针详解]]"
-  - "[[C语言进阶 - 结构体]]"
-  - "[[C语言进阶 - 函数]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
 ---
-
-# C语言高级 - 状态机设计模式
-
 ## 📋 概述
 
 状态机（State Machine）是一种强大的设计模式，广泛应用于嵌入式系统、协议处理、游戏开发等领域。本文详细介绍如何在C语言中实现状态机。
@@ -795,7 +779,7 @@ if (state_lut[state].handler != NULL) {
 - [[C语言进阶 - 指针详解]] - 函数指针基础
 - [[C语言进阶 - 结构体]] - 结构体应用
 - [[Linux系统编程 - 进程管理]] - 进程状态机
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
@@ -819,3 +803,9 @@ if (state_lut[state].handler != NULL) {
 ---
 
 *最后更新: 2025-11-18*
+
+## 相关笔记
+
+- [[C语言进阶 - 指针详解]]
+- [[C语言进阶 - 结构体]]
+- [[C语言基础 - 函数]]

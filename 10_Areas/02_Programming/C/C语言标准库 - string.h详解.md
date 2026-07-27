@@ -1,26 +1,9 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/intermediate"
-  - "#language/c"
-  - "#grain/stdlib"
-  - "#tech/strings"
-status: 完成
-complexity: 中级
-notetype: 技术参考
-resource: C标准库文档
-related:
-  - "[[C语言进阶 - 字符串]]"
-  - "[[C语言标准库 - stdio.h详解]]"
-  - "[[C语言标准库 - stdlib.h详解]]"
-  - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
 ---
-
-# C语言标准库 - string.h详解
-
 ## 📋 概述
 
 `string.h` 是C标准库中专门处理字符串和内存操作的头文件，包含：
@@ -1391,13 +1374,13 @@ memcmp(data1, data2, 5);
 - [[C语言进阶 - 字符串]] - 字符串基础知识
 - [[C语言进阶 - 指针详解]] - 指针操作
 - [[C语言标准库 - stdlib.h详解]] - 其他实用函数
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
 ## 相关资源
 
-- [[00_C_MOC]] - C语言知识体系
+- [[C 语言知识地图]] - C语言知识体系
 - [[C语言标准库 - stdio.h详解]] - 文件和字符串输入输出
 - [[C语言标准库 - stdlib.h详解]] - 内存管理（memcpy需要）
 - [[C语言进阶 - 字符串]] - 字符串处理进阶

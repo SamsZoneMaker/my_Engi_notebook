@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/c"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: C Primer Plus、C程序设计语言
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 函数]]"
-  - "[[C语言基础 - 数组]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:03
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言基础 - 控制流
-
 > [!abstract] 摘要
 > 本笔记详细介绍C语言的控制流语句,包括条件判断(if-else、switch)、循环结构(for、while、do-while)以及跳转语句(break、continue、goto),帮助你掌握程序逻辑控制的核心技术。
 
@@ -1483,7 +1470,7 @@ int search() {
 * C语言程序设计现代方法 - K. N. King
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言基础 - 数据类型与变量]] - 控制流中需要使用变量和运算符
 * [[C语言基础 - 函数]] - 复杂的控制流逻辑通常封装为函数
 * [[C语言基础 - 数组]] - 循环常用于遍历数组

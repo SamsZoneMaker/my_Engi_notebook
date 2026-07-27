@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/python"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 列表与元组]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 数据类型
-
 > [!abstract] 摘要
 > 本笔记系统介绍Python的基础数据类型,包括字符串、数字和None类型的使用方法、常用操作和最佳实践。
 
@@ -1281,6 +1269,6 @@ def text_formatter():
 * Python官方文档 - Built-in Types
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的基础部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的基础部分
 * 与[[Python基础 - 列表与元组]]共同构成Python的基础数据结构知识
 * 字符串格式化在[[Python基础 - 函数]]中也会频繁使用

@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/advanced"
-  - "#language/python"
-status: 完善中
-complexity: 高级
-notetype: 学习笔记
-resource: Python Threading Documentation
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 类与面向对象]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python高级 - 多线程
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的多线程编程,包括threading模块的使用、线程同步机制和线程队列的实现方法。
 
@@ -457,6 +445,6 @@ print("All tasks completed!")
 * Threading in Python: The Complete Guide
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的高级部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的高级部分
 * [[Python基础 - 类与面向对象]]是理解线程类的基础
 * [[Python高级 - 异常处理]]在多线程中同样重要

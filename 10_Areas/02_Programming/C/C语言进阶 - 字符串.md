@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#language/c"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: C Primer Plus、C和指针
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 数组]]"
-  - "[[C语言进阶 - 指针详解]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:04
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言进阶 - 字符串
-
 > [!abstract] 摘要
 > 本笔记深入介绍C语言字符串处理,包括字符串的本质、string.h标准库函数、字符串常见操作、内存安全问题以及高效的字符串处理技巧。
 
@@ -829,7 +816,7 @@ void safe_strcat(char *dest, const char *src, size_t dest_size) {
 * Secure Coding in C and C++ - Robert C. Seacord
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言基础 - 数组]] - 字符串是特殊的字符数组
 * [[C语言进阶 - 指针详解]] - 字符串与指针密切相关
 * [[C语言进阶 - 结构体]] - 字符串常作为结构体成员

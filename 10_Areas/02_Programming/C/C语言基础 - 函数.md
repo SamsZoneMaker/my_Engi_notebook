@@ -1,23 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/c"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: C Primer Plus、C程序设计语言
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 控制流]]"
-  - "[[C语言基础 - 数组]]"
-  - "[[C语言进阶 - 指针详解]]"
-created: 2025-11-18 22:00:00
-modified: 2026-01-09  14:47:03
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言基础 - 函数
-
 > [!abstract] 摘要
 > 本笔记详细介绍C语言函数的定义、调用、参数传递、返回值、作用域、递归等核心概念,帮助你掌握模块化编程的基础。
 
@@ -1298,7 +1284,7 @@ void fill_array(int arr[], int size) {
 * C和指针 - Kenneth A. Reek
 
 ## 🕸️ Relation
-* [[00_C_MOC]] - C语言知识体系
+* [[C 语言知识地图]] - C语言知识体系
 * [[C语言基础 - 数据类型与变量]] - 函数需要使用变量
 * [[C语言基础 - 控制流]] - 函数内部使用控制流
 * [[C语言基础 - 数组]] - 函数常用于处理数组

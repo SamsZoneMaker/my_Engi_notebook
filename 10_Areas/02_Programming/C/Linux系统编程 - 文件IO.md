@@ -1,26 +1,10 @@
 ---
-tags:
-  - "#domain/programming"
-  - "#type/reference"
-  - "#level/advanced"
-  - "#language/c"
-  - "#tech/linux"
-  - "#tech/syscall"
-  - "#grain/system-programming"
-status: 完成
-complexity: 高级
-notetype: 技术参考
-resource: Linux系统编程手册
-related:
-  - "[[C语言标准库 - stdio.h详解]]"
-  - "[[Linux系统编程 - 进程管理]]"
-  - "[[C语言进阶 - 指针详解]]"
 created: 2025-11-18
-modified: 2026-01-09  14:47:04
+tags:
+  - type/reference
+  - topic/programming/c
+  - topic/system/linux
 ---
-
-# Linux系统编程 - 文件IO
-
 ## 📋 概述
 
 Linux系统提供了两套文件IO接口：
@@ -1072,7 +1056,7 @@ for (int i = 0; i < 1000; i++) {
 - [[C语言标准库 - stdio.h详解]] - 标准IO库
 - [[Linux系统编程 - 进程管理]] - 进程相关系统调用
 - [[C语言进阶 - 指针详解]] - 指针操作
-- [[00_C_MOC]] - C语言知识地图
+- [[C 语言知识地图]] - C语言知识地图
 
 ---
 
@@ -1098,3 +1082,9 @@ for (int i = 0; i < 1000; i++) {
 ---
 
 *最后更新: 2025-11-18*
+
+## 相关笔记
+
+- [[C语言标准库 - stdio.h详解]]
+- [[Linux系统编程 - 进程管理]]
+- [[C语言进阶 - 指针详解]]

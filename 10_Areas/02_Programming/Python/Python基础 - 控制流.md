@@ -1,21 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/basic"
-  - "#language/python"
-status: 完善中
-complexity: 基础
-notetype: 学习笔记
-resource: Python Crash Course
-related:
-  - "[[🐍 00_Python_MOC]]"
-  - "[[Python基础 - 列表与元组]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:05
+  - type/knowledge
+  - topic/programming/python
 ---
-# Python基础 - 控制流
-
 > [!abstract] 摘要
 > 本笔记详细介绍Python中的控制流语句,包括for循环、if条件语句和while循环的使用方法和最佳实践。
 
@@ -966,6 +954,6 @@ def atm_system():
 * Python官方文档 - Control Flow
 
 ## 🕸️ Relation
-* 这篇笔记是[[🐍 00_Python_MOC|Python知识体系]]的核心部分
+* 这篇笔记是[[Python 知识地图|Python知识体系]]的核心部分
 * 与[[Python基础 - 列表与元组]]结合使用,实现数据的遍历和处理
 * 在[[Python基础 - 函数]]和[[Python基础 - 类与面向对象]]中会频繁使用控制流

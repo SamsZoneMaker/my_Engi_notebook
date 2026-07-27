@@ -1,21 +1,26 @@
-# SoC FW review records
-
+---
+tags:
+  - type/project
+  - project/songshan
+---
 ## 1. Boot mode
 
-![image-20250718141501736](D:\WorkSpace\Personal\入职记录\figures\image-20250718141501736.png)
+![[assets/01_03_Boot/boot_media_mapping.png]]
 
 
 
-![image-20250718141715460](C:\Users\desen.li\AppData\Roaming\Typora\typora-user-images\image-20250718141715460.png)
+![[assets/20_02_Songshan/boot_mode_selection.png]]
 
 
 
-![image-20250718141901708](C:\Users\desen.li\AppData\Roaming\Typora\typora-user-images\image-20250718141901708.png)
+![[assets/20_02_Songshan/boot_rom_flow.png]]
 
 gpio要兼容intel的行业准则，efuse是自研的IP
 
 
 
-![image-20250718142446932](C:\Users\desen.li\AppData\Roaming\Typora\typora-user-images\image-20250718142446932.png)![image-20250718143910281](C:\Users\desen.li\AppData\Roaming\Typora\typora-user-images\image-20250718143910281.png)
+![[assets/20_02_Songshan/boot_rom_eeprom.png]]
 
-![image-20250718145221122](C:\Users\desen.li\AppData\Roaming\Typora\typora-user-images\image-20250718145221122.png)
+![[assets/20_02_Songshan/boot_rom_smbus.png]]
+
+![[assets/20_02_Songshan/boot_flash_flow.png]]

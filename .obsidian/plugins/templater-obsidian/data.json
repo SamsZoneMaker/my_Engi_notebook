@@ -1,40 +1,21 @@
 {
   "command_timeout": 5,
   "templates_folder": "90_obsystem/Templates",
-  "templates_pairs": [
-    [
-      "",
-      ""
-    ]
-  ],
-  "trigger_on_file_creation": false,
+  "templates_pairs": [],
+  "trigger_on_file_creation": true,
   "auto_jump_to_cursor": false,
-  "enable_system_commands": true,
-  "shell_path": "/bin/bash",
+  "enable_system_commands": false,
+  "shell_path": "",
   "user_scripts_folder": "",
-  "enable_folder_templates": true,
-  "folder_templates": [
-    {
-      "folder": "",
-      "template": ""
-    }
-  ],
+  "enable_folder_templates": false,
+  "folder_templates": [],
   "enable_file_templates": false,
-  "file_templates": [
-    {
-      "regex": ".*",
-      "template": ""
-    }
-  ],
+  "file_templates": [],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "90_obsystem/Templates/Template for notes.md",
-    ""
+    "90_obsystem/Templates/Template for notes.md"
   ],
-  "startup_templates": [
-    "90_obsystem/Templates/Template for notes.md",
-    ""
-  ],
+  "startup_templates": [],
   "intellisense_render": 1
 }

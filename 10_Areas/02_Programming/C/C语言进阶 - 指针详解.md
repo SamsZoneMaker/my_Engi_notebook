@@ -1,22 +1,9 @@
 ---
+created: 2025-11-18
 tags:
-  - "#domain/programming"
-  - "#type/knowledge"
-  - "#level/intermediate"
-  - "#language/c"
-status: 完善中
-complexity: 中级
-notetype: 学习笔记
-resource: C语言程序设计
-related:
-  - "[[00_C_MOC]]"
-  - "[[C语言基础 - 数据类型与变量]]"
-  - "[[C语言基础 - 数组]]"
-created: 2025-11-18 21:46:54
-modified: 2026-01-09  14:47:04
+  - type/knowledge
+  - topic/programming/c
 ---
-# C语言进阶 - 指针详解
-
 > [!abstract] 摘要
 > 本笔记详细介绍C语言中的指针概念、定义、使用方法,包括指针数组、数组指针、函数指针和动态内存分配等高级主题。
 
@@ -356,7 +343,7 @@ void *p;            // p是一个指针变量,基类型为void,不指向具体�
 * Expert C Programming
 
 ## 🕸️ Relation
-* 这篇笔记是[[00_C_MOC|C语言知识体系]]的核心部分
+* 这篇笔记是[[C 语言知识地图|C语言知识体系]]的核心部分
 * [[C语言基础 - 数组]]与指针密切相关
 * [[C语言基础 - 函数]]中会涉及函数指针
 * [[C语言进阶 - 字符串]]需要理解字符指针

@@ -1,8 +1,7 @@
 ---
-create date: 2025-08-27  10:23
-modify date: 2025-10-17  18:13:29
 tags:
-  - project/🤗Dragon
+  - type/project
+  - project/songshan
 ---
 **Relative to:** #bflash_test #c语言 #project/Dragon 
 
