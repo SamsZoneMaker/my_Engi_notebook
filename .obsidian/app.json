@@ -1,5 +1,5 @@
 {
-  "showLineNumber": true,
+  "showLineNumber": false,
   "showInlineTitle": true,
   "readableLineLength": false,
   "promptDelete": false,
@@ -8,5 +8,7 @@
   "strictLineBreaks": false,
   "showUnsupportedFiles": false,
   "focusNewTab": true,
-  "attachmentFolderPath": "assets"
+  "attachmentFolderPath": "assets",
+  "defaultViewMode": "source",
+  "showIndentGuide": true
 }

@@ -1,0 +1,53 @@
+---
+date: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - type/daily
+---
+## 今日聚焦
+
+- [ ] 今日最重要的事 #task ⏫
+- [ ] 第二项行动 #task
+- [ ] 第三项行动 #task
+
+## 今日到期任务
+
+```tasks
+not done
+due today
+sort by priority
+```
+
+## 今日记录
+
+
+## 今日复盘
+
+### 学到的内容
+
+
+### 遇到的问题
+
+
+### 下一步
+
+
+## 今日新增或修改的笔记
+
+```dataview
+TABLE WITHOUT ID
+  file.link AS "笔记",
+  choice(
+    dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd"),
+    "新增",
+    "更新"
+  ) AS "类型",
+  file.mtime AS "修改时间"
+FROM ""
+WHERE (
+  dateformat(file.cday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd")
+  OR dateformat(file.mday, "yyyy-MM-dd") = dateformat(this.file.date, "yyyy-MM-dd")
+)
+AND file.name != this.file.name
+AND !contains(file.path, "90_System/Templates")
+SORT file.mtime DESC
+```

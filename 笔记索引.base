@@ -1,0 +1,85 @@
+filters:
+  and:
+    - file.ext == "md"
+    - not:
+        - file.inFolder("90_System/Templates")
+        - file.inFolder("99_Archive")
+properties:
+  file.name:
+    displayName: 笔记
+  file.folder:
+    displayName: 目录
+  file.mtime:
+    displayName: 最近修改
+  file.ctime:
+    displayName: 创建时间
+  file.tags:
+    displayName: 标签
+  status:
+    displayName: 状态
+views:
+  - type: table
+    name: 全部笔记
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+      - file.tags
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: 知识笔记
+    filters:
+      and:
+        - file.hasTag("type/knowledge")
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+      - file.tags
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: MOC
+    filters:
+      and:
+        - file.hasTag("type/moc")
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 项目
+    filters:
+      and:
+        - file.hasTag("type/project")
+    order:
+      - file.name
+      - status
+      - file.folder
+      - file.mtime
+      - file.tags
+    sort:
+      - property: status
+        direction: ASC
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: 最近 30 天
+    filters:
+      and:
+        - file.mtime > now() - "30d"
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+      - file.tags
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 50

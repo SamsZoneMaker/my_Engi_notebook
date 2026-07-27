@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Areas/02_Programming/C/C语言标准库 - stdio.h详解.md",
-                "mode": "source",
+                "file": "31_RISC-V/RISC-V - 中断机制.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "C语言标准库 - stdio.h详解"
+              "title": "RISC-V - 中断机制"
             }
           }
         ]
@@ -63,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10_Areas/02_Programming/C/C语言标准库 - stdio.h详解.md",
+                "file": "31_RISC-V/RISC-V - 中断机制.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "C语言标准库 - stdio.h详解 的大纲"
+              "title": "RISC-V - 中断机制 的大纲"
             }
           },
           {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#topic/programming/c",
+                "query": "核心内容",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,8 +99,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -225,7 +224,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:新建数据库": false,
+      "bases:新建数据库": true,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -238,54 +237,54 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "b285f0827c399527",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "90_obsystem/笔记系统规范.md",
-    "链接脚本文件（.ld).md",
-    "待办.md",
-    "未命名.base",
+    "90_System/Templates/Template for notes.md",
+    "31_RISC-V/RISC-V - 中断机制.md",
     "Dashboard.md",
-    "assets/20_02_Songshan/boot_flash_flow.png",
-    "assets/20_02_Songshan/boot_rom_smbus.png",
-    "assets/20_02_Songshan/boot_rom_eeprom.png",
-    "assets/20_02_Songshan/boot_rom_flow.png",
-    "assets/20_02_Songshan/boot_mode_selection.png",
-    "assets/20_02_Songshan",
-    "10_Areas/05_Hardware/硬件知识地图.md",
-    "10_Areas/03_Embeded_System/SerDes/SerDes 知识地图.md",
-    "10_Areas/02_Programming/Tools/开发工具知识地图.md",
-    "10_Areas/02_Programming/Shell/Shell 知识地图.md",
-    "10_Areas/02_Programming/Python/Python 知识地图.md",
-    "10_Areas/02_Programming/C/C 语言知识地图.md",
-    "90_obsystem/Templates/template for quick notes.md",
-    "90_obsystem/Templates/Template for daily notes.md",
-    "90_obsystem/Templates/Template for project notes.md",
-    "90_obsystem/Templates/Template for MOC.md",
-    "90_obsystem/Templates/Template for notes.md",
-    "Homepage.md",
-    "40_Periodic_notes/Daily/2026-07-26.md",
-    "20_Project/ww_songshan/温度监控（连接误码仪版本）.md",
-    "20_Project/01_Dragon/本地ai生成内容.md",
-    "assets/README.md",
-    "assets/01_03_Toolchain/linker_flow.drawio",
-    "assets/01_03_Toolchain/linker_flow.svg",
-    "assets/01_03_Toolchain/linker_flow.png",
-    "assets/01_03_SerDes/equalizer_bandwidth_effect.jpg",
-    "assets/01_03_SerDes/clock_data_recovery.png",
-    "assets/01_03_SerDes/ethernet_phy_sublayers.png",
-    "assets/01_03_Toolchain",
-    "assets/01_02_Build_Tools",
-    "assets/01_03_Boot",
-    "assets/01_01_Networks",
-    "assets/01_03_SerDes",
-    "assets",
-    "30_Resources/@pci-sig2010.md",
-    "40_Periodic_notes/Daily/2025-10-22.md",
-    "40_Periodic_notes/Weekly/2025-W43.md",
-    "99_Archives/socArch_training.md",
-    "20_Project/01_Dragon/日志模块重构方案.md",
-    "10_Areas/03_Embeded_System/Toolchain/链接脚本.md",
-    "structure.txt",
+    "52_Development_Tools/Git - 日常操作.md",
+    "21_C/C 标准库 - math.h.md",
+    "43_Hardware/MOC - Hardware.md",
+    "32_Computer_Architecture/栈与堆.md",
+    "43_Hardware/PINMUX - 引脚复用.md",
+    "52_Development_Tools/MOC - Development Tools.md",
+    "51_Build_Systems/MOC - Build Systems.md",
+    "50_Toolchain/MOC - Toolchain.md",
+    "42_SerDes/MOC - SerDes.md",
+    "41_PCIe/MOC - PCIe.md",
+    "40_Embedded_and_Interfaces/MOC - Embedded Systems.md",
+    "33_Operating_Systems/MOC - Operating Systems.md",
+    "32_Computer_Architecture/MOC - Computer Architecture.md",
+    "31_RISC-V/MOC - RISC-V.md",
+    "30_Computer_Systems/MOC - Computer Systems.md",
+    "23_Shell/MOC - Shell.md",
+    "22_Python/MOC - Python.md",
+    "21_C/MOC - C.md",
+    "20_Programming/MOC - Programming.md",
+    "_rename_mocs.ps1",
+    "00_Inbox/202607271830-Andes plic interrupt.md",
+    "10_Projects/Dragon/日志模块重构设计方案.md",
+    "80_Periodic/Weekly/2025-W43.md",
+    "80_Periodic/Daily/2026-07-27.md",
+    "笔记索引.base",
+    "assets/51_Build_Systems/make_workflow.png",
+    "assets/50_Toolchain/compilation_pipeline.jpg",
+    "assets/50_Toolchain/linker_flow.svg",
+    "assets/50_Toolchain/linker_flow.png",
+    "assets/42_SerDes/equalizer_bandwidth_effect.jpg",
+    "assets/42_SerDes/clock_data_recovery.png",
+    "assets/30_Computer_Systems/Networks/osi_7_layer_model.png",
+    "assets/10_Projects/Songshan/boot_flash_flow.png",
+    "未命名.base",
+    "99_Archive/Dragon 日志模块重构草稿",
+    "70_Resources/Makefile/makefile_example2.mak",
+    "70_Resources/Makefile/makefile_example1.mak",
+    "70_Resources/Makefile",
+    "10_Projects/Songshan",
+    "10_Projects/Dragon",
+    "60_Personal",
+    "assets/10_Projects/Songshan/boot_rom_smbus.png",
+    "assets/10_Projects/Songshan/boot_rom_eeprom.png",
     "未命名.canvas"
   ]
 }

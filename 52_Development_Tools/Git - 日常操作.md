@@ -1,0 +1,160 @@
+---
+created: 2025-11-26
+tags:
+  - type/knowledge
+  - topic/development-tools
+---
+> [!abstract] 核心内容
+> 记录 Git 分支、远程跟踪关系与 stash 的日常操作。
+
+## 清理远程分支
+场景：在web page上修改了分支的名字，但是本地即便使用了 `git fetch`也只是更新新增或修改了的分支，旧分支不会被删除掉。
+
+解决办法：
+- 使用 `git fetch --prune` 或者 `git fetch prune origin`，这会删除远程的分支
+
+## 查看本地分支对应的远程分支
+场景：本地设置了几个本地分支，与远程的名字不一样，需要查看本地的分支对应的是远程的哪个分支
+
+解决办法：
+- 使用 `git branch -vv` 查看所有分支及其追踪的远程分支
+- 使用 `git status -sb` 只看当前分支的追踪信息
+
+## 切换分支
+场景1：远程有一个分支，想要拉到本地作为另一个本地分支
+方法：
+- `git checkout -b phase1-setup-logging origin/claude/phase1-setup-logging` 这一行命令创建了一个本地分支 `phase1-setup-logging`，跟踪到了 `origin/claude/phase1-setup-logging` 分支
+
+场景2：本地已有分支，想让其链接到另一个分支
+方法：
+- `git checkout phase1-setup-logging` 切换到该分支，`git branch -u origin/claude/phase1-setup-logging` 将当前本地分支追踪到该远程分支
+
+## 切换分支 - 保留本地分支 对应远程不同分支
+场景：可以只保留一个本地分支（比如 `main` 或 `work`），然后通过切换它跟踪的远程分支来工作。
+方法：
+```
+# 假设你的本地分支叫 work
+git checkout work
+
+# 方法1：拉取远程分支内容并切换跟踪
+git fetch origin claude/phase1-setup-logging
+git reset --hard origin/claude/phase1-setup-logging
+git branch -u origin/claude/phase1-setup-logging
+
+# 方法2：更简洁的方式（如果远程分支已经 fetch 过）
+git checkout work
+git reset --hard origin/claude/phase1-setup-logging
+git branch -u origin/claude/phase1-setup-logging
+```
+
+推送方式：
+```
+# 做修改...
+git add .
+git commit -m "your changes"
+
+# 推送到当前跟踪的远程分支
+git push
+
+# 或者显式指定推送到哪个远程分支
+git push origin HEAD:claude/phase1-setup-logging
+```
+
+完整的工作流：
+```
+# 初始化：创建一个工作分支
+git checkout -b work
+
+# === 工作在 phase1 ===
+git reset --hard origin/claude/phase1-setup-logging
+git branch -u origin/claude/phase1-setup-logging
+# 做修改...
+git add .
+git commit -m "phase1 work"
+git push
+
+# === 切换到 phase2 ===
+git reset --hard origin/claude/phase2-timestamp-mapping
+git branch -u origin/claude/phase2-timestamp-mapping
+# 做修改...
+git add .
+git commit -m "phase2 work"
+git push
+
+# === 切换回 main ===
+git reset --hard origin/main
+git branch -u origin/main
+```
+
+## 暂存修改
+用 `git stash` 暂存当前的修改
+
+保存当前的修改：
+```
+# 保存所有未提交的修改（已tracked的文件）
+git stash
+
+# 保存时添加描述信息
+git stash save "正在修改logging功能"
+
+# 保存所有修改，包括untracked文件
+git stash -u
+
+# 保存所有修改，包括untracked和ignored文件
+git stash -a
+```
+
+查看stash的修改：
+```
+# 查看所有stash
+git stash list
+
+# 输出示例：
+# stash@{0}: WIP on main: 1a2b3c4 commit message
+# stash@{1}: On work: 正在修改logging功能
+# stash@{2}: WIP on phase1: 5d6e7f8 another commit
+```
+
+恢复stash：
+```
+# 恢复最新的stash并删除它
+git stash pop
+
+# 恢复指定的stash并删除它
+git stash pop stash@{1}
+
+# 恢复最新的stash但不删除它（可以多次应用）
+git stash apply
+
+# 恢复指定的stash但不删除
+git stash apply stash@{1}
+```
+
+删除stash：
+```
+# 删除最新的stash
+git stash drop
+
+# 删除指定的stash
+git stash drop stash@{1}
+
+# 删除所有stash
+git stash clear
+```
+
+查看stash的内容：
+```
+# 查看最新stash的修改内容
+git stash show
+
+# 查看详细的diff
+git stash show -p
+
+# 查看指定stash的内容
+git stash show stash@{1}
+```
+
+## 相关笔记
+
+- [[MOC - Development Tools]]
+- [[VS Code - 使用指南]]

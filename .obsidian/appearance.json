@@ -1,6 +1,6 @@
 {
   "nativeMenus": false,
-  "baseFontSize": 16,
+  "baseFontSize": 17,
   "monospaceFontFamily": "Cascadia Code",
   "cssTheme": "Things",
   "accentColor": "#a4d5ce",
@@ -9,6 +9,7 @@
   "textFontFamily": "Cascadia Mono",
   "enabledCssSnippets": [
     "vscode_search",
-    "cunstom_style"
-  ]
+    "custom_style"
+  ],
+  "showRibbon": true
 }

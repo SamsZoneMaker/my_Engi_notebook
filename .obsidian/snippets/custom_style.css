@@ -1,0 +1,61 @@
+/*
+ * Vault essentials
+ * 保留少量有明确用途的样式，其余外观交给当前主题。
+ */
+
+/* 阅读视图中的标题层级 */
+.markdown-rendered h1 {
+  border-bottom: 3px solid var(--interactive-accent);
+  padding-bottom: 0.3em;
+}
+
+.markdown-rendered h2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.25em;
+}
+
+.markdown-rendered h3 {
+  color: var(--text-accent);
+}
+
+.markdown-rendered h4 {
+  border-left: 3px solid var(--interactive-accent);
+  padding-left: 0.55em;
+}
+
+.markdown-rendered h5 {
+  color: var(--text-muted);
+}
+
+.markdown-rendered h6 {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* 明确区分尚未创建的内部链接 */
+.markdown-rendered .internal-link.is-unresolved {
+  color: var(--text-error);
+  text-decoration-style: dashed;
+}
+
+/* 外部链接使用轻量箭头提示，不覆盖主题本身的链接颜色 */
+.markdown-rendered .external-link::after {
+  content: " ↗";
+  color: var(--text-muted);
+  font-size: 0.8em;
+}
+
+/* 防止大图溢出正文，同时保持原始宽高比 */
+.markdown-rendered img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 6px;
+}
+
+/* 自定义 > [!idea] 灯泡提示框 */
+.callout[data-callout="idea"] {
+  --callout-color: 234, 179, 8;
+  --callout-icon: lucide-lightbulb;
+}

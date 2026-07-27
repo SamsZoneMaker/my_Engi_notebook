@@ -5,7 +5,7 @@
       "name": "Create New Notes",
       "type": "Template",
       "command": true,
-      "templatePath": "90_obsystem/Templates/Template for notes.md",
+      "templatePath": "90_System/Templates/Template for notes.md",
       "fileNameFormat": {
         "enabled": true,
         "format": "{{VALUE}}"
@@ -27,11 +27,41 @@
       },
       "fileExistsMode": "Increment the file name",
       "setFileExistsBehavior": false
+    },
+    {
+      "id": "7eec7f29-8ca4-4d4b-9355-4d087a697928",
+      "name": "Quick Capture to Inbox",
+      "type": "Template",
+      "command": true,
+      "templatePath": "90_System/Templates/template for quick notes.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYYMMDDHHmm}}-{{VALUE}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "00_Inbox"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
     }
   ],
   "inputPrompt": "single-line",
   "devMode": false,
-  "templateFolderPath": "90_obsystem/Templates",
+  "templateFolderPath": "90_System/Templates",
   "announceUpdates": true,
   "version": "2.5.0",
   "globalVariables": {},
