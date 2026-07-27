@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "31_RISC-V/RISC-V - 中断机制.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "核心内容",
+                "query": "[\"tags\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -239,10 +239,14 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "90_System/Templates/Template for notes.md",
-    "31_RISC-V/RISC-V - 中断机制.md",
-    "Dashboard.md",
+    "80_Periodic/Daily/2026-07-27.md",
+    "10_Projects/Songshan/均衡器状态机代码阅读.md",
+    "99_Archive/C Programme.md",
+    "21_C/C - 数据类型与变量.md",
     "52_Development_Tools/Git - 日常操作.md",
+    "31_RISC-V/RISC-V - 中断机制.md",
+    "90_System/Templates/Template for notes.md",
+    "Dashboard.md",
     "21_C/C 标准库 - math.h.md",
     "43_Hardware/MOC - Hardware.md",
     "32_Computer_Architecture/栈与堆.md",
@@ -262,10 +266,6 @@
     "21_C/MOC - C.md",
     "20_Programming/MOC - Programming.md",
     "_rename_mocs.ps1",
-    "00_Inbox/202607271830-Andes plic interrupt.md",
-    "10_Projects/Dragon/日志模块重构设计方案.md",
-    "80_Periodic/Weekly/2025-W43.md",
-    "80_Periodic/Daily/2026-07-27.md",
     "笔记索引.base",
     "assets/51_Build_Systems/make_workflow.png",
     "assets/50_Toolchain/compilation_pipeline.jpg",

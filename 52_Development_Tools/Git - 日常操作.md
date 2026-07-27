@@ -154,6 +154,22 @@ git stash show -p
 git stash show stash@{1}
 ```
 
+删除本地分支：
+```
+# 查看本地分支
+git branch
+
+# 查看更详细的信息
+git branch -v
+
+# 删除本地分支
+git branch -d 分支名
+
+# 强制删除本地分支
+git branch -D 分支名
+
+```
+
 ## 相关笔记
 
 - [[MOC - Development Tools]]

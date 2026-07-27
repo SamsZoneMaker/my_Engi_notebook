@@ -1,12 +1,12 @@
 {
   "nativeMenus": false,
   "baseFontSize": 17,
-  "monospaceFontFamily": "Cascadia Code",
+  "monospaceFontFamily": "Cascadia Code,Noto Sans SC",
   "cssTheme": "Things",
   "accentColor": "#a4d5ce",
   "theme": "system",
   "interfaceFontFamily": "Noto Sans SC",
-  "textFontFamily": "Cascadia Mono",
+  "textFontFamily": "Cascadia Mono,Noto Sans SC",
   "enabledCssSnippets": [
     "vscode_search",
     "custom_style"
