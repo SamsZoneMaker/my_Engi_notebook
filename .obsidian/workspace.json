@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "419846622f19d1d8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "31_RISC-V/RISC-V - 中断机制.md",
+                "file": "31_RISC-V/Andes n25f中断机制.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "RISC-V - 中断机制"
+              "title": "Andes n25f中断机制"
             }
           }
         ]
@@ -63,13 +63,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "31_RISC-V/RISC-V - 中断机制.md",
+                "file": "31_RISC-V/Andes n25f中断机制.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "RISC-V - 中断机制 的大纲"
+              "title": "Andes n25f中断机制 的大纲"
             }
           },
           {
@@ -237,19 +237,23 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "419846622f19d1d8",
   "lastOpenFiles": [
+    "32_Computer_Architecture/栈与堆.md",
+    "31_RISC-V/RISCV - 中断机制.md",
+    "31_RISC-V/Andes n25f中断机制.md",
+    "31_RISC-V/MOC - RISC-V.md",
+    "22_Python/Python - 函数.md",
+    "90_System/Templates/Template for notes.md",
     "80_Periodic/Daily/2026-07-27.md",
+    "structure.txt",
     "10_Projects/Songshan/均衡器状态机代码阅读.md",
     "99_Archive/C Programme.md",
     "21_C/C - 数据类型与变量.md",
     "52_Development_Tools/Git - 日常操作.md",
-    "31_RISC-V/RISC-V - 中断机制.md",
-    "90_System/Templates/Template for notes.md",
     "Dashboard.md",
     "21_C/C 标准库 - math.h.md",
     "43_Hardware/MOC - Hardware.md",
-    "32_Computer_Architecture/栈与堆.md",
     "43_Hardware/PINMUX - 引脚复用.md",
     "52_Development_Tools/MOC - Development Tools.md",
     "51_Build_Systems/MOC - Build Systems.md",
@@ -259,12 +263,9 @@
     "40_Embedded_and_Interfaces/MOC - Embedded Systems.md",
     "33_Operating_Systems/MOC - Operating Systems.md",
     "32_Computer_Architecture/MOC - Computer Architecture.md",
-    "31_RISC-V/MOC - RISC-V.md",
     "30_Computer_Systems/MOC - Computer Systems.md",
     "23_Shell/MOC - Shell.md",
     "22_Python/MOC - Python.md",
-    "21_C/MOC - C.md",
-    "20_Programming/MOC - Programming.md",
     "_rename_mocs.ps1",
     "笔记索引.base",
     "assets/51_Build_Systems/make_workflow.png",
@@ -282,7 +283,6 @@
     "70_Resources/Makefile",
     "10_Projects/Songshan",
     "10_Projects/Dragon",
-    "60_Personal",
     "assets/10_Projects/Songshan/boot_rom_smbus.png",
     "assets/10_Projects/Songshan/boot_rom_eeprom.png",
     "未命名.canvas"

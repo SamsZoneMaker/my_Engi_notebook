@@ -16,7 +16,7 @@ tags:
 ## 固件视角
 
 - [[MOC - Embedded Systems]]
-- [[RISC-V - 中断机制]]
+- [[RISCV - 中断机制]]
 
 ## 项目记录
 
