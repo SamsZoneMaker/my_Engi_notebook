@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"s4hs000000000000","type":"text","text":"# S4 · 一个 bit 完成的双向握手\n§3.3 的全部机制：**我发出去的 Feature Ack 位 = 我的 Remote Valid 位。**\n盯着两个 bit 的值怎么随时间变化，就能看懂为什么不需要单独的确认报文、序号和超时。","x":-1300,"y":-1100,"width":1100,"height":110},
+		{"id":"s4hs000000000001","type":"text","text":"**本板配色**\n- 紫：A / B 的内部状态\n- 绿：线上的 DLLP\n- 黄：状态量更新\n- 红：结论\n- 无色：说明","x":-100,"y":-1100,"width":520,"height":130},
+		{"id":"s4hs000000000010","type":"text","text":"## A 端","x":-1300,"y":-940,"width":520,"height":60,"color":"6"},
+		{"id":"s4hs000000000011","type":"text","text":"## 线上","x":-740,"y":-940,"width":440,"height":60,"color":"4"},
+		{"id":"s4hs000000000012","type":"text","text":"## B 端","x":-260,"y":-940,"width":520,"height":60,"color":"6"},
+		{"id":"s4hs000000000020","type":"text","text":"**t0** 进入 DL_Feature\n清 Remote Supported、清 $Valid$\n$Valid_A = 0$ → 发出去的 $Ack = 0$","x":-1300,"y":-860,"width":520,"height":100,"color":"6"},
+		{"id":"s4hs000000000022","type":"text","text":"**t0** 进入 DL_Feature\n$Valid_B = 0$ → 发出去的 $Ack = 0$","x":-260,"y":-860,"width":520,"height":100,"color":"6"},
+		{"id":"s4hs000000000032","type":"text","text":"**t1** B 收到\n$Valid_B$ 原为 0 → **记录 A 的能力**，$Valid_B := 1$\n收到的 Ack = 0 → **不能退出**（A 还没拿到我的）\n此后 B 发出去的 **Ack = 1**","x":-220,"y":-540,"width":520,"height":120,"color":"3"},
+		{"id":"s4hs000000000041","type":"text","text":"**t2** B → A\nData Link Feature DLLP\nSupported = B 的能力，**Ack = 1**","x":-750,"y":-360,"width":440,"height":100,"color":"4"},
+		{"id":"s4hs000000000040","type":"text","text":"**t2** A 收到\n$Valid_A$ 原为 0 → **记录 B 的能力**，$Valid_A := 1$\n收到的 **Ack = 1 → 退出条件满足** ✅\nA 进入 DL_Init，不再发送 Feature DLLP","x":-1300,"y":-160,"width":520,"height":120,"color":"3"},
+		{"id":"s4hs000000000050","type":"text","text":"**t3** A → **DL_Init**\n开始发 InitFC1（S5）","x":-1300,"y":300,"width":520,"height":110,"color":"6"},
+		{"id":"s4hs000000000051","type":"text","text":"**t3** A → B\n**InitFC1**\nA 已进入 DL_Init，开始流控初始化\n这也是 B 的兜底退出证据","x":-750,"y":60,"width":440,"height":120,"color":"4"},
+		{"id":"s4hs000000000052","type":"text","text":"**t3** B 收到 InitFC1 → **兜底退出** ✅\nB → **DL_Init**；这条路径不激活 Scaled FC","x":-260,"y":300,"width":520,"height":110,"color":"6"},
+		{"id":"s4hs000000000071","type":"text","text":"A 在 DL_Feature 里周期性发 Feature DLLP，$Ack = 0$\nB **从没进过 DL_Feature**，直接进 DL_Init，开始发 **InitFC1**\nA 收到 InitFC1 → 退出条件 1 → **判定对方不玩这套** → A 进 DL_Init\n\n$Valid_A$ 始终为 0 → Remote Supported 全 0 → **Scaled FC 不激活**（Local ∧ Remote = 0）\n但链路照常起来，只是不用 Scaled FC。","x":-1300,"y":780,"width":760,"height":200},
+		{"id":"s4hs000000000081","type":"text","text":"A 已进 DL_Init，**不再发 Feature DLLP**。B 还在 DL_Feature 等 Ack = 1 —— 死等？\n\n**不会。** A 进 DL_Init 后立刻开始发 **InitFC1**。\n「收到 InitFC1」是退出条件 1 → B 照样退出。\n\n退出条件 1 有**双重作用**：判定对方不支持 + 兜住 Ack = 1 丢失。\n（和 S5 里 FI2 的兜底路径同一思路）","x":-500,"y":780,"width":760,"height":200},
+		{"id":"s4hs000000000072","type":"text","text":"⭐ **没有超时机制**\n不是「等 X ms 没回就当不支持」，而是**看到对方做下一步了，就知道它跳过了这一步**。\n不用定超时值、不受速率和重训练影响。**对方的行为本身就是最可靠的信号。**\n（这个套路在第 3 章还会出现三次 → S11「模式四」）","x":-1300,"y":1000,"width":760,"height":150,"color":"1"},
+		{"id":"s4hs000000000082","type":"text","text":"### 周期性重发 = 天然的重传\n每条 DLLP 同时携带「数据」（Supported）和「回执」（Ack），≥ 每 34 µs 一次（Recovery/Configuration 不计入）。丢一条，下一条再来。**不需要序号、不需要 Nak、不需要重传缓冲。**\n这是 S1「self-repairing」的又一个实例。","x":-500,"y":1000,"width":760,"height":150},
+		{"id":"s4hs000000000090","type":"text","text":"### 双方「支持 / 使能」的四种组合\n| 我 | 对方 | 结果 |\n|---|---|---|\n| 支持∧使能 | 支持∧使能 | **正常握手**，唯一能激活特性的组合 |\n| 支持∧使能 | 不支持/未使能 | 我收到 InitFC1 退出；不激活 |\n| 不支持/未使能 | 支持∧使能 | 镜像 |\n| 不支持/未使能 | 不支持/未使能 | 都跳过 DL_Feature |\n\n**四种都能起链路**——Scaled FC 只是性能选项。激活 = Local ∧ Remote（逻辑与）。","x":-1300,"y":1180,"width":760,"height":250},
+		{"id":"s4hs000000000091","type":"text","text":"### Gen5 里这一节实际协商的内容\nTable 3-1 只定义了 **bit 0 = Scaled Flow Control**，bit 22:1 Reserved。\n**整节存在的唯一目的就是协商这 1 个 bit** → 它和 §3.4.2 是一件事的两半（[[01_36_S6_ScaledFC|S6]]）。\n⚠️ 只对 Gen5 成立，Gen6 加了 Immediate Readiness / Extended VC Count / L0p Exit Latency（S11）。\n\n**16 GT/s+ 必须支持 Scaled FC，但协议可选** → 不激活也能跑满速率，只是性能可能受限。「**能力必备、使用可选**」。","x":-500,"y":1180,"width":760,"height":250},
+		{"id":"s4hs000000000070","type":"text","text":"## 分支 ①：对方不支持（或未使能）","x":-1300,"y":700,"width":760,"height":60,"color":"6"},
+		{"id":"s4hs000000000080","type":"text","text":"## 分支 ②：t3 那条 Ack = 1 的 DLLP 丢了","x":-500,"y":700,"width":760,"height":60,"color":"6"},
+		{"id":"s4hs000000000031","type":"text","text":"**t1** A → B\nData Link Feature DLLP\nSupported = A 的能力，**Ack = 0**","x":-740,"y":-680,"width":440,"height":100,"color":"4"},
+		{"id":"s4hs000000000060","type":"text","text":"⭐ **收到 Ack = 1 能推出两件事**\n① 对方的 Ack = 对方的 Valid = 1 → **对方已经拿到我的信息**\n② 这条 DLLP 自带对方的 Supported → **我已经拿到对方的信息**\n**双方信息都齐 → 协议完成。** 一个 bit 够用，因为它把「我方已完成」传给对方，对方结合「我手上有你的数据」就能独立判断。","x":-2080,"y":-400,"width":780,"height":180,"color":"1"}
+	],
+	"edges":[
+		{"id":"es4hs0000000001","fromNode":"s4hs000000000020","fromSide":"right","toNode":"s4hs000000000031","toSide":"left","color":"4"},
+		{"id":"es4hs0000000002","fromNode":"s4hs000000000031","fromSide":"right","toNode":"s4hs000000000032","toSide":"left","color":"4"},
+		{"id":"es4hs0000000003","fromNode":"s4hs000000000032","fromSide":"bottom","toNode":"s4hs000000000041","toSide":"right","color":"4"},
+		{"id":"es4hs0000000004","fromNode":"s4hs000000000041","fromSide":"left","toNode":"s4hs000000000040","toSide":"top","color":"4"},
+		{"id":"es4hs0000000005","fromNode":"s4hs000000000040","fromSide":"bottom","toNode":"s4hs000000000050","toSide":"top","color":"1","label":"N"},
+		{"id":"es4hs0000000006","fromNode":"s4hs000000000040","fromSide":"right","toNode":"s4hs000000000051","toSide":"left","color":"4"},
+		{"id":"es4hs0000000007","fromNode":"s4hs000000000051","fromSide":"right","toNode":"s4hs000000000052","toSide":"left","color":"4"},
+		{"id":"es4hs0000000009","fromNode":"s4hs000000000051","fromSide":"bottom","toNode":"s4hs000000000080","toSide":"top","label":"如果这条丢了？"},
+		{"id":"es4hs000000000a","fromNode":"s4hs000000000071","fromSide":"bottom","toNode":"s4hs000000000072","toSide":"top","toEnd":"none"},
+		{"id":"es4hs000000000b","fromNode":"s4hs000000000081","fromSide":"bottom","toNode":"s4hs000000000082","toSide":"top","toEnd":"none"},
+		{"id":"f67a13eaf0a42933","fromNode":"s4hs000000000040","fromSide":"left","toNode":"s4hs000000000060","toSide":"bottom"}
+	]
+}

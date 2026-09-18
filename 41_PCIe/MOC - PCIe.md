@@ -18,6 +18,7 @@ tags:
 
 ## 前置与相邻主题
 
+- [[01_3f_Gen5_DLL_MOC]]：PCIe Gen5 第 3 章数据链路层完整学习入口（细节笔记、独立讲义与 Canvas）。
 - [[MOC - SerDes]]：理解物理层收发、均衡和信号完整性。
 - [[MOC - Computer Architecture]]：理解内存映射、事务和中断。
 - [[MOC - Hardware]]：连接板级链路、引脚和芯片实现。

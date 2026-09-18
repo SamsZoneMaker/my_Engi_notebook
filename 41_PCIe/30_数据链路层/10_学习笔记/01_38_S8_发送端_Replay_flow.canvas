@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"rp00000000000000","type":"text","text":"[[01_46_99_看懂流程图|图例]]\n- 红框：判断\n- 黄框：状态量更新\n- 紫框：阶段切换\n- 无色框：动作 / 说明\n- 红线：主路径","x":-1220,"y":-1160,"width":320,"height":230},
+		{"id":"rp00000000000004","type":"text","text":"**步骤 2**\n触发它的是「**确认了某些 TLP** 的 Nak」吗？","x":-540,"y":-780,"width":320,"height":105,"color":"1"},
+		{"id":"rp0000000000000a","type":"text","text":"**步骤 3**\n阻塞：不再从发送侧事务层接收新的 TLP","x":-540,"y":-202,"width":320,"height":102},
+		{"id":"rp0000000000000c","type":"text","text":"**步骤 5**\n**重发所有未确认的 TLP**\n从**最老的**开始，按**原始发送顺序**","x":-540,"y":158,"width":320,"height":102,"color":"6"},
+		{"id":"rp0000000000000f","type":"text","text":"**步骤 6**\n重新允许从事务层接收新 TLP\n→ 回到正常操作","x":-540,"y":340,"width":320,"height":85,"color":"6"},
+		{"id":"rp0000000000000d","type":"text","text":"重发**第一个** TLP 的最后一个 Symbol 处：\n**重置并重启** $REPLAY\\_TIMER$","x":-1080,"y":65,"width":430,"height":85,"color":"3"},
+		{"id":"rp00000000000011","type":"text","text":"### 放弃步骤\n```\n单个 TLP 出错  → Nak / 超时 → replay\n     ↓ 连续 4 次仍无进展\n怀疑链路本身  → 物理层重训练（Recovery）\n     ↓ 重训练也失败\n宣告链路死亡  → LinkUp=0b → DL_Inactive\n```\n**PCIe 的错误处理是逐级升级的：先怀疑包，再怀疑链路，最后才放弃。**","x":680,"y":-230,"width":460,"height":338},
+		{"id":"rp00000000000007","type":"text","text":"**步骤 2a**\n从 `11b` 溢出到 `00b`？\n（即第 4 次 replay）","x":-540,"y":-417,"width":320,"height":95,"color":"1"},
+		{"id":"rp00000000000009","type":"text","text":"⚠️ **Retry Buffer 不会被清空**\nspec：DLL 状态（含 Retry Buffer）\n**不因此动作而复位**，除非物理层\n报告 $LinkUp = 0b$（→ DL_Inactive）\n\n**重训练是「修链路」，不是「放弃数据」**","x":460,"y":-526,"width":380,"height":204},
+		{"id":"rp00000000000005","type":"text","text":"$REPLAY\\_NUM$ **重置为 0**\n之后**允许但不要求**再 +1\n（因为有 forward progress）","x":-1030,"y":-675,"width":380,"height":105,"color":"3"},
+		{"id":"rp0000000000000b","type":"text","text":"**步骤 4**\n完成当前**正在发送**的那个 TLP\n（不能腰斩中途中断，否则物理层帧会坏）","x":-540,"y":-33,"width":320,"height":133},
+		{"id":"rp00000000000006","type":"text","text":"$REPLAY\\_NUM = REPLAY\\_NUM + 1$","x":-570,"y":-561,"width":380,"height":70,"color":"3"},
+		{"id":"rp00000000000008","type":"text","text":"**通知物理层重训练链路**\n（LTSSM Recovery）\n**等重训练完成**后再继续 replay\n→ 这是一个 **reported error**","x":-100,"y":-344,"width":340,"height":142,"color":"6"},
+		{"id":"rp0000000000000e","type":"text","text":"**replay 期间收到 Ack / Nak 怎么办**\n\n**允许**：完全无视，照常发完\n**也允许**：跳过那些刚被确认的 TLP\nQ：conflict！\n\n⚠️ **注意**：一旦开始重发某个 TLP，\n**无论如何必须把它发完**\n\n**必须处理，且可「折叠（collapse）」**：\n- 多个 Ack → 只看序号最大的\n- Nak 后跟更晚的 Ack → **Ack 覆盖 Nak**","x":0,"y":34,"width":560,"height":349},
+		{"id":"rp00000000000010","type":"text","text":"💡 **重发不消耗额外 credit**\nspec：Retry Buffer 里的条目\n**第一次发时就已经在接收方分配过空间**，\n所以 **no further flow control synchronization is necessary**。\n\n**流控和重传是两套正交的机制。**","x":-1080,"y":273,"width":430,"height":220,"color":"1"},
+		{"id":"rp00000000000002","type":"text","text":"**步骤 1**\n所有 TLP 都已确认？","x":-540,"y":-1240,"width":320,"height":105,"color":"1"},
+		{"id":"rp00000000000001","type":"text","text":"==[[01_46_99_看懂流程图#^769821|从我开始]]==\n**两个触发源**\n① 收到 **Nak**（主要机制）\n② $REPLAY\\_TIMER$ 超时（次要 / 兜底）","x":-590,"y":-1045,"width":420,"height":160},
+		{"id":"rp00000000000003","type":"text","text":"**终止 replay**\n没有东西需要重发","x":-60,"y":-1227,"width":300,"height":80,"color":"6"}
+	],
+	"edges":[
+		{"id":"erp00000000002","fromNode":"rp00000000000002","fromSide":"right","toNode":"rp00000000000003","toSide":"left","color":"1","label":"Y"},
+		{"id":"erp00000000004","fromNode":"rp00000000000004","fromSide":"left","toNode":"rp00000000000005","toSide":"top","color":"1","label":"Y"},
+		{"id":"erp00000000005","fromNode":"rp00000000000004","fromSide":"bottom","toNode":"rp00000000000006","toSide":"top","color":"1","label":"N"},
+		{"id":"erp00000000006","fromNode":"rp00000000000005","fromSide":"bottom","toNode":"rp00000000000006","toSide":"left","color":"1"},
+		{"id":"erp00000000007","fromNode":"rp00000000000006","fromSide":"bottom","toNode":"rp00000000000007","toSide":"top","color":"1"},
+		{"id":"erp00000000008","fromNode":"rp00000000000007","fromSide":"right","toNode":"rp00000000000008","toSide":"top","color":"1","label":"Y"},
+		{"id":"erp00000000009","fromNode":"rp00000000000008","fromSide":"right","toNode":"rp00000000000009","toSide":"left"},
+		{"id":"erp0000000000a","fromNode":"rp00000000000008","fromSide":"bottom","toNode":"rp0000000000000a","toSide":"right","color":"1","label":"训练完成后继续"},
+		{"id":"erp0000000000b","fromNode":"rp00000000000007","fromSide":"bottom","toNode":"rp0000000000000a","toSide":"top","color":"1","label":"N"},
+		{"id":"erp0000000000c","fromNode":"rp0000000000000a","fromSide":"bottom","toNode":"rp0000000000000b","toSide":"top","color":"1"},
+		{"id":"erp0000000000d","fromNode":"rp0000000000000b","fromSide":"bottom","toNode":"rp0000000000000c","toSide":"top","color":"1"},
+		{"id":"erp0000000000e","fromNode":"rp0000000000000c","fromSide":"left","toNode":"rp0000000000000d","toSide":"right"},
+		{"id":"erp0000000000f","fromNode":"rp0000000000000c","fromSide":"right","toNode":"rp0000000000000e","toSide":"left"},
+		{"id":"erp00000000010","fromNode":"rp0000000000000c","fromSide":"bottom","toNode":"rp0000000000000f","toSide":"top","color":"1"},
+		{"id":"erp00000000011","fromNode":"rp0000000000000f","fromSide":"left","toNode":"rp00000000000010","toSide":"right"},
+		{"id":"ded6fb5e40193c83","fromNode":"rp00000000000002","fromSide":"bottom","toNode":"rp00000000000001","toSide":"top","label":"N"},
+		{"id":"cd8af5baa382a590","fromNode":"rp00000000000001","fromSide":"bottom","toNode":"rp00000000000004","toSide":"top"}
+	]
+}

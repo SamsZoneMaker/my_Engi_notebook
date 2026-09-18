@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"s6sh000000000000","type":"text","text":"# S6 · Scaled Flow Control = 移位\n**DLLP 里的字段位宽一个都没变**（Hdr 8 位、Data 12 位），变的只是「一格代表几个 credit」。\n三块面板分别对应三个缩放因子：看内部计数器的**哪几位**上线、接收方怎么还原、代价是什么。","x":-1300,"y":-1230,"width":1500,"height":110},
+		{"id":"s6sh000000000010","type":"text","text":"## Scale = 01b（因子 1）","x":-1300,"y":-1085,"width":460,"height":60,"color":"6"},
+		{"id":"s6sh000000000011","type":"text","text":"**内部 HdrFC[7:0]**（8 位）\n**内部 DataFC[11:0]**（12 位）","x":-1300,"y":-990,"width":460,"height":80,"color":"6"},
+		{"id":"s6sh000000000030","type":"text","text":"## Scale = 11b（因子 16）","x":-260,"y":-1085,"width":460,"height":60,"color":"6"},
+		{"id":"s6sh000000000031","type":"text","text":"**内部 HdrFC[11:0]**（12 位）\n**内部 DataFC[15:0]**（16 位）","x":-260,"y":-990,"width":460,"height":80,"color":"6"},
+		{"id":"s6sh000000000020","type":"text","text":"## Scale = 10b（因子 4）","x":-780,"y":-1085,"width":460,"height":60,"color":"6"},
+		{"id":"s6sh000000000021","type":"text","text":"**内部 HdrFC[9:0]**（10 位）\n**内部 DataFC[13:0]**（14 位）","x":-780,"y":-990,"width":460,"height":80,"color":"6"},
+		{"id":"s6sh000000000040","type":"text","text":"⭐ **线上字段位宽从来没变：Hdr 永远 8 位，Data 永远 12 位**\nTable 3-2 的「Field Width」列（8/10/12、12/14/16）说的是**芯片内部计数器**，不是线上。我第一遍就被这一列误导以为 DLLP 变长了。**没有。**\n「丢掉最低 n 位」=「除以 2ⁿ」=「一格代表 2ⁿ 个 credit」—— 三种说法一回事。","x":250,"y":-862,"width":760,"height":130,"color":"1"},
+		{"id":"s6sh000000000012","type":"text","text":"**线上 HdrFC = HdrFC[7:0]**（原样）\n**线上 DataFC = DataFC[11:0]**（原样）\n接收：原样","x":-1300,"y":-732,"width":460,"height":95,"color":"4"},
+		{"id":"s6sh000000000032","type":"text","text":"**线上 HdrFC = HdrFC[11:4]**（丢最低 4 位 = `>> 4`）\n**线上 DataFC = DataFC[15:4]**\n接收：`<< 4` 还原","x":-260,"y":-732,"width":460,"height":95,"color":"4"},
+		{"id":"s6sh000000000022","type":"text","text":"**线上 HdrFC = HdrFC[9:2]**（丢最低 2 位 = `>> 2`）\n**线上 DataFC = DataFC[13:2]**\n接收：`<< 2` 还原（最低 2 位补 0）","x":-780,"y":-732,"width":460,"height":95,"color":"4"},
+		{"id":"s6sh000000000023","type":"text","text":"粒度 **4** · 最大 Hdr **127×4 = 508** · 最大 Data **2047×4 = 8188**\n最小能通告 **4**（一格就是 4 个）","x":-780,"y":-574,"width":460,"height":85},
+		{"id":"s6sh000000000033","type":"text","text":"粒度 **16** · 最大 Hdr **127×16 = 2032** · 最大 Data **2047×16 = 32752**\n最小能通告 **16**","x":-260,"y":-574,"width":460,"height":85},
+		{"id":"s6sh000000000013","type":"text","text":"粒度 **1** · 最大 Hdr **127** · 最大 Data **2047**\n和 00b 行为完全一样，区别只在「我玩不玩 Scaled FC」（见 ⑤）","x":-1300,"y":-574,"width":460,"height":85},
+		{"id":"s6sh000000000060","type":"text","text":"## 为什么需要它：带宽时延积（量级估算）\ncredit 从 A 发出 TLP 时被消耗，要等 B 收到 → 上层取走 → 发 UpdateFC → 飞回 A，**整个往返期间那份 credit 在途、用不了**。\n需要的在途容量 = 带宽 × 往返时延。\n\n**Gen5 x16**，往返 ≈ 1 µs：63 GB/s × 1 µs ≈ **63 KB**\n不缩放上限：2047 × 16 B ≈ **32 KB** —— 差一半 → spec：*can limit performance*\n因子 16 上限：32752 × 16 B ≈ **512 KB** —— 绰绰有余","x":250,"y":-637,"width":760,"height":250},
+		{"id":"s6sh000000000052","type":"text","text":"**要通告 67 个**\n发送：`67 >> 2 = 16` 上线（16.75 取整）\n接收：`16 << 2 = 64` —— **少了 3 个**\n\n那 3 个没丢，只是**暂时报不出去**。接收方要再腾出 1 个凑到 68，才能上线报 17。\n**缩放因子 = 通告的最小粒度。用精度换量程。**","x":-540,"y":-270,"width":470,"height":170,"color":"3"},
+		{"id":"s6sh000000000051","type":"text","text":"**要通告 64 个**（= 1024 B payload，Figure 3-3 的 040h）\n发送：`64 >> 2 = 16` 上线\n接收：`16 << 2 = 64` ✅ **无损**\n\n因子 16：`64 >> 4 = 4`，接收 `4 << 4 = 64` ✅ 也无损","x":-1030,"y":-270,"width":470,"height":170,"color":"3"},
+		{"id":"s6sh000000000050","type":"text","text":"## 用两个数算一遍（Data credit，因子 4）","x":-1030,"y":-350,"width":960,"height":60,"color":"3"},
+		{"id":"s6sh000000000071","type":"text","text":"| 编码 | 因子 | 含义 |\n|---|---|---|\n| `00b` | 1 | **我不玩 Scaled FC** |\n| `01b` | 1 | **我玩，但这类 credit 用因子 1 就够** |\n\nspec 判「该 VC 启不启用」看的是 **FC_INIT1 收到的 Scale 值是不是 0**，不是因子是不是 1。\n收到非零 → 启用 → 之后 UpdateFC 必须填 01b/10b/11b；收到零 → 不启用 → 填 00b。\n\n**Hdr 和 Data 的因子可以不同**：`HdrScale=01b, DataScale=11b` 完全合法。","x":-1300,"y":60,"width":700,"height":260},
+		{"id":"s6sh000000000081","type":"text","text":"| 词 | 作用域 | 判定 | 出处 |\n|---|---|---|---|\n| **Supported** | 单个 **Port** | 硬件能力位（Table 3-1 bit0） | §3.3 |\n| **Activated** | 整条 **Link** | Local ∧ Remote 都置位 | §3.3 |\n| **Enabled** | 单个 **VC** | FC_INIT1 收到非零 Scale | §3.4.2 |\n\n粒度不同才分三层：硬件属性 → 链路属性 → VC 属性。实际实现里通常一致，但 spec 分开定义让边界情况不含糊。","x":-560,"y":60,"width":760,"height":260},
+		{"id":"s6sh000000000070","type":"text","text":"## ⑤ 00b vs 01b：因子都是 1，为什么要两个？","x":-1300,"y":-40,"width":700,"height":60,"color":"6"},
+		{"id":"s6sh000000000080","type":"text","text":"## 三个层次：Supported → Activated → Enabled","x":-560,"y":-40,"width":760,"height":60,"color":"6"},
+		{"id":"s6sh000000000090","type":"text","text":"⭐ **为什么上限是 127 / 2047，不是 255 / 4095**\ncredit 计数器用**模运算**比大小，要留一半空间区分「领先」和「落后」→ 8 位只用 [0,127]，12 位只用 [0,2047]。\n这是第 2 章 §2.6 的规则，第 3 章只引用。TLP 序号也使用 2048 半环门限，但 Equation 3-1 左式=未确认数+1；各判断式的 `<` / `≤` 边界必须逐条照抄。","x":250,"y":-290,"width":760,"height":210,"color":"1"},
+		{"id":"s6sh000000000091","type":"text","text":"### 速率三条\n① 所有 Port 都**允许**支持　② 16 GT/s+ **必须**支持　③ 激活与否**不影响**跑 16 GT/s+\n→ 没激活照样跑 32 GT/s，只是性能可能受限。**能力必备、使用可选。**（S4 那个「矛盾」的答案）","x":250,"y":5,"width":760,"height":155},
+		{"id":"s6sh000000000001","type":"text","text":"**本板配色**\n- 紫：内部计数器\n- 绿：线上的 DLLP 字段\n- 黄：算术例子\n- 红：结论 / 陷阱\n- 无色：说明","x":-1800,"y":-1085,"width":340,"height":260}
+	],
+	"edges":[
+		{"id":"es6sh0000000001","fromNode":"s6sh000000000011","fromSide":"bottom","toNode":"s6sh000000000012","toSide":"top","label":"原样"},
+		{"id":"es6sh0000000002","fromNode":"s6sh000000000021","fromSide":"bottom","toNode":"s6sh000000000022","toSide":"top","label":">> 2"},
+		{"id":"es6sh0000000003","fromNode":"s6sh000000000031","fromSide":"bottom","toNode":"s6sh000000000032","toSide":"top","label":">> 4"},
+		{"id":"es6sh0000000004","fromNode":"s6sh000000000012","fromSide":"bottom","toNode":"s6sh000000000013","toSide":"top","toEnd":"none"},
+		{"id":"es6sh0000000005","fromNode":"s6sh000000000022","fromSide":"bottom","toNode":"s6sh000000000023","toSide":"top","toEnd":"none"},
+		{"id":"es6sh0000000006","fromNode":"s6sh000000000032","fromSide":"bottom","toNode":"s6sh000000000033","toSide":"top","toEnd":"none"},
+		{"id":"es6sh0000000007","fromNode":"s6sh000000000023","fromSide":"bottom","toNode":"s6sh000000000050","toSide":"top","label":"代价在哪？算一遍"},
+		{"id":"es6sh0000000008","fromNode":"s6sh000000000013","fromSide":"bottom","toNode":"s6sh000000000070","toSide":"left","label":"那 00b 呢？"},
+		{"id":"es6sh0000000009","fromNode":"s6sh000000000071","fromSide":"right","toNode":"s6sh000000000081","toSide":"left","toEnd":"none"}
+	]
+}

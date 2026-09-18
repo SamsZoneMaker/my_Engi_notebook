@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"rt00000000000000","type":"text","text":"# $REPLAY\\_TIMER$ 的 7 条启停规则\n§3.6.2.1 用 7 个 bullet 定义了它的行为。**只记住「超时就重发」是远远不够的。**\n本板按「**动作类型**」分组，不是流程图。","x":-1080,"y":-980,"width":1180,"height":120},
+		{"id":"rt00000000000001","type":"text","text":"**本板配色**\n- 紫：变量本体\n- 绿：**启动**\n- 黄：**重置并重启**\n- 橙：**重置并保持**（归零后停住）\n- 青：**不推进**（冻结，保持当前值）","x":380,"y":-980,"width":720,"height":150},
+		{"id":"rt00000000000010","type":"text","text":"# $REPLAY\\_TIMER$\n\n**作用**：计量「多久没收到 Ack/Nak 了」\n\n超过 **REPLAY_TIMER Limit** → **发起 replay**\n（Replay Timer Timeout，是 reported error）\n\n→ [[01_38_S8_发送端_Replay_flow.canvas|replay 流程看板]]","x":-260,"y":-500,"width":520,"height":260,"color":"6"},
+		{"id":"rt00000000000020","type":"text","text":"## ▶ 启动（start）","x":-1080,"y":-800,"width":720,"height":60,"color":"4"},
+		{"id":"rt00000000000021","type":"text","text":"**规则 1**\n任何 TLP **发送或重发**的**最后一个 Symbol** 处启动，\n**前提是它还没在跑**（if not already running）","x":-1080,"y":-720,"width":720,"height":105,"color":"4"},
+		{"id":"rt00000000000022","type":"text","text":"**规则 2**\n每次 **replay** 时，在**重发的第一个 TLP** 的\n最后一个 Symbol 处**重置并重启**","x":-1080,"y":-595,"width":720,"height":95,"color":"4"},
+		{"id":"rt00000000000030","type":"text","text":"## ↻ 重置并重启（reset and restart）","x":380,"y":-800,"width":720,"height":60,"color":"3"},
+		{"id":"rt00000000000040","type":"text","text":"## ⏹ 重置并保持（reset and hold）","x":-1080,"y":-170,"width":720,"height":60,"color":"2"},
+		{"id":"rt00000000000041","type":"text","text":"**规则 4**\n收到 **Nak** 时（**replay 期间除外**），\n或 $REPLAY\\_TIMER$ **自己超时**时\n\n→ 归零后**停住**，等规则 1 / 2 的启动条件出现\n（因为马上就要开始 replay 了）","x":-1080,"y":-90,"width":720,"height":140,"color":"2"},
+		{"id":"rt00000000000042","type":"text","text":"**规则 7**\n**没有任何未确认的 TLP 时**（Retry Buffer 空）\n\n→ 归零后**停住**。没有在等的东西，计时毫无意义。\n直到下一个 TLP 发出去（规则 1）才重新开始跑。","x":-1080,"y":70,"width":720,"height":125,"color":"2"},
+		{"id":"rt00000000000050","type":"text","text":"## ⏸ 不推进 / 冻结（not advanced）","x":380,"y":-170,"width":720,"height":60,"color":"5"},
+		{"id":"rt00000000000051","type":"text","text":"**规则 5**\n**链路重训练期间不推进**，保持当前值\n（LTSSM 处于 **Recovery** 或 **Configuration** 状态）\n\n⚠️ 注意措辞：不是清零，是**暂停**（holds its value）","x":380,"y":-90,"width":720,"height":145,"color":"5"},
+		{"id":"rt00000000000032","type":"text","text":"💡 **spec 自己的注解**\n> This ensures that REPLAY_TIMER is reset\n> **only when forward progress is being made**\n\n**条件③排除的是「重复的 Ack」。**\n若每收到一个 Ack 就重置，对方反复发同一个 Ack\n就能让计时器**永不超时** → 卡住的 TLP 永不重发 → **活锁**。\n\n同一原则也管着 $REPLAY\\_NUM$ →\n[[01_35_01_发送端_变量.canvas|发送端状态变量看板]]","x":380,"y":-420,"width":720,"height":230,"color":"1"},
+		{"id":"rt00000000000031","type":"text","text":"**规则 3** —— 全章最精妙的一条\n收到 **Ack** 时重置重启，条件有 **3 个，缺一不可**：\n① 收到的是 **Ack**\n② **还有更多未确认的 TLP 在途**\n③ **当且仅当（if and only if）**这个 Ack\n   **确认了 Retry Buffer 里的某些 TLP**","x":380,"y":-705,"width":720,"height":220,"color":"3"},
+		{"id":"rt00000000000061","type":"text","text":"### 一句话记住这 7 条\n\n**「发了包就开始计时，有进展就重来，没进展就让它跑到超时，\n链路修理期间暂停，没事干就归零。」**\n\n核心是那个 **iff**：**只有 forward progress 才有资格重置错误计数。**","x":740,"y":455,"width":720,"height":180,"color":"1"},
+		{"id":"rt00000000000052","type":"text","text":"**规则 6**\n若支持 **Protocol Multiplexing**，\n**可选**在接收 PMUX Packet 期间不推进\n（Appendix G，非本章内容）","x":960,"y":230,"width":720,"height":148,"color":"5"},
+		{"id":"rt00000000000060","type":"text","text":"### 规则 5 与前面章节的呼应\n\n| 章节 | 措辞 | 含义 |\n|---|---|---|\n| §3.3 / §3.4 的 34 µs 要求 | *does not **contribute** to this limit* | 不计入 |\n| §3.6.2.1 本规则 | *not **advanced**, holds its value* | 冻结 |\n\n**同一个道理：链路在重训练时根本发不了包，把这段时间算进去就会误判。**\n凡「周期性发 DLLP」或「超时计时」的要求，都要扣掉链路发不了包的时间。","x":-220,"y":195,"width":900,"height":315}
+	],
+	"edges":[
+		{"id":"ert00000000001","fromNode":"rt00000000000010","fromSide":"left","toNode":"rt00000000000020","toSide":"right"},
+		{"id":"ert00000000002","fromNode":"rt00000000000010","fromSide":"right","toNode":"rt00000000000030","toSide":"left"},
+		{"id":"ert00000000003","fromNode":"rt00000000000010","fromSide":"left","toNode":"rt00000000000040","toSide":"right"},
+		{"id":"ert00000000004","fromNode":"rt00000000000010","fromSide":"right","toNode":"rt00000000000050","toSide":"left"},
+		{"id":"ert00000000005","fromNode":"rt00000000000020","fromSide":"bottom","toNode":"rt00000000000021","toSide":"top","toEnd":"none"},
+		{"id":"ert00000000006","fromNode":"rt00000000000021","fromSide":"bottom","toNode":"rt00000000000022","toSide":"top","toEnd":"none"},
+		{"id":"ert00000000007","fromNode":"rt00000000000030","fromSide":"bottom","toNode":"rt00000000000031","toSide":"top","toEnd":"none"},
+		{"id":"ert00000000008","fromNode":"rt00000000000031","fromSide":"bottom","toNode":"rt00000000000032","toSide":"top","toEnd":"none"},
+		{"id":"ert00000000009","fromNode":"rt00000000000040","fromSide":"bottom","toNode":"rt00000000000041","toSide":"top","toEnd":"none"},
+		{"id":"ert0000000000a","fromNode":"rt00000000000041","fromSide":"bottom","toNode":"rt00000000000042","toSide":"top","toEnd":"none"},
+		{"id":"ert0000000000b","fromNode":"rt00000000000050","fromSide":"bottom","toNode":"rt00000000000051","toSide":"top","toEnd":"none"},
+		{"id":"ert0000000000c","fromNode":"rt00000000000051","fromSide":"bottom","toNode":"rt00000000000052","toSide":"top","toEnd":"none"},
+		{"id":"ert0000000000d","fromNode":"rt00000000000051","fromSide":"bottom","toNode":"rt00000000000060","toSide":"top","toEnd":"none"}
+	]
+}

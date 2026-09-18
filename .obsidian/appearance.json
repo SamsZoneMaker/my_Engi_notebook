@@ -1,6 +1,6 @@
 {
   "nativeMenus": false,
-  "baseFontSize": 17,
+  "baseFontSize": 16,
   "monospaceFontFamily": "Cascadia Code,Noto Sans SC",
   "cssTheme": "Things",
   "accentColor": "#a4d5ce",

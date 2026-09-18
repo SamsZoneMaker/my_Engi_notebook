@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"dllsim0000000001","type":"text","text":"# Gen5 DLL 全链路推演\n从启动到 replay；蓝色=启动，绿色=正常，红色=错误，黄色=恢复。\n\n配套：[[讲义03_TLP可靠传输与Replay]] · [[讲义04_接收判定_计时器与调试]]","x":-1500,"y":-1020,"width":720,"height":180,"color":"6"},
+		{"id":"dllsim0000000002","type":"text","text":"## ① 启动闭环\n`Physical LinkUp=1`\n→ `DL_Feature`（可选）\n→ `FC_INIT1` 交换 credit\n→ `FC_INIT2`：**DL_Up=1**\n→ `FI2=1` 后进入 `DL_Active`","x":-1500,"y":-760,"width":400,"height":240,"color":"5"},
+		{"id":"dllsim0000000003","type":"text","text":"## ② 两套账本\n**FC 账本**：能否发送一个新的逻辑 TLP\n**可靠性账本**：已发 TLP 的副本能否释放\n\nReplay 是同一个逻辑 TLP，不再次扣 credit；Ack 也不等于接收 buffer 此刻才释放。","x":-980,"y":-760,"width":440,"height":240,"color":"1"},
+		{"id":"dllsim0000000004","type":"text","text":"## A 发送新 TLP 101\n`ACKD_SEQ=100`\n`NEXT_TRANSMIT_SEQ=101`\n\n1. credit gating\n2. 附 Seq=101\n3. 算 LCRC\n4. 存 Retry Buffer\n5. NEXT→102","x":-420,"y":-760,"width":380,"height":260,"color":"4"},
+		{"id":"dllsim0000000005","type":"text","text":"## B 正常接收 101\n`NEXT_RCV_SEQ=101`\nPHY ok → 非 nullify → LCRC ok → Seq 相等\n\n剥 DLL 外壳，上交 TL\n`NEXT_RCV_SEQ→102`\n清 `NAK_SCHEDULED`","x":100,"y":-760,"width":410,"height":260,"color":"4"},
+		{"id":"dllsim0000000006","type":"text","text":"## B 累计 Ack(101)\n常规 Ack 最晚受 6 条条件约束；可以更早安排。\n\nA 收到合法 Ack：\n- 清 Retry Buffer 到 101\n- `ACKD_SEQ=101`\n- `REPLAY_NUM=0`","x":650,"y":-760,"width":410,"height":260,"color":"4"},
+		{"id":"dllsim0000000007","type":"text","text":"# 场景 A：TLP 101 丢失\nB 先看到 102：\n`(101-102) mod4096 = 4095 > 2048`\n→ gap / out-of-sequence\n→ 丢弃 102，立即 Nak(100)\n→ `NAK_SCHEDULED=1`","x":-1500,"y":-350,"width":440,"height":260,"color":"1"},
+		{"id":"dllsim0000000008","type":"text","text":"B 随后看到 103\n仍是 gap，只丢弃；因为标志已置位，**不再发 Nak**。\n\n这避免一次缺口产生 Nak 风暴。","x":-920,"y":-350,"width":400,"height":200,"color":"1"},
+		{"id":"dllsim0000000009","type":"text","text":"A 收到 Nak(100)\n先确认到 100，再从最老未确认项 101 开始 replay。\n\n101 正确到达 B 后：\n`NEXT_RCV_SEQ→102`，清标志；\n随后 102、103 依次恢复。","x":-380,"y":-350,"width":430,"height":260,"color":"3"},
+		{"id":"dllsim0000000010","type":"text","text":"# 场景 B：Nak 丢失\nB 不会无限重发同一个 Nak。\nA 等不到前进 Ack，`REPLAY_TIMER` 超时，仍会启动 replay。\n\n**Nak 是快速路径，Timer 是兜底。**","x":190,"y":-350,"width":410,"height":230,"color":"3"},
+		{"id":"dllsim0000000011","type":"text","text":"# 场景 C：Ack 丢失\nA 超时 replay 101；B 已期待 102：\n`(102-101) mod4096 = 1 ≤ 2048`\n→ duplicate\n→ 丢弃事务内容，但**安排 Ack**\n\n不得再次上交 TL。","x":740,"y":-350,"width":420,"height":260,"color":"3"},
+		{"id":"dllsim0000000012","type":"text","text":"## `NAK_SCHEDULED` 精确边界\n置位时：\n- 抑制重复 Nak ✅\n- 阻止常规 latency-driven Ack ✅\n- **不阻止 duplicate TLP 触发 Ack** ✅\n- 错误报告仍 permitted；仅 recommended 在 Clear 时报告\n\n把它说成“所有 Ack/Nak/错误都抑制”是错的。","x":-1500,"y":80,"width":570,"height":300,"color":"2"},
+		{"id":"dllsim0000000013","type":"text","text":"## 2048 半环：别犯 off-by-one\nEquation 3-1：\n`(NEXT - ACKD) mod4096 >= 2048`\n\n左式 = 未确认数 + 1。\n0 个未确认时：`000-FFF=1`；\n所以保护条件下实际未确认上限是 **2047**。\n各规则的 `<` / `≤` 边界必须逐条照抄。","x":-760,"y":80,"width":500,"height":300,"color":"2"},
+		{"id":"dllsim0000000014","type":"text","text":"## 调试落点\n- 起不来：Feature / FI1 / FI2\n- 新包发不出：credit / Retry Buffer / Eq3-1\n- 反复 replay：Ack/Nak 合法窗口 / Timer reset\n- 重复上交：duplicate 路径错误\n- Nak 风暴：`NAK_SCHEDULED` 错\n- 标志置位后死循环：duplicate Ack 例外被错挡","x":-90,"y":80,"width":540,"height":300,"color":"6"}
+	],
+	"edges":[
+		{"id":"dllsimedge000001","fromNode":"dllsim0000000002","fromSide":"right","toNode":"dllsim0000000003","toSide":"left"},
+		{"id":"dllsimedge000002","fromNode":"dllsim0000000003","fromSide":"right","toNode":"dllsim0000000004","toSide":"left"},
+		{"id":"dllsimedge000003","fromNode":"dllsim0000000004","fromSide":"right","toNode":"dllsim0000000005","toSide":"left","label":"TLP 101"},
+		{"id":"dllsimedge000004","fromNode":"dllsim0000000005","fromSide":"right","toNode":"dllsim0000000006","toSide":"left","label":"Ack(101)"},
+		{"id":"dllsimedge000005","fromNode":"dllsim0000000007","fromSide":"right","toNode":"dllsim0000000008","toSide":"left","label":"再来 103"},
+		{"id":"dllsimedge000006","fromNode":"dllsim0000000008","fromSide":"right","toNode":"dllsim0000000009","toSide":"left","label":"Nak 到达"},
+		{"id":"dllsimedge000007","fromNode":"dllsim0000000009","fromSide":"right","toNode":"dllsim0000000010","toSide":"left","label":"若 Nak 丢"},
+		{"id":"dllsimedge000008","fromNode":"dllsim0000000010","fromSide":"right","toNode":"dllsim0000000011","toSide":"left","label":"Replay"},
+		{"id":"dllsimedge000009","fromNode":"dllsim0000000011","fromSide":"bottom","toNode":"dllsim0000000012","toSide":"top","label":"关键例外"},
+		{"id":"dllsimedge000010","fromNode":"dllsim0000000012","fromSide":"right","toNode":"dllsim0000000013","toSide":"left"},
+		{"id":"dllsimedge000011","fromNode":"dllsim0000000013","fromSide":"right","toNode":"dllsim0000000014","toSide":"left"}
+	]
+}

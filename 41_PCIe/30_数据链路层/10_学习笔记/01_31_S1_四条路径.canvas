@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{"id":"s1p0000000000000","type":"text","text":"# S1 · 图 3-1 的四条路径\nspec 只在图上标了 1/2/3/4 四个数字，但 §3.6 反复引用它们。本板把它们摊开，并埋一个后面会反复用到的关系：**路径 1 的后果由路径 4 处理**。","x":-1300,"y":-1140,"width":1100,"height":160},
+		{"id":"s1p0000000000011","type":"text","text":"**A 数据链路层**\n`4  Data Link  1`","x":-1300,"y":-640,"width":280,"height":90,"color":"6"},
+		{"id":"s1p0000000000012","type":"text","text":"**A 物理层**","x":-1300,"y":-380,"width":280,"height":70},
+		{"id":"s1p0000000000040","type":"text","text":"⭐ **奇数 = 发送，偶数 = 接收**\n`1 → 2` 是 A 到 B 的方向，`3 → 4` 是 B 到 A 的方向。\n这是**两条完全独立的通路**，各有各的序号计数器、各有各的 Retry Buffer。\n§3.6 分「Transmitter / Receiver」两节，讲的就是「1、3」和「2、4」。","x":-1300,"y":-230,"width":700,"height":180,"color":"1"},
+		{"id":"s1p0000000000031","type":"text","text":"**① A 的发送路径**\nTransmit Data Link Layer\n打序号 · 算 LCRC · 存 Retry Buffer\n→ **§3.6.2 (TLP Transmitter)**","x":-880,"y":-800,"width":420,"height":120,"color":"4"},
+		{"id":"s1p0000000000050","type":"text","text":"### §3.1 的服务清单 → 后面在哪展开\n| 清单项                                                 | 中文                         | 展开                  |\n| --------------------------------------------------- | -------------------------- | ------------------- |\n| Accept TLPs for transmission / Accept TLPs received | 搬运 TLP（路径 1·3 / 2·4）       | §3.6                |\n| TLP Sequence Number and LCRC generation             | 加序号、算 LCRC                 | §3.6.2.1            |\n| Transmitted TLP storage for Retry                   | **Retry Buffer**           | §3.6.2.1            |\n| Data integrity checking for TLPs and DLLPs          | 收到后校验                      | §3.6.2.2 / §3.6.3.1 |\n| Positive and negative acknowledgement DLLPs         | **Ack / Nak**              | §3.5 + §3.6         |\n| Error indications for reporting and logging         | 报错给上层                      | §3.6 + 第 6 章        |\n| Link Acknowledgement Timeout replay                 | **REPLAY_TIMER** 超时重发      | §3.6.2.1            |\n| Track Link state → active/reset/disconnected        | **DLCMSM**，DL_Up / DL_Down | §3.2                |\n","x":-1300,"y":-20,"width":1460,"height":400},
+		{"id":"s1p0000000000060","type":"text","text":"### 这一节的另外三个结论\n**① DLLP 不跨跳**：Switch 收到 Ack 不转发，自己消化，再在另一条 Link 上重做一遍 DLL 流程 → TLP 的可靠性是**逐跳接力**的\n**② DLLP 坏了丢、TLP 坏了重传**：DLLP 是自愈的（successive DLLP **supersedes**），TLP 不是\n**③ 保序、不保时**：同一条 Link 上进出顺序不变；时延可变（主要来自重传）→ DLL 会**背压**事务层","x":-1300,"y":420,"width":1460,"height":170},
+		{"id":"s1p0000000000010","type":"text","text":"**A 事务层**","x":-1300,"y":-960,"width":280,"height":70},
+		{"id":"s1p0000000000032","type":"text","text":"**② B 的接收路径**\nReceive Data Link Layer\n→ **§3.6.3 (TLP Receiver)**","x":-210,"y":-760,"width":320,"height":120,"color":"2"},
+		{"id":"s1p0000000000001","type":"text","text":"**本板配色**\n- 紫：数据链路层\n- 绿：**发送**路径（奇数 1、3）\n- 橙：**接收**路径（偶数 2、4）\n- 红：结论\n- 红线：TLP 的方向；无色线：DLLP 的方向","x":-150,"y":-1200,"width":520,"height":220},
+		{"id":"s1p0000000000034","type":"text","text":"**④ A 的接收路径**\nReceive Data Link Layer\n查 LCRC · 查序号 · 回 Ack/Nak\n→ **§3.6.3 (TLP Receiver)**","x":-620,"y":-520,"width":260,"height":120,"color":"2"},
+		{"id":"s1p0000000000033","type":"text","text":"**③ B 的发送路径**\nTransmit Data Link Layer\n→ **§3.6.2 (TLP Transmitter)**","x":10,"y":-520,"width":310,"height":120,"color":"4"},
+		{"id":"s1p0000000000022","type":"text","text":"**B 物理层**","x":500,"y":-380,"width":280,"height":70},
+		{"id":"s1p0000000000020","type":"text","text":"**B 事务层**","x":440,"y":-960,"width":280,"height":70},
+		{"id":"s1p0000000000021","type":"text","text":"**B 数据链路层**\n`2  Data Link  3`","x":500,"y":-640,"width":280,"height":90,"color":"6"},
+		{"id":"s1p0000000000041","type":"text","text":"⭐ **路径 1 的后果，由路径 4 处理**\nA 在 **①** 上发 TLP。B 收到后回一个 Ack —— 这个 Ack 走 **③ → ④**。\n但它改的是 A **①** 的账本：清 Retry Buffer、推进 $ACKD\\_SEQ$。\n\n**所以 §3.6.2.2「收到 DLLP 怎么处理」虽然发生在接收侧，\n却被放在 (TLP Transmitter) 那一节下面。** —— S9 回来看这里。","x":-420,"y":-230,"width":700,"height":180,"color":"1"}
+	],
+	"edges":[
+		{"id":"es1p00000000002","fromNode":"s1p0000000000031","fromSide":"bottom","toNode":"s1p0000000000011","toSide":"right","color":"1"},
+		{"id":"es1p00000000003","fromNode":"s1p0000000000011","fromSide":"bottom","toNode":"s1p0000000000012","toSide":"top","color":"1","label":"TLP 下行"},
+		{"id":"es1p00000000004","fromNode":"s1p0000000000012","fromSide":"right","toNode":"s1p0000000000022","toSide":"left","color":"1","label":"Link"},
+		{"id":"es1p00000000005","fromNode":"s1p0000000000022","fromSide":"top","toNode":"s1p0000000000021","toSide":"bottom","color":"1"},
+		{"id":"es1p00000000006","fromNode":"s1p0000000000021","fromSide":"left","toNode":"s1p0000000000032","toSide":"bottom","color":"1"},
+		{"id":"es1p00000000007","fromNode":"s1p0000000000032","fromSide":"top","toNode":"s1p0000000000020","toSide":"bottom","color":"1","label":"1 → 2：A 到 B"},
+		{"id":"es1p00000000008","fromNode":"s1p0000000000021","fromSide":"left","toNode":"s1p0000000000033","toSide":"right","label":"Ack 从 ③ 出发"},
+		{"id":"es1p00000000009","fromNode":"s1p0000000000033","fromSide":"left","toNode":"s1p0000000000034","toSide":"right","label":"3 → 4：B 到 A（此处走的是 Ack）"},
+		{"id":"es1p0000000000a","fromNode":"s1p0000000000034","fromSide":"top","toNode":"s1p0000000000031","toSide":"bottom","label":"改的却是 ① 的账本"},
+		{"id":"es1p0000000000b","fromNode":"s1p0000000000034","fromSide":"bottom","toNode":"s1p0000000000041","toSide":"top","toEnd":"none"},
+		{"id":"es1p0000000000c","fromNode":"s1p0000000000031","fromSide":"left","toNode":"s1p0000000000040","toSide":"top","toEnd":"none"},
+		{"id":"es1p00000000001","fromNode":"s1p0000000000010","fromSide":"bottom","toNode":"s1p0000000000031","toSide":"top","color":"1"}
+	]
+}

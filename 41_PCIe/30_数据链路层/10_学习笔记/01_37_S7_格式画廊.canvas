@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"s7gl000000000000","type":"text","text":"# S7 · 八种 DLLP 的格式画廊\n把 Figure 3-5 ~ 3-12 并排摆在一起，一眼看出 **3 个 type-specific 字节只有三种填法**。每张卡片 = 一种 DLLP 的 Byte 0–3（Byte 4–5 的 CRC 所有 DLLP 相同，单独画在最下面）。","x":-1300,"y":-1160,"width":1500,"height":100},
+		{"id":"s7gl000000000001","type":"text","text":"**本板配色**\n- 紫：Type 字节（Byte 0）\n- 绿：有实际内容的字段\n- 无色：Reserved / 任意值\n- 红：关键结论 / 易错点\n- 黄：CRC","x":300,"y":-1160,"width":460,"height":220},
+		{"id":"s7gl000000000010","type":"text","text":"## 填法一：装序号（Ack / Nak，Figure 3-5）","x":-1300,"y":-1000,"width":1500,"height":60,"color":"6"},
+		{"id":"s7gl000000000011","type":"text","text":"**Byte 0**\n`0000 0000` = Ack\n`0001 0000` = Nak\n（只差 bit[4]）","x":-1300,"y":-920,"width":360,"height":120,"color":"6"},
+		{"id":"s7gl000000000012","type":"text","text":"**Byte 1 + Byte 2 高 4 位**\nReserved（12 bit，填 0）","x":-920,"y":-920,"width":520,"height":120},
+		{"id":"s7gl000000000013","type":"text","text":"**Byte 2 低 4 位 + Byte 3**\n**AckNak_Seq_Num（12 bit）**\n= 我已正确收到的最后一个序号（S10：$NEXT\\_RCV\\_SEQ - 1$）","x":-380,"y":-920,"width":580,"height":120,"color":"4"},
+		{"id":"s7gl000000000020","type":"text","text":"## 填法二：装 credit（InitFC1 / InitFC2 / UpdateFC，Figure 3-7 / 3-8 / 3-9 —— 三张图布局完全相同）","x":-1300,"y":-680,"width":1500,"height":60,"color":"6"},
+		{"id":"s7gl000000000022","type":"text","text":"**Byte 1**\nbit[7:6] **HdrScale**（2）\nbit[5:0] **HdrFC[7:2]**","x":-920,"y":-600,"width":360,"height":150,"color":"4"},
+		{"id":"s7gl000000000023","type":"text","text":"**Byte 2**\nbit[7:6] **HdrFC[1:0]**\nbit[5:4] **DataScale**（2）\nbit[3:0] **DataFC[11:8]**","x":-540,"y":-600,"width":360,"height":150,"color":"4"},
+		{"id":"s7gl000000000024","type":"text","text":"**Byte 3**\n**DataFC[7:0]**\n\n合计 2 + 8 + 2 + 12 = **24 bit**，正好填满","x":-160,"y":-600,"width":360,"height":150,"color":"4"},
+		{"id":"s7gl000000000027","type":"text","text":"**谁触发发送 / 谁消费**\n初始化期间（InitFC1/2）→ **数据链路层**触发（§3.4）　初始化后（UpdateFC）→ **事务层**触发（§2.6，所以发送时机规则不在第 3 章）\n接收：DLL 校验，正确则 credit 值**交事务层**，失败则丢弃。InitFC1/2 **仅用于初始化**。","x":-1300,"y":-260,"width":1500,"height":100},
+		{"id":"s7gl000000000030","type":"text","text":"## 填法三：几乎全空（NOP / Vendor / PM / Data Link Feature）","x":-1300,"y":-130,"width":1500,"height":60,"color":"6"},
+		{"id":"s7gl000000000031","type":"text","text":"**NOP**（Figure 3-6）\nByte 0：`0011 0001`\nByte 1–3：**Arbitrary Value**（真的任意，唯一不受约束的）\n规则：校验后**丢弃不处理**\n脚注 53：这是「不支持的 Type 编码」通用规则的**特例** → PCIe 对未知 DLLP 的态度是静默忽略","x":-1300,"y":-50,"width":360,"height":230},
+		{"id":"s7gl000000000032","type":"text","text":"**Vendor-specific**（Figure 3-11）\nByte 0：`0011 0000`\nByte 1–3：**defined by vendor**\n规则：两条 **recommended**（不是 must）—— 接收方静默忽略、发送方不发，除非实现特定机制使能\n和 NOP 只差 bit[0]，刻意放一起","x":-920,"y":-50,"width":360,"height":230},
+		{"id":"s7gl000000000033","type":"text","text":"**PM**（Figure 3-10）\nByte 0：`0010 0xxx`\n`000` Enter_L1 · `001` Enter_L23 · `011` Active_State_Request_L1 · `100` Request_Ack\nByte 1–3：**全 Reserved** —— 信息全在 Type 字节里\n由电源管理逻辑触发（第 5 章），DLL 校验后转交。**DLL 只是搬运工。**","x":-540,"y":-50,"width":360,"height":230},
+		{"id":"s7gl000000000034","type":"text","text":"**Data Link Feature**（Figure 3-12）\nByte 0：`0000 0010`\n**Byte 1 bit[7]：Feature Ack**（图中明确标出）\n其余 23 bit：Feature Supported（= Local Supported，bit0 = Scaled FC）\nFeature Ack = 「我已收到过你的 Feature DLLP」（= 我的 Remote Valid 位，S4）","x":-160,"y":-50,"width":360,"height":230,"color":"4"},
+		{"id":"s7gl000000000040","type":"text","text":"## 所有 DLLP 共用：Byte 4–5 的 16-bit CRC","x":-1300,"y":220,"width":1500,"height":60,"color":"3"},
+		{"id":"s7gl000000000021","type":"text","text":"**Byte 0**\n家族‖类型‖0‖VC\n`01xx` InitFC1 · `10xx` UpdateFC · `11xx` InitFC2\n`xx00` P · `xx01` NP · `xx10` Cpl\n低 3 位 = VC ID","x":-1300,"y":-600,"width":360,"height":150,"color":"6"},
+		{"id":"s7gl000000000026","type":"text","text":"⭐ **「正好填满」不是巧合**\nPCIe 3.0 只有 HdrFC(8) + DataFC(12) = 20 bit，**剩 4 bit 是 Reserved**。4.0 加 Scaled FC 时就把这 4 位拿来做了 HdrScale + DataScale —— **包格式一字节没改**。老设备当 Reserved 忽略，新设备赋予含义。\n**「发 0、收忽略」这条规矩让 20 年后的扩展成为可能。**","x":300,"y":-410,"width":580,"height":200,"color":"1"},
+		{"id":"s7gl000000000014","type":"text","text":"⭐ spec 原文「what TLP**s** are affected」—— 复数。**Ack 是累积确认**：序号 N 表示「≤ N 的我全收好了」。所以 Ack 丢了没关系，下一条序号更大的会覆盖它。","x":300,"y":-730,"width":580,"height":130,"color":"1"},
+		{"id":"s7gl000000000025","type":"text","text":"✅ **Gen5 图已逐位复核**\nFigure 3-7/3-8/3-9 都明确画出 HdrScale / DataScale：\nByte1[7:6]=HdrScale；HdrFC 跨 Byte1[5:0] 与 Byte2[7:6]；Byte2[5:4]=DataScale；DataFC 跨 Byte2[3:0] 与 Byte3[7:0]。\n总位宽 2+8+2+12=24 bit，与 Table 3-4 一致。","x":-2000,"y":-410,"width":620,"height":165,"color":"4"},
+		{"id":"s7gl000000000042","type":"text","text":"**Table 3-5 的 16 行 = 一句话：每个字节内部位序翻转**\n```\n结果 bit : 7 6 5 4 3 2 1 0     15 14 13 12 11 10 9 8\n            ↓ 翻转                 ↓ 翻转\nByte 4  : 0 1 2 3 4 5 6 7   Byte 5: 8 9 10 11 12 13 14 15\n```\n结果 bit0 → 字段 bit7（Byte4 的 MSB）✅　结果 bit8 → 字段 bit15（Byte5 的 MSB）✅\n为什么翻：计算是 LSB-first，移位寄存器吐出的顺序和按字节存放的顺序相反，翻一次让线上顺序对齐。\n**S8 的 LCRC（Table 3-6，32 行）是同一条规律。**","x":-580,"y":300,"width":780,"height":200,"color":"3"},
+		{"id":"s7gl000000000041","type":"text","text":"**四条计算规则**\n多项式 **100Bh** = x¹⁶ + x³ + x + 1　seed **FFFFh**（全 1）\n范围 **Byte 0–3**（含 Reserved 位）　位序 每字节 **bit 0 → bit 7**（LSB first）\n最后**取反**，再按 Table 3-5 放进字段\n\nseed 全 1 + 末尾取反 = 堵住「全 0 包被判合法」的漏洞（CRC 通用惯例）","x":-1560,"y":300,"width":700,"height":200,"color":"3"},
+		{"id":"s7gl000000000050","type":"text","text":"⭐ **三种填法 = 三种「谁消费」**\n装序号的 Ack/Nak → **数据链路层自己**消费（事务层不知道它们存在，§3.6）\n装 credit 的 FC DLLP → **事务层**消费（DLL 只是过路，§3.4 / §2.6）\n几乎全空的四种 → 丢弃 / 厂商 / 电源管理逻辑 / DLL 自己（§3.3）\n**「谁消费」决定了它在哪一章被详细讲。**","x":300,"y":440,"width":580,"height":190,"color":"1"}
+	],
+	"edges":[
+		{"id":"es7gl0000000001","fromNode":"s7gl000000000011","fromSide":"right","toNode":"s7gl000000000012","toSide":"left","toEnd":"none"},
+		{"id":"es7gl0000000002","fromNode":"s7gl000000000012","fromSide":"right","toNode":"s7gl000000000013","toSide":"left","toEnd":"none"},
+		{"id":"es7gl0000000003","fromNode":"s7gl000000000013","fromSide":"right","toNode":"s7gl000000000014","toSide":"top","toEnd":"none"},
+		{"id":"es7gl0000000004","fromNode":"s7gl000000000021","fromSide":"right","toNode":"s7gl000000000022","toSide":"left","toEnd":"none"},
+		{"id":"es7gl0000000005","fromNode":"s7gl000000000022","fromSide":"right","toNode":"s7gl000000000023","toSide":"left","toEnd":"none"},
+		{"id":"es7gl0000000006","fromNode":"s7gl000000000023","fromSide":"right","toNode":"s7gl000000000024","toSide":"left","toEnd":"none"},
+		{"id":"es7gl0000000007","fromNode":"s7gl000000000022","fromSide":"bottom","toNode":"s7gl000000000025","toSide":"top","label":"Scale 在哪几位？"},
+		{"id":"es7gl0000000008","fromNode":"s7gl000000000024","fromSide":"bottom","toNode":"s7gl000000000026","toSide":"top","toEnd":"none","label":"为什么正好 24？"},
+		{"id":"es7gl0000000009","fromNode":"s7gl000000000041","fromSide":"right","toNode":"s7gl000000000042","toSide":"left","label":"结果怎么放"},
+		{"id":"e3b2759d0267793c","fromNode":"s7gl000000000042","fromSide":"right","toNode":"s7gl000000000050","toSide":"top"}
+	]
+}

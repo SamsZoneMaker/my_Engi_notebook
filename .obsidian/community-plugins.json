@@ -6,12 +6,12 @@
   "obsidian-tasks-plugin",
   "tag-wrangler",
   "table-editor-obsidian",
-  "obsidian-hover-editor",
   "obsidian-style-settings",
   "contribution-graph",
   "homepage",
   "quickadd",
   "metadata-menu",
   "periodic-notes",
-  "editing-toolbar"
+  "editing-toolbar",
+  "obsidian-hover-editor"
 ]

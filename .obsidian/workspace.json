@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "7a5e78e505eb5e4f",
         "type": "tabs",
         "children": [
           {
-            "id": "419846622f19d1d8",
+            "id": "e18b0ccbfe4baafe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "31_RISC-V/Andes n25f中断机制.md",
-                "mode": "source",
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,10 +28,86 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Andes n25f中断机制"
+              "title": "01_38_S8_数据完整性_发送端"
+            }
+          },
+          {
+            "id": "8283bf6789beacac",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_Replay_flow.canvas",
+                "viewState": {
+                  "x": -326.9112315397632,
+                  "y": -457.3244069047667,
+                  "zoom": -0.004775759691794446
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "01_38_S8_发送端_Replay_flow"
+            }
+          },
+          {
+            "id": "24d9f597035b4c89",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_专题_序号环与ACKD_SEQ复位.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "01_38_S8_专题_序号环与ACKD_SEQ复位"
+            }
+          },
+          {
+            "id": "6680abda0c204fd4",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_00_序号环与ACKD_SEQ复位_实例.canvas",
+                "viewState": {
+                  "x": -390,
+                  "y": -710,
+                  "zoom": -1.2076296101405775
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "01_38_00_序号环与ACKD_SEQ复位_实例"
+            }
+          },
+          {
+            "id": "1859b22d92518938",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_REPLAY_TIMER.canvas",
+                "viewState": {
+                  "x": 300,
+                  "y": -172.5,
+                  "zoom": -1.2181219839582196
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "01_38_S8_发送端_REPLAY_TIMER"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -51,7 +127,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -63,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "31_RISC-V/Andes n25f中断机制.md",
+                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_专题_序号环与ACKD_SEQ复位.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Andes n25f中断机制 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -78,7 +156,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"tags\"]",
+                "query": "mermaid",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,12 +176,26 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "2ace3e26f510d5c5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "70_Resources/PCIe_gen6/spec_chap3.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "spec_chap3"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 304.5
+    "width": 264.70001220703125,
+    "collapsed": true
   },
   "right": {
     "id": "c52a3eced2de6214",
@@ -220,7 +312,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5
+    "width": 347.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,54 +330,62 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "419846622f19d1d8",
+  "active": "24d9f597035b4c89",
   "lastOpenFiles": [
-    "32_Computer_Architecture/栈与堆.md",
-    "31_RISC-V/RISCV - 中断机制.md",
-    "31_RISC-V/Andes n25f中断机制.md",
-    "31_RISC-V/MOC - RISC-V.md",
-    "22_Python/Python - 函数.md",
-    "90_System/Templates/Template for notes.md",
-    "80_Periodic/Daily/2026-07-27.md",
-    "structure.txt",
-    "10_Projects/Songshan/均衡器状态机代码阅读.md",
-    "99_Archive/C Programme.md",
-    "21_C/C - 数据类型与变量.md",
-    "52_Development_Tools/Git - 日常操作.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_专题_序号环与ACKD_SEQ复位.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_Replay_flow.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_39_S9_数据完整性_收DLLP.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_REPLAY_TIMER.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_00_序号环与ACKD_SEQ复位_实例.canvas",
     "Dashboard.md",
-    "21_C/C 标准库 - math.h.md",
-    "43_Hardware/MOC - Hardware.md",
-    "43_Hardware/PINMUX - 引脚复用.md",
-    "52_Development_Tools/MOC - Development Tools.md",
-    "51_Build_Systems/MOC - Build Systems.md",
-    "50_Toolchain/MOC - Toolchain.md",
-    "42_SerDes/MOC - SerDes.md",
-    "41_PCIe/MOC - PCIe.md",
-    "40_Embedded_and_Interfaces/MOC - Embedded Systems.md",
-    "33_Operating_Systems/MOC - Operating Systems.md",
-    "32_Computer_Architecture/MOC - Computer Architecture.md",
-    "30_Computer_Systems/MOC - Computer Systems.md",
-    "23_Shell/MOC - Shell.md",
-    "22_Python/MOC - Python.md",
-    "_rename_mocs.ps1",
-    "笔记索引.base",
-    "assets/51_Build_Systems/make_workflow.png",
-    "assets/50_Toolchain/compilation_pipeline.jpg",
-    "assets/50_Toolchain/linker_flow.svg",
-    "assets/50_Toolchain/linker_flow.png",
-    "assets/42_SerDes/equalizer_bandwidth_effect.jpg",
-    "assets/42_SerDes/clock_data_recovery.png",
-    "assets/30_Computer_Systems/Networks/osi_7_layer_model.png",
-    "assets/10_Projects/Songshan/boot_flash_flow.png",
-    "未命名.base",
-    "99_Archive/Dragon 日志模块重构草稿",
-    "70_Resources/Makefile/makefile_example2.mak",
-    "70_Resources/Makefile/makefile_example1.mak",
-    "70_Resources/Makefile",
-    "10_Projects/Songshan",
-    "10_Projects/Dragon",
-    "assets/10_Projects/Songshan/boot_rom_smbus.png",
-    "assets/10_Projects/Songshan/boot_rom_eeprom.png",
-    "未命名.canvas"
+    "41_PCIe/30_数据链路层/10_学习笔记/01_3a_S10_数据完整性_接收端.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_33_S3_DLCMSM.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_专题_序号环与ACKD_SEQ复位.md.tmp.14260.6e9236b7e8f1",
+    "41_PCIe/30_数据链路层/01_3f_Gen5_DLL_MOC.md.tmp.14260.76aaeb24f4d8",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_31_S1_数据链路层概述.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_36_S6_ScaledFC.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_32_S2_DLLP初识.md",
+    "assets/附件管理.md",
+    "70_Resources/PCIe_gen5/gen5_chap3.pdf",
+    "Excalidraw/Drawing 2026-09-04 11.56.50.excalidraw.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_37_S7_DLLP详解.md",
+    "40_Embedded_Systems/芯片架构 - 核心概念与分类.md",
+    "40_Embedded_Systems/watchdog/overview.md",
+    "未命名.md",
+    "40_Embedded_Systems/watchdog",
+    "40_Embedded_Systems/MOC - Embedded Systems.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_36_S6_移位.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_37_S7_格式画廊.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_33_S3_一次开机.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_35_S5_两阶段握手.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_34_S4_一个bit握手.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_32_S2_编码解码器.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_35_S5_流控初始化.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_31_S1_四条路径.canvas",
+    "41_PCIe/30_数据链路层/20_独立讲义/讲义00_学习路线与掌握标准.md",
+    "41_PCIe/30_数据链路层/20_独立讲义/讲义01_从LinkUp到DL_Active.md",
+    "41_PCIe/30_数据链路层/20_独立讲义/讲义02_DLLP与信用协议.md",
+    "41_PCIe/30_数据链路层/20_独立讲义/讲义03_TLP可靠传输与Replay.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_34_S4_数据链路特性交换.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_30_S0_前置对齐.md",
+    "01_33_S3_DLCMSM^dlup-timing.md",
+    "Excalidraw",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_3b_S11_全章整合.md",
+    "tmp/osis_final_patch",
+    "tmp/osis_pic_stage/gen5_tab3-8to9_ack_latency.png",
+    "tmp/osis_pic_stage/gen5_tab3-7to9_ack_latency.png",
+    "tmp/osis_pic_stage/gen5_tab3-7_ack_latency.png",
+    "tmp/osis_pic_stage/gen5_tab3-4_scale_encodings.png",
+    "tmp/osis_pic_stage/gen5_tab3-3_dllp_types.png",
+    "tmp/osis_pic_stage/gen5_tab3-2_scale_factors.png",
+    "tmp/osis_pic_stage/gen5_tab3-2_scale_factors_part2.png",
+    "tmp/osis_pic_stage/gen5_tab3-2_scale_factors_part1.png",
+    "tmp/osis_pic_stage/gen5_tab3-1_feature_bits.png",
+    "tmp/osis_pic_stage/gen5_fig3-9to12_dllp_fmt.png",
+    "tmp/osis_pic_stage",
+    "tmp/osis_dll_stage_restart/90_历史稿",
+    "tmp/osis_dll_stage_restart/01_34_流控初始化",
+    "tmp/osis_dll_stage_restart/01_35_数据完整性"
   ]
 }

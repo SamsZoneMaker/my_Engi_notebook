@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"s2dec00000000000","type":"text","text":"# S2 · DLLP 编码解码器\nTable 3-3 有 22 行，但它**不是乱排的**。把 Type 字节拆成 4 个位段，12 个流控编码用一条规律全覆盖，非流控区按上半字节分组。**看完这张板，不用背表。**","x":-1300,"y":-1220,"width":1100,"height":200},
+		{"id":"s2dec00000000010","type":"text","text":"## ① 通用形状：固定 6 字节，无例外","x":-1300,"y":-960,"width":1520,"height":60,"color":"6"},
+		{"id":"s2dec00000000011","type":"text","text":"**Byte 0**\n**DLLP Type**\n拿到第一个字节就知道是什么 DLLP","x":-1300,"y":-880,"width":360,"height":110,"color":"6"},
+		{"id":"s2dec00000000012","type":"text","text":"**Byte 1 – 3**\n**Type-Specific（3 字节 = 24 bit）**\n解释方式完全由 Type 决定 —— 每种类型一张图（Figure 3-5 ~ 3-12），那是 S7 的事","x":-920,"y":-880,"width":760,"height":110},
+		{"id":"s2dec00000000013","type":"text","text":"**Byte 4 – 5**\n**16-bit CRC**\n多项式 100Bh，S7 详讲","x":-140,"y":-880,"width":360,"height":110,"color":"6"},
+		{"id":"s2dec00000000001","type":"text","text":"**本板配色**\n- 紫：位段 / 字节结构\n- 绿：取值表\n- 红：规律 / 结论\n- 黄：练习\n- 无色：说明","x":-180,"y":-1220,"width":520,"height":200},
+		{"id":"s2dec00000000061","type":"text","text":"**Q1**\n`UpdateFC-NP`，用于 VC2。\n编码是？","x":-1280,"y":760,"width":490,"height":130,"color":"3"},
+		{"id":"s2dec00000000060","type":"text","text":"## ⑤ 练习：不查表写编码（答案在最下面）","x":-1280,"y":680,"width":1520,"height":60,"color":"3"},
+		{"id":"s2dec00000000062","type":"text","text":"**Q2**\n收到 Type = `1110 0101`。\n它是什么？","x":-770,"y":760,"width":490,"height":130,"color":"3"},
+		{"id":"s2dec00000000063","type":"text","text":"**Q3**\n收到 Type = `0010 0010`。\n它是什么？该怎么处理？","x":-260,"y":760,"width":500,"height":130,"color":"3"},
+		{"id":"s2dec00000000064","type":"text","text":"**A1** `10`‖`01`‖`0`‖`010` = **1001 0010**　　**A2** `11` = InitFC2，`10` = Cpl，VC `101` = 5 → **InitFC2-Cpl，VC5**　　**A3** `0010` = PM 区，但 bit[2:0] = `010` 未定义 → **Reserved 编码** → 按 §3.6.2.2 **静默丢弃，不算错误**","x":-1280,"y":910,"width":1520,"height":90},
+		{"id":"s2dec00000000014","type":"text","text":"没有长度字段（数满 6 字节就结束）· 前后的 SDP/END 成帧属于第 4 章 · Reserved 字段：**发 0、收忽略、但参与 CRC**；不认识的 Type 编码：**整包静默丢弃、不算错误**（§3.6.2.2）","x":-500,"y":-720,"width":460,"height":140},
+		{"id":"s2dec00000000020","type":"text","text":"## ② 流控区（bit[7:6] ≠ 00）的解码器：编码 = 家族 ‖ 类型 ‖ 0 ‖ VC","x":-1280,"y":-500,"width":1520,"height":60,"color":"6"},
+		{"id":"s2dec00000000021","type":"text","text":"**bit[7:6]**\n家族","x":-1280,"y":-420,"width":360,"height":70,"color":"6"},
+		{"id":"s2dec00000000022","type":"text","text":"**bit[5:4]**\nCredit 类型","x":-900,"y":-420,"width":360,"height":70,"color":"6"},
+		{"id":"s2dec00000000023","type":"text","text":"**bit[3]**\n固定 0","x":-520,"y":-420,"width":180,"height":70,"color":"6"},
+		{"id":"s2dec00000000024","type":"text","text":"**bit[2:0]**\nVC 编号","x":-320,"y":-420,"width":560,"height":70,"color":"6"},
+		{"id":"s2dec00000000031","type":"text","text":"`01` = **InitFC1**（初始化阶段一）\n`10` = **UpdateFC**（运行期）\n`11` = **InitFC2**（初始化阶段二）\n`00` = 非流控区（见 ③）\n⚠️ 编码顺序 ≠ 时间顺序，别从编码推先后","x":-1280,"y":-300,"width":360,"height":180,"color":"4"},
+		{"id":"s2dec00000000032","type":"text","text":"`00` = **P**（Posted）\n`01` = **NP**（Non-Posted）\n`10` = **Cpl**（Completion）\n`11` = MR-IOV（外部规范，跳过）","x":-900,"y":-300,"width":360,"height":180,"color":"4"},
+		{"id":"s2dec00000000033","type":"text","text":"Gen5：恒为 `0`\n\nGen6.2：该位区分\n`0` Shared FC / `1` Dedicated FC；VC 仍是 bit[2:0]","x":-520,"y":-300,"width":180,"height":180,"color":"4"},
+		{"id":"s2dec00000000034","type":"text","text":"`000` = VC0 … `111` = VC7\n\nVC0 是默认通道，链路启动时唯一必初始化的；VC1–7 由软件使能后再各自初始化","x":-320,"y":-300,"width":560,"height":180,"color":"4"},
+		{"id":"s2dec00000000040","type":"text","text":"## ③ 非流控区（bit[7:6] = 00）：按上半字节分组","x":-1280,"y":10,"width":740,"height":60,"color":"6"},
+		{"id":"s2dec00000000050","type":"text","text":"## ④ 按功能：五大家族 + 谁最终消费","x":-520,"y":10,"width":760,"height":60,"color":"4"},
+		{"id":"s2dec00000000051","type":"text","text":"| 家族 | 成员 | 谁最终消费 | 详讲 |\n|---|---|---|---|\n| ① 重传 | Ack / Nak | **数据链路层自己**（事务层不知道它们存在） | §3.6 |\n| ② 流控 | InitFC1 / InitFC2 / UpdateFC × P/NP/Cpl × VC | **事务层**（DLL 只是过路，校验完上交 credit 值） | §3.4 / §2.6 |\n| ③ 特性协商 | Data_Link_Feature | 数据链路层 | §3.3 |\n| ④ 电源管理 | PM_× 4 种 | **电源管理逻辑**（DLL 纯搬运） | 第 5 章 |\n| ⑤ 其他 | NOP / Vendor-specific | 丢弃 / 厂商私有 | S7 带过 |\n\n**「谁消费」决定了它在哪一章被详细讲。**","x":-520,"y":100,"width":760,"height":315,"color":"4"},
+		{"id":"s2dec00000000041","type":"text","text":"| bit[7:4] | 组 | 成员（低 4 位） |\n|---|---|---|\n| `0000` | 确认 + 杂项 | **Ack** `0000` · MRInit `0001` · **Data_Link_Feature** `0010` |\n| `0001` | 否定确认 | **Nak** `0000` |\n| `0010` | **电源管理** | PM_Enter_L1 `0000` · PM_Enter_L23 `0001` · PM_Active_State_Request_L1 `0011` · PM_Request_Ack `0100` |\n| `0011` | 其他 | Vendor-specific `0000` · **NOP** `0001` |\n\nPM 区里 `010` / `101` / `110` / `111` 没定义 → **Reserved 编码** → 收到就静默丢弃","x":-1280,"y":100,"width":740,"height":315},
+		{"id":"s2dec00000000042","type":"text","text":"⭐ **Ack = `0000 0000`，Nak = `0001 0000`，只差 bit[4]**\n0 = 肯定，1 = 否定。硬件里最热的一根线。","x":-1660,"y":350,"width":340,"height":130,"color":"1"},
+		{"id":"s2dec00000000035","type":"text","text":"⭐ **验证三次，规律成立**\n`InitFC1-NP` VC0 = `01`‖`01`‖`0`‖`000` = **0101 0000** ✅　`UpdateFC-Cpl` VC3 = `10`‖`10`‖`0`‖`011` = **1010 0011** ✅　`InitFC2-P` VC0 = `11`‖`00`‖`0`‖`000` = **1100 0000** ✅\n**12 个流控编码，一条规律全覆盖，一个都不用背。**","x":-340,"y":1040,"width":520,"height":180,"color":"1"}
+	],
+	"edges":[
+		{"id":"es2dec00000001","fromNode":"s2dec00000000021","fromSide":"bottom","toNode":"s2dec00000000031","toSide":"top","toEnd":"none"},
+		{"id":"es2dec00000002","fromNode":"s2dec00000000022","fromSide":"bottom","toNode":"s2dec00000000032","toSide":"top","toEnd":"none"},
+		{"id":"es2dec00000003","fromNode":"s2dec00000000023","fromSide":"bottom","toNode":"s2dec00000000033","toSide":"top","toEnd":"none"},
+		{"id":"es2dec00000004","fromNode":"s2dec00000000024","fromSide":"bottom","toNode":"s2dec00000000034","toSide":"top","toEnd":"none"},
+		{"id":"es2dec00000005","fromNode":"s2dec00000000011","fromSide":"bottom","toNode":"s2dec00000000020","toSide":"top","label":"Byte 0 怎么解码 ↓"},
+		{"id":"es2dec00000006","fromNode":"s2dec00000000031","fromSide":"bottom","toNode":"s2dec00000000040","toSide":"top","label":"00 → 非流控区"},
+		{"id":"es2dec00000007","fromNode":"s2dec00000000041","fromSide":"left","toNode":"s2dec00000000042","toSide":"top","toEnd":"none"}
+	]
+}
