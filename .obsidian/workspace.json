@@ -4,182 +4,76 @@
     "type": "split",
     "children": [
       {
-        "id": "23e0e1a985c8e0dc",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "a85f343a9d9e6f00",
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dashboard.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Dashboard"
+            }
+          },
+          {
+            "id": "67d81f3b7f587b4e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "10_Projects/Taishan/QA/上手学习/01_指南.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "01_指南"
+            }
+          },
+          {
+            "id": "c35ec19fba50d663",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_00_序号环与ACKD_SEQ复位_实例.canvas",
+                "file": "10_Projects/Taishan/QA/上手学习/01_设计框图.canvas",
                 "viewState": {
-                  "x": -390,
-                  "y": -710,
-                  "zoom": -0.4463280313631172
+                  "x": 680,
+                  "y": 498,
+                  "zoom": -0.3333333333333333
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "01_38_00_序号环与ACKD_SEQ复位_实例"
-            }
-          },
-          {
-            "id": "828490d6292ba9c0",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_Replay_flow.canvas",
-                "viewState": {
-                  "x": -40,
-                  "y": -373.5,
-                  "zoom": -0.5882204327706975
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "01_38_S8_发送端_Replay_flow"
-            }
-          },
-          {
-            "id": "9e0a4bedba67f767",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "01_38_S8_数据完整性_发送端"
-            }
-          },
-          {
-            "id": "754af2680df0a71a",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_发送端_REPLAY_TIMER.canvas",
-                "viewState": {
-                  "x": -148,
-                  "y": 4,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "01_38_S8_发送端_REPLAY_TIMER"
-            }
-          },
-          {
-            "id": "f0dcf014737870ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_39_S9_数据完整性_收DLLP.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "01_39_S9_数据完整性_收DLLP"
-            }
-          },
-          {
-            "id": "f2c9826b4244ea2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_3a_S10_数据完整性_接收端.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "01_3a_S10_数据完整性_接收端"
-            }
-          },
-          {
-            "id": "28d9e648b66a5fd8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "01_38_S8_数据完整性_发送端"
-            }
-          },
-          {
-            "id": "eee18afd416a33bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "01_38_S8_数据完整性_发送端"
+              "title": "01_设计框图"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -213,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "41_PCIe/30_数据链路层/10_学习笔记/01_39_S9_数据完整性_收DLLP.md",
+                "file": "10_Projects/Taishan/QA/上手学习/01_指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -228,7 +122,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#spec",
+                "query": "tag:#task",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -401,13 +295,23 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "f0dcf014737870ea",
+  "active": "4b152f50307a90a2",
   "lastOpenFiles": [
+    "10_Projects/Taishan/QA/上手学习/01_设计框图.canvas",
+    "10_Projects/Taishan/QA/上手学习/01_指南.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_31_S1_数据链路层概述.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_31_S1_四条路径.canvas",
+    "Dashboard.md",
+    "20_Programming/markdown语法.md",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_30_S0_地图.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_3c_全链路推演.canvas",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_32_S2_编码解码器.canvas",
+    "10_Projects/Taishan/QA/上手学习",
+    "10_Projects/Taishan/QA",
+    "10_Projects/Taishan",
+    "41_PCIe/30_数据链路层/10_学习笔记/01_39_S9_数据完整性_收DLLP.md",
     "41_PCIe/30_数据链路层/10_学习笔记/01_3a_S10_数据完整性_接收端.md",
     "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_数据完整性_发送端.md",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_31_S1_数据链路层概述.md",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_3c_全链路推演.canvas",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_39_S9_数据完整性_收DLLP.md",
     "41_PCIe/30_数据链路层/10_学习笔记/01_37_S7_DLLP详解.md",
     "41_PCIe/30_数据链路层/10_学习笔记/01_32_S2_DLLP初识.md",
     "70_Resources/PCIe_gen5/gen5_chap3.pdf",
@@ -421,7 +325,6 @@
     "40_Embedded_Systems/watchdog/00_看门狗moc.md",
     "11_AndesTech/WDT200 看门狗.md",
     "06_Dragon-裸机WDT驱动.md",
-    "Dashboard.md",
     "51_Build_Systems/Kbuild - fixdep 依赖优化.md",
     "30_Computer_Systems/MOC - Computer Systems.md",
     "10_Projects/Dragon/使能向量中断.md",
@@ -434,17 +337,11 @@
     "assets/41_PCIe/dllp_acknak.png",
     "Excalidraw/Drawing 2026-09-04 11.56.50.excalidraw.md",
     "41_PCIe/30_数据链路层/20_独立讲义/讲义00_学习路线与掌握标准.md",
-    "41_PCIe/30_数据链路层/90_历史稿/01_20_数据链路层_3.1-3.2_讲义.md",
-    "未命名.md",
     "41_PCIe/30_数据链路层/10_学习笔记/01_38_S8_专题_序号环与ACKD_SEQ复位.md.tmp.14260.6e9236b7e8f1",
     "41_PCIe/30_数据链路层/01_3f_Gen5_DLL_MOC.md.tmp.14260.76aaeb24f4d8",
     "40_Embedded_Systems/watchdog",
     "41_PCIe/30_数据链路层/10_学习笔记/01_36_S6_移位.canvas",
     "41_PCIe/30_数据链路层/10_学习笔记/01_37_S7_格式画廊.canvas",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_33_S3_一次开机.canvas",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_35_S5_两阶段握手.canvas",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_34_S4_一个bit握手.canvas",
-    "41_PCIe/30_数据链路层/10_学习笔记/01_32_S2_编码解码器.canvas",
     "Excalidraw",
     "tmp/osis_final_patch",
     "tmp/osis_pic_stage/gen5_tab3-8to9_ack_latency.png",
@@ -454,9 +351,6 @@
     "tmp/osis_pic_stage/gen5_tab3-3_dllp_types.png",
     "tmp/osis_pic_stage/gen5_tab3-2_scale_factors.png",
     "tmp/osis_pic_stage/gen5_tab3-2_scale_factors_part2.png",
-    "tmp/osis_pic_stage",
-    "tmp/osis_dll_stage_restart/90_历史稿",
-    "tmp/osis_dll_stage_restart/01_34_流控初始化",
-    "tmp/osis_dll_stage_restart/01_35_数据完整性"
+    "tmp/osis_pic_stage"
   ]
 }
